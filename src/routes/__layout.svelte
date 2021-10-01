@@ -1,0 +1,33 @@
+<script>
+	import Header from '$components/layout/header.svelte';
+	import Footer from '$components/layout/footer.svelte';
+</script>
+
+<Header />
+<main>
+	<slot />
+</main>
+<Footer />
+
+<style>
+	:global(body) {
+		background: var(--bg);
+		color: var(--text);
+		font-size: clamp(var(--text-base), 1rem + 1vw, var(--text-text-lg));
+	}
+	:global(#svelte) {
+		min-height: 100vh;
+		height: 100%;
+		display: grid;
+		gap: 1rem;
+		grid-template-rows: auto 1fr auto;
+	}
+	main {
+		width: var(--max-width);
+		max-width: var(--max-width);
+		margin-inline: auto;
+	}
+
+	@media (min-width: 1024px) {
+	}
+</style>
