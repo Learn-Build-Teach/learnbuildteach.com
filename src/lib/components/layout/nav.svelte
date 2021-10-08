@@ -1,34 +1,67 @@
+<script>
+	import { page } from '$app/stores';
+	let selected;
+</script>
+
 <nav>
 	<ul>
-		<li><a href="/">Home</a></li>
-	</ul>
-
-	<ul>
-		<a href="https://discord.com/invite/vM2bagU" target="_blank" rel="noopener noreferrer"
-			><img class="discord" src="/static/img/discord.svg" alt="discord" /></a
-		>
+		<li>
+			<a class={$page.path === '/' ? 'page' : 'selected'} sveltekit:prefetch href="/">Home</a>
+		</li>
+		<li>
+			<a class={$page.path === '/content' ? 'page' : ''} sveltekit:prefetch href="/content"
+				>Content</a
+			>
+		</li>
+		<li>
+			<a class={$page.path === '/talks' ? 'page' : 'selected'} sveltekit:prefetch href="/talks"
+				>Talks</a
+			>
+		</li>
 	</ul>
 </nav>
 
 <style>
-	nav {
+	ul {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: var(--gap-7);
 		color: var(--white);
+		font-family: var(--font-heading);
+		font-size: var(--text-xxl);
 	}
 
-	.discord {
-		height: 2rem;
-		width: 2rem;
+	a {
+		color: var(--white);
+		text-decoration: none;
+		padding: 1rem;
+		display: block;
+		position: relative;
+	}
+	a::before {
+		content: '';
+		position: absolute;
+		transition: all 0.3s ease;
+		left: 12%;
+		bottom: 0;
+		top: 50%;
+		width: 75%;
+		height: 4px;
+		background: var(--white);
+		transform: scaleX(0);
+	}
+	a:hover {
+		color: var(--secondary);
 	}
 
-	.discord:hover {
-		transform: scale(1.1);
-		transition: transform 0.2s ease-in-out;
+	.selected:hover {
+		color: var(--secondary);
 	}
-
-	ul {
-		list-style-type: none;
+	a:hover::before,
+	.page::before {
+		transform: scaleX(1);
+	}
+	.page::before {
+		background: var(--secondary);
 	}
 </style>

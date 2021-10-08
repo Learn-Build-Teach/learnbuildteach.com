@@ -34,4 +34,16 @@
 	--text-xxxl: 1.875rem;
 	--text-xxxxl: 2.25rem;
 	--text-xxxxxl: 3rem;
+
+	/* TYPOGRAPHY */
+	--font-heading: 'Raleway', system-ui, sans-serif;
+	--font-body: 'Inter', system-ui, sans-serif;
+
+	/* TRANSITIONS */
+	--cb: (0.4, 0, 0.2, 1);
+	--transition-all: all 150ms var(--cb);
+	--transition-colors: background-color, border-color, color, fill, stroke 150ms var(--cb);
+	--transition-opacity: opacity 150ms var(--cb);
+	--transition-shadow: box-shadow 150ms var(--cb);
+	--transition-transform: transform 150ms var(--cb);
 }
