@@ -1,12 +1,11 @@
-import { mdsvex } from "mdsvex";
-import mdsvexConfig from "./mdsvex.config.js";
+import { mdsvex } from 'mdsvex';
 /** @type {import('@sveltejs/kit').Config} */
 import path from 'path';
 
 const config = {
-    "extensions": [".svelte", ...mdsvexConfig.extensions],
-
-    kit: {
+	extensions: ['.svelte', '.md', '.svx'],
+	preprocess: [mdsvex({ extensions: ['.svelte', '.md', '.svx'] })],
+	kit: {
 		target: '#svelte',
 		vite: {
 			resolve: {
@@ -20,9 +19,7 @@ const config = {
 				}
 			}
 		}
-	},
-
-    preprocess: [mdsvex(mdsvexConfig)]
+	}
 };
 
 export default config;
