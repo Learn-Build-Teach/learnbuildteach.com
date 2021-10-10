@@ -1,6 +1,9 @@
 <script>
 	import Header from '$components/layout/header.svelte';
 	import Footer from '$components/layout/footer.svelte';
+	import '$styles/reset.css';
+	import '$styles/root.css';
+	import '$styles/typography.css';
 </script>
 
 <Header />
