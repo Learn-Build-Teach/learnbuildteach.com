@@ -1,3 +1,3 @@
 <article>
-	<h1>Talks</h1>
+	<h1>Meetups</h1>
 </article>
