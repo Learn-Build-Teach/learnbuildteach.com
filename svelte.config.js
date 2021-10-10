@@ -4,10 +4,10 @@ import { mdsvex } from 'mdsvex';
 import path from 'path';
 
 const config = {
-	adapter: adapter(),
 	extensions: ['.svelte', '.md', '.svx'],
 	preprocess: [mdsvex({ extensions: ['.svelte', '.md', '.svx'] })],
 	kit: {
+		adapter: adapter(),
 		target: '#svelte',
 		vite: {
 			resolve: {
