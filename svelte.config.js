@@ -1,3 +1,4 @@
+import adapter from '@sveltejs/adapter-netlify';
 import { mdsvex } from 'mdsvex';
 /** @type {import('@sveltejs/kit').Config} */
 import path from 'path';
@@ -6,6 +7,7 @@ const config = {
 	extensions: ['.svelte', '.md', '.svx'],
 	preprocess: [mdsvex({ extensions: ['.svelte', '.md', '.svx'] })],
 	kit: {
+		adapter: adapter(),
 		target: '#svelte',
 		vite: {
 			resolve: {
