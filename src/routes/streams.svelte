@@ -1,3 +1,3 @@
 <article>
-	<h1>Talks</h1>
+	<h1>Streams</h1>
 </article>

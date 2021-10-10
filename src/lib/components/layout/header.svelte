@@ -38,12 +38,11 @@
 
 <style>
 	header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--gap-1);
 		width: 100%;
 		max-width: var(--max-width);
-		margin-inline: auto;
 		padding: var(--gap-2) var(--gap-4);
 	}
 	img {
@@ -75,6 +74,10 @@
 	@media (min-width: 1024px) {
 		header {
 			padding-inline: 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-inline: auto;
 		}
 	}
 </style>

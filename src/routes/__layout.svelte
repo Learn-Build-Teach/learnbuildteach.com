@@ -16,14 +16,20 @@
 		font-size: clamp(var(--text-base), 1rem + 1vw, var(--text-text-lg));
 	}
 	:global(#svelte) {
+		overflow-x: hidden;
+		width: 100%;
 		min-height: 100vh;
 		height: 100%;
 		display: grid;
 		gap: 1rem;
 		grid-template-rows: auto 1fr auto;
+		grid-template-columns: minmax(0, 1fr);
 	}
 	main {
-		width: var(--max-width);
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		align-content: flex-start;
+		width: 100%;
 		max-width: var(--max-width);
 		margin-inline: auto;
 	}
