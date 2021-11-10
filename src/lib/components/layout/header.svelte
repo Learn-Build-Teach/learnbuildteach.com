@@ -10,7 +10,7 @@
 
 	<ul>
 		<li>
-			<a href="https://discord.com/invite/vM2bagU" target="_blank" rel="noopener noreferrer">
+			<a href="https://discord.com/invite/vM2bagU" target="_blank" rel="noopener noreferrer" aria-label="Join the Learn Build Teach Discord server">
 				<svg
 					class="discord"
 					width="71"
