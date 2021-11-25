@@ -6,6 +6,18 @@
 	import '$styles/typography.css';
 </script>
 
+<svelte:head>
+	<title>Learn Build Teach</title>
+	<link rel="icon" href="img/favicon.ico" />
+	<meta property="og:url" content="https://learnbuildteach.netlify.app/" />
+	<meta property="og:title" content="Learn Build Teach" />
+	<meta
+		property="og:description"
+		content="The goal of Learn Build Teach is to provide a safe place for developers to well... learn, build, and teach!"
+	/>
+	<meta property="og:image" content="img/android-chrome-512x512.png" />
+</svelte:head>
+
 <Header />
 <main>
 	<slot />
