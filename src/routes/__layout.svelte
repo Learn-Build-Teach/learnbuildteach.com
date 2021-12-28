@@ -57,6 +57,7 @@
 		width: 100%;
 		max-width: var(--max-width);
 		margin-inline: auto;
+        padding: var(--gap-4);
 	}
 
 	@media (min-width: 1024px) {

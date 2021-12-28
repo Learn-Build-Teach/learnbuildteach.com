@@ -1,4 +1,4 @@
-<footer>This is the footer.</footer>
+<footer>@Learn Build Teach, LLC</footer>
 
 <style>
 	footer {

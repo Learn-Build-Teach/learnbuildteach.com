@@ -19,15 +19,15 @@
 			</a>
 		</li>
 		<li>
-			<a class={$page.path === '/meetups' ? 'page' : 'selected'} sveltekit:prefetch href="/meetups">
-				Meetups
+			<a class={$page.path === '/code-of-conduct' ? 'page' : 'selected'} sveltekit:prefetch href="/code-of-conduct">
+				Code of Conduct
 			</a>
 		</li>
-		<li>
+		<!-- <li>
 			<a class={$page.path === '/streams' ? 'page' : 'selected'} sveltekit:prefetch href="/streams">
 				Streams
 			</a>
-		</li>
+		</li> -->
 	</ul>
 </nav>
 
@@ -44,7 +44,6 @@
 	a {
 		color: var(--white);
 		text-decoration: none;
-		padding: 1rem;
 		display: block;
 		position: relative;
 	}
@@ -78,7 +77,7 @@
 			transition: all 0.3s ease;
 			left: 12%;
 			bottom: 0;
-			top: 50%;
+			top: 80%;
 			width: 75%;
 			height: 4px;
 			background: var(--white);

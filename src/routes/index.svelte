@@ -5,6 +5,7 @@
 		<a href="https://github.com/Learn-Build-Teach/learnbuildteach.com"> Learn Build Teach repo </a>
 		to help contribute!
 	</p>
+    <a href="https://discord.gg/vM2bagU">Join the Discord</a>
 </article>
 
 <style>
