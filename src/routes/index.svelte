@@ -1,29 +1,27 @@
 <article>
-	<h1>Welcome to Learn Build Teach</h1>
-	<p>
-		Visit
-		<a href="https://github.com/Learn-Build-Teach/learnbuildteach.com"> Learn Build Teach repo </a>
-		to help contribute!
-	</p>
-    <a href="https://discord.gg/vM2bagU">Join the Discord</a>
+	<h1>Welcome to the Learn Build Teach Community!</h1>
+    <a href="https://discord.gg/vM2bagU" target="_blank" rel="noreferrer noopener" class="button">Join the Discord</a>
 </article>
 
 <style>
+	
 	article {
-		display: grid;
-		align-content: flex-start;
-		grid-template-columns: minmax(0, 1fr);
-		gap: var(--gap-4);
-	}
-	a {
-		border-bottom: 1px solid var(--secondary);
-		font-weight: 600;
-		transition: var(--transition-all);
-	}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    a.button {
+        background-color: var(--white);
+        border: none;
+        padding: var(--gap-2) var(--gap-4);
+        border-radius: var(--gap-2);
+        color: var(--primary);
+        font-weight: bold;
+        position: relative;
+    }
 
-	a:hover {
-		filter: brightness(1.05);
-		font-weight: 600;
-		border-bottom: 2px solid var(--secondary);
-	}
+    a.button:hover {
+        background-color: var(--accent);
+        transition: all 500ms;
+    }
 </style>

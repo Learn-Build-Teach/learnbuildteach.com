@@ -17,7 +17,7 @@ import { getContent } from "$lib/helpers/airtable";
 	<h1>Recent Content from the LBT Community!</h1>
     <ul>
         {#each content as item}
-		<li><a target="_blank" href="item.link">
+		<li><a target="_blank" href={item.link}>
 			{item.title} by {item.discordUser}
 		</a></li>
         {/each}

@@ -55,7 +55,11 @@
 		gap: var(--gap-1);
 		font-size: 1.5rem;
 		font-family: 'Raleway', sans-serif;
+        border: none;
 	}
+    ul {
+        list-style-type: none;
+    }
 
 	.discord {
 		height: 2rem;

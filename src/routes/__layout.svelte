@@ -18,7 +18,7 @@
 	<meta property="og:title" content="Learn Build Teach" />
 	<meta
 		property="og:description"
-		content="The goal of Learn Build Teach is to provide a safe place for developers to well... learn, build, and teach!"
+		content="The goal of this community is to provide a safe place for developers to learn, build, and teach!"
 	/>
 	<meta property="og:image" content="img/android-chrome-512x512.png" />
 	<meta property="og:image:alt" content="Learn Build Teach" />

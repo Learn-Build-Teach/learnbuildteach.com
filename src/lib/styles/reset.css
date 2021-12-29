@@ -23,12 +23,17 @@ body {
 
 h1 {
 	font-size: 2rem;
+	margin-bottom: var(--gap-4);
 }
 h2 {
 	font-size: 1.5rem;
+	margin-top: var(--gap-4);
+	margin-bottom: var(--gap-2);
 }
 h3 {
 	font-size: 1.17rem;
+	margin-top: var(--gap-4);
+	margin-bottom: var(--gap-2);
 }
 h4 {
 	font-size: 1rem;
@@ -48,12 +53,25 @@ picture {
 
 ul,
 ol {
-	list-style: none;
+	margin-top: var(--gap-6);
+	margin-bottom: var(--gap-6);
+}
+
+li {
+	margin: var(--gap-2);
 }
 
 a {
 	text-decoration: none;
 	color: inherit;
+	border-bottom: 1px solid var(--secondary);
+	font-weight: 600;
+	transition: var(--transition-all);
+}
+a:hover {
+	filter: brightness(1.05);
+	font-weight: 600;
+	border-bottom: 2px solid var(--secondary);
 }
 
 input,

@@ -39,6 +39,8 @@
 		color: var(--white);
 		font-family: var(--font-heading);
 		font-size: var(--text-xxl);
+    	list-style: none;
+
 	}
 
 	a {
@@ -46,12 +48,14 @@
 		text-decoration: none;
 		display: block;
 		position: relative;
+        border: none;
 	}
 	.page {
 		color: var(--secondary);
 	}
 	a:hover {
 		color: var(--secondary);
+        border: none;
 	}
 
 	.selected:hover {
@@ -76,8 +80,8 @@
 			position: absolute;
 			transition: all 0.3s ease;
 			left: 12%;
-			bottom: 0;
-			top: 80%;
+			top: 100%;
+			/* top: 80%; */
 			width: 75%;
 			height: 4px;
 			background: var(--white);
