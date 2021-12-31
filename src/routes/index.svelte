@@ -1,5 +1,6 @@
 <article>
 	<h1>Welcome to the Learn Build Teach Community!</h1>
+    <p>Where Devs help Devs</p>
     <a href="https://discord.gg/vM2bagU" target="_blank" rel="noreferrer noopener" class="button">Join the Discord</a>
 </article>
 
