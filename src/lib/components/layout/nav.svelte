@@ -1,25 +1,25 @@
 <script>
 	import { page } from '$app/stores';
-	let selected;
+	let path = $page.url.pathname;
 </script>
 
 <nav>
 	<ul>
 		<li>
-			<a class={$page.path === '/' ? 'page' : 'selected'} sveltekit:prefetch href="/"> Home </a>
+			<a class={path === '/' ? 'page' : 'selected'} sveltekit:prefetch href="/"> Home </a>
 		</li>
 		<li>
-			<a class={$page.path === '/content' ? 'page' : ''} sveltekit:prefetch href="/content">
+			<a class={path === '/content' ? 'page' : ''} sveltekit:prefetch href="/content">
 				Content
 			</a>
 		</li>
 		<li>
-			<a class={$page.path === '/talks' ? 'page' : 'selected'} sveltekit:prefetch href="/talks">
+			<a class={path === '/talks' ? 'page' : 'selected'} sveltekit:prefetch href="/talks">
 				Talks
 			</a>
 		</li>
 		<li>
-			<a class={$page.path === '/code-of-conduct' ? 'page' : 'selected'} sveltekit:prefetch href="/code-of-conduct">
+			<a class={path === '/code-of-conduct' ? 'page' : 'selected'} sveltekit:prefetch href="/code-of-conduct">
 				Code of Conduct
 			</a>
 		</li>
