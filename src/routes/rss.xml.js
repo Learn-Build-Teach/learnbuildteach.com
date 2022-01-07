@@ -29,6 +29,7 @@ const xml = posts =>
         <item>
           <title>${post.title} by ${post.discordUser}</title>
           <description>${post.description}</description>
+          <author>${post.discordUser}</author>
           <link>${post.link}/</link>
           <pubDate>${new Date(post.createdAt)}</pubDate>
         </item>
