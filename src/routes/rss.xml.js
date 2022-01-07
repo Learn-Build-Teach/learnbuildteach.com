@@ -31,11 +31,6 @@ const xml = posts =>
           <author>${post.discordUser}</author>
           <link>${post.link}/</link>
           <pubDate>${new Date(post.createdAt)}</pubDate>
-           <image>
-            <url>${post.image}</url>
-            <title>${post.title}</title>
-            <link>${post.link}</link>
-        </image>
         </item>
       `
       )
