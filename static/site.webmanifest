@@ -2,8 +2,8 @@
 	"name": "Learn Build Teach",
 	"short_name": "Learn Build Teach",
 	"icons": [
-		{ "src": "/images/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
-		{ "src": "/images/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+		{ "src": "/images/logo-square-192x192.png", "sizes": "192x192", "type": "image/png" },
+		{ "src": "/images/logo-square-512x512.png", "sizes": "512x512", "type": "image/png" }
 	],
 	"theme_color": "#457b9d",
 	"background_color": "#1d3556",

@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	let path = $page.url.pathname;
+    $: path = $page.url.pathname;
 </script>
 
 <nav>
@@ -9,7 +9,7 @@
 			<a class={path === '/' ? 'page' : 'selected'} sveltekit:prefetch href="/"> Home </a>
 		</li>
 		<li>
-			<a class={path === '/content' ? 'page' : ''} sveltekit:prefetch href="/content">
+			<a class={path === '/content' ? 'page' : 'selected'} sveltekit:prefetch href="/content">
 				Content
 			</a>
 		</li>

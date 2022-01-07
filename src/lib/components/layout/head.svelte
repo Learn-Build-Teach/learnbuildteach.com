@@ -4,7 +4,7 @@
 		(lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
 			match.toUpperCase()
 		);
-	const img = 'https://www.learnbuildteach.com/images/android-chrome-192x192.png';
+	const img = '/images/logo-square-192x192.png';
 	const desc = 'The goal of this community is to provide a safe place for developers to learn, build, and teach!';
     
 	$: title =
