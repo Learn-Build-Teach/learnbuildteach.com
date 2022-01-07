@@ -1,6 +1,7 @@
 import { getContent } from '$lib/helpers/airtable';
 export async function get() {
   const content = await getContent(50, true);
+  console.log(content);
   const body = xml(content)
 
   const headers = {
@@ -26,9 +27,9 @@ const xml = posts =>
         post =>
           `
         <item>
-          <title>${post.title}</title>
+          <title>${post.title} by ${post.discordUser}</title>
           <description>${post.description}</description>
-          <link>${website}/posts/${post.link}/</link>
+          <link>${post.link}/</link>
           <pubDate>${new Date(post.createdAt)}</pubDate>
         </item>
       `
