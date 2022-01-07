@@ -1,7 +1,7 @@
 <script context="module">
 import { getContent } from "$lib/helpers/airtable";
 
-    export async function load({page, fetch}){
+    export async function load(){
         try {
             const content = await getContent(20, false);
             return {props: {content}}

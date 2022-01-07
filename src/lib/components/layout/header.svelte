@@ -4,7 +4,7 @@
 
 <header>
 	<a href="/">
-		<img src="img/logo-dark-pencil.png" alt="Learn Build Teach logo" />
+		<img src="/images/logo-dark-pencil.png" alt="Learn Build Teach logo" />
 	</a>
 	<Nav />
 
