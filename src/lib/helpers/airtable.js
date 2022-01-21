@@ -5,8 +5,8 @@ const shareTableName = import.meta.env.VITE_SHARE_TABLE_NAME;
 
 export const getContent = async (maxRecords = 20, includeArchived = false) => {
     //TODO: make the query more composable
-    const archiveStr = includeArchived ? '' : `%2C+%7Barchived%7D%3DFALSE()`
-    const url = `https://api.airtable.com/v0/${baseId}/${shareTableName}?filterByFormula=AND(%7Bemailable%7D%3DTRUE())&maxRecords=${maxRecords}&sort%5B0%5D%5Bfield%5D=createdAt&sort%5B0%5D%5Bdirection%5D=desc`
+    const archiveStr = includeArchived ? '' :'&view=Grid%20view';
+    const url = `https://api.airtable.com/v0/${baseId}/${shareTableName}?filterByFormula=AND(%7Bemailable%7D%3DTRUE())&maxRecords=${maxRecords}&sort%5B0%5D%5Bfield%5D=createdAt&sort%5B0%5D%5Bdirection%5D=desc${archiveStr}`
     const res = await fetch(url, {
             headers: {
                 Authorization: `Bearer ${apiKey}`,
@@ -17,5 +17,6 @@ export const getContent = async (maxRecords = 20, includeArchived = false) => {
         id: item.id,
         ...item.fields
     }));
+    console.log(content);
     return content;
 }
