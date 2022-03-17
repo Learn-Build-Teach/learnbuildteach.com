@@ -13,11 +13,11 @@
 				Content
 			</a>
 		</li>
-		<li>
+		<!-- <li>
 			<a class={path === '/talks' ? 'page' : 'selected'} sveltekit:prefetch href="/talks">
 				Talks
 			</a>
-		</li>
+		</li> -->
 		<li>
 			<a class={path === '/code-of-conduct' ? 'page' : 'selected'} sveltekit:prefetch href="/code-of-conduct">
 				Code of Conduct
