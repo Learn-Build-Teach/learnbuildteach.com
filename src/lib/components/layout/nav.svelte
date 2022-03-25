@@ -44,7 +44,7 @@
 
 <style>
 	.invisible {
-		visibility: hidden;
+		opacity: 0;
 	}
 	ul {
 		padding: 0;
