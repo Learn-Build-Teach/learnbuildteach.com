@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"cookie": "^0.4.2",
 		"dotenv": "^10.0.0",
 		"xml": "^1.0.1"
 	}

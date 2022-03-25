@@ -1,16 +1,21 @@
 <script>
-	import Head from '$components/layout/head.svelte'
+	import Head from '$components/layout/head.svelte';
 	import Header from '$components/layout/header.svelte';
 	import Footer from '$components/layout/footer.svelte';
 	import '$styles/reset.css';
 	import '$styles/root.css';
 	import '$styles/typography.css';
+	import { session } from '$app/stores';
+
+	// onMount((loadUser);
+	//TODO: logged in user is not recognized immediately after login, you have to refresh...WHY
 </script>
 
 <Head />
 
 <Header />
 <main>
+	{JSON.stringify($session)}
 	<slot />
 </main>
 <Footer />
@@ -38,7 +43,7 @@
 		width: 100%;
 		max-width: var(--max-width);
 		margin-inline: auto;
-        padding: var(--gap-4);
+		padding: var(--gap-4);
 	}
 
 	@media (min-width: 1024px) {

@@ -1,11 +1,12 @@
 import * as dotenv from 'dotenv';
+import cookie from 'cookie';
 dotenv.config();
 
 export async function post(event) {
 	let response = {};
 	if (event.httpMethod === 'OPTIONS') {
 		response = {
-			statusCode: 200,
+			status: 200,
 			headers: {
 				'Access-Control-Allow-Origin': '*',
 				'Access-Control-Allow-Headers': '*'
@@ -43,14 +44,24 @@ export async function post(event) {
 	try {
 		let res = await fetch('https://discord.com/api/oauth2/token', opts);
 		let json = await res.json();
+    const headers = {
+      'Set-Cookie': cookie.serialize('lbt_session', JSON.stringify(json), {
+        httpOnly: false,
+        maxAge: 60*60*24*7,
+        path: '/',
+        sameSite: 'lax',
+      }),
+      location: '/'
+    }
 		response = {
-			statusCode: 200,
-			body: JSON.stringify(json)
+			status: 302,
+			body: JSON.stringify(json),
+      headers
 		};
 	} catch (err) {
 		console.log(err);
 		response = {
-			statusCode: 400
+			status: 400
 		};
 	}
 

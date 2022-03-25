@@ -1,9 +1,11 @@
 <script>
-	import { page } from '$app/stores';
+	import { page, session } from '$app/stores';
+
 	$: path = $page.url.pathname;
 	let loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${
 		import.meta.env.VITE_DISCORD_CLIENT_ID
 	}&redirect_uri=${$page.url.origin}%2Foauth&response_type=code&scope=identify%20email`;
+	//TODO: logged in user is not recognized immediately after login, you have to refresh...WHY
 
 	let showLogin = import.meta.env.VITE_FEATURE_SHOW_LOGIN === 'TRUE';
 </script>
@@ -32,9 +34,16 @@
 				Code of Conduct
 			</a>
 		</li>
-		<li class={!showLogin && 'invisible'}>
-			<a href={loginUrl}> Login </a>
-		</li>
+		{#if $session.authenticated}
+			<li>
+				<a rel="external" href="/api/logout"> Logout </a>
+			</li>
+		{:else}
+			<li>
+				<a href={loginUrl}> Login </a>
+			</li>
+		{/if}
+
 		<!-- <li>
 			<a class={$page.path === '/streams' ? 'page' : 'selected'} sveltekit:prefetch href="/streams">
 				Streams
