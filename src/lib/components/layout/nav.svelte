@@ -5,8 +5,6 @@
 	let loginUrl = `https://discord.com/api/oauth2/authorize?client_id=787509396447166474&redirect_uri=${$page.url.origin}%2Foauth&response_type=code&scope=identify%20email`;
 
 	let showLogin = import.meta.env.VITE_FEATURE_SHOW_LOGIN === 'TRUE';
-	console.log(showLogin);
-	console.log(import.meta.env.VITE_FEATURE_SHOW_LOGIN);
 </script>
 
 <nav>
