@@ -1,8 +1,9 @@
 <script>
 	import { page } from '$app/stores';
 	$: path = $page.url.pathname;
-
-	let loginUrl = `https://discord.com/api/oauth2/authorize?client_id=787509396447166474&redirect_uri=${$page.url.origin}%2Foauth&response_type=code&scope=identify%20email`;
+	let loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${
+		import.meta.env.VITE_DISCORD_CLIENT_ID
+	}&redirect_uri=${$page.url.origin}%2Foauth&response_type=code&scope=identify%20email`;
 
 	let showLogin = import.meta.env.VITE_FEATURE_SHOW_LOGIN === 'TRUE';
 </script>

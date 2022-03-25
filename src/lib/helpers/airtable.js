@@ -17,6 +17,5 @@ export const getContent = async (maxRecords = 20, includeArchived = false) => {
         id: item.id,
         ...item.fields
     }));
-    console.log(content);
     return content;
 }

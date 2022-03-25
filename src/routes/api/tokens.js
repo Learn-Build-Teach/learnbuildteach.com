@@ -13,11 +13,9 @@ export async function post(event) {
 		};
 		return response;
 	}
-
-	const body = await event.request.json();
-
+	const body = event.body;
 	let data = {
-		client_id: process.env.DISCORD_CLIENT_ID,
+		client_id: process.env.VITE_DISCORD_CLIENT_ID,
 		client_secret: process.env.DISCORD_CLIENT_SECRET,
 		grant_type: 'authorization_code',
 		code: body.code,
@@ -45,7 +43,6 @@ export async function post(event) {
 	try {
 		let res = await fetch('https://discord.com/api/oauth2/token', opts);
 		let json = await res.json();
-		console.log(json);
 		response = {
 			statusCode: 200,
 			body: JSON.stringify(json)
