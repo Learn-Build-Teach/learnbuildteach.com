@@ -1,8 +1,12 @@
 <script>
 	import { page } from '$app/stores';
-    $: path = $page.url.pathname;
+	$: path = $page.url.pathname;
 
 	let loginUrl = `https://discord.com/api/oauth2/authorize?client_id=787509396447166474&redirect_uri=${$page.url.origin}%2Foauth&response_type=code&scope=identify%20email`;
+
+	let showLogin = import.meta.env.VITE_FEATURE_SHOW_LOGIN === 'TRUE';
+	console.log(showLogin);
+	console.log(import.meta.env.VITE_FEATURE_SHOW_LOGIN);
 </script>
 
 <nav>
@@ -21,14 +25,16 @@
 			</a>
 		</li> -->
 		<li>
-			<a class={path === '/code-of-conduct' ? 'page' : 'selected'} sveltekit:prefetch href="/code-of-conduct">
+			<a
+				class={path === '/code-of-conduct' ? 'page' : 'selected'}
+				sveltekit:prefetch
+				href="/code-of-conduct"
+			>
 				Code of Conduct
 			</a>
 		</li>
-		<li>
-			<a href={loginUrl}>
-				Login
-			</a>
+		<li class={!showLogin && 'invisible'}>
+			<a href={loginUrl}> Login </a>
 		</li>
 		<!-- <li>
 			<a class={$page.path === '/streams' ? 'page' : 'selected'} sveltekit:prefetch href="/streams">
@@ -39,6 +45,9 @@
 </nav>
 
 <style>
+	.invisible {
+		visibility: hidden;
+	}
 	ul {
 		padding: 0;
 		display: grid;
@@ -46,8 +55,7 @@
 		color: var(--white);
 		font-family: var(--font-heading);
 		font-size: var(--text-xxl);
-    	list-style: none;
-
+		list-style: none;
 	}
 
 	a {
@@ -55,14 +63,14 @@
 		text-decoration: none;
 		display: block;
 		position: relative;
-        border: none;
+		border: none;
 	}
 	.page {
 		color: var(--secondary);
 	}
 	a:hover {
 		color: var(--secondary);
-        border: none;
+		border: none;
 	}
 
 	.selected:hover {
