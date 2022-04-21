@@ -4,9 +4,11 @@
 		(lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
 			match.toUpperCase()
 		);
-	const img = '/images/logo-square-192x192.png';
-	const desc = 'The goal of this community is to provide a safe place for developers to learn, build, and teach!';
-    
+	const img =
+		'https://media.codingcat.dev/image/upload/v1650488862/main-codingcatdev-photo/Learn-build-teach.jpg';
+	const desc =
+		'The goal of this community is to provide a safe place for developers to learn, build, and teach!';
+
 	$: title =
 		$page.url.pathname === '/' || $page.url.pathname.includes('//prerender/')
 			? 'Learn Build Teach'
@@ -37,6 +39,6 @@
 	<meta property="twitter:image" content={img} />
 	<meta name="twitter:image:alt" content="Learn Build Teach" />
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
-	
+
 	<title>{title}</title>
 </svelte:head>
