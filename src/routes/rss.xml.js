@@ -1,6 +1,6 @@
-import { getContent } from '$lib/helpers/airtable';
+import { getRecentShares } from '$lib/helpers/apiClient';
 export async function get() {
-  const content = await getContent(50, true);
+  const content = await getRecentShares(50, true);
   const body = xml(content)
 
   const headers = {
