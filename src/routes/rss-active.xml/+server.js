@@ -1,45 +1,41 @@
 import { json } from '@sveltejs/kit';
-import { getContent } from '$lib/helpers/airtable';
-export async function GET() {
-  const content = await getContent(50);
-  const body = xml(content)
+import { loadContentFromLBT } from '$lib/stores/contentStore';
 
-  const headers = {
-    'Cache-Control': 'max-age=0, s-maxage=3600',
-    'Content-Type': 'application/xml',
-  }
-  throw new Error("@migration task: Migrate this return statement (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292701)");
-  // Suggestion (check for correctness before using):
-  // return json(body, {
-  //   headers: headers
-  // });
-  return {
-    headers,
-    body,
-  }
+export async function GET() {
+	const content = await loadContentFromLBT();
+	const body = xml(content);
+	console.log(body);
+	const headers = {
+		'Cache-Control': 'max-age=0, s-maxage=3600',
+		'Content-Type': 'application/xml'
+	};
+	return json(body, {
+		headers: headers
+	});
 }
 
-const website = "https://www.learnbuildteach.com"
+const website = 'https://www.learnbuildteach.com';
 
-const xml = posts => 
-`<rss xmlns:dc="https://purl.org/dc/elements/1.1/" xmlns:content="https://purl.org/rss/1.0/modules/content/" xmlns:atom="https://www.w3.org/2005/Atom" version="2.0">
+const xml = (posts) =>
+	`<rss xmlns:dc="https://purl.org/dc/elements/1.1/" xmlns:content="https://purl.org/rss/1.0/modules/content/" xmlns:atom="https://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Learn Build Teach</title>
     <link>${website}</link>
     <description>Learn Build Teach</description>
     ${posts
-      .map(
-        post =>
-          `
+			.map(
+				(post) =>
+					`
         <item>
-          <title>${post.title} by ${post.discordUser}</title>
+          <title>${post.title}</title>
           <description>${post.description}</description>
-          <author>${post.discordUser}</author>
+          <author>${post.user.username}</author>
           <link>${post.link}/</link>
           <pubDate>${new Date(post.createdAt)}</pubDate>
         </item>
       `
-      )
-      .join('').replace(/&(?!#?[a-z0-9]+;)/g, '&amp;')}
+			)
+			.join('')
+			.replace(/&(?!#?[a-z0-9]+;)/g, '&amp;')}
   </channel>
-</rss>`
+</rss>`;
