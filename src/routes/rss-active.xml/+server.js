@@ -1,5 +1,6 @@
+import { json } from '@sveltejs/kit';
 import { getContent } from '$lib/helpers/airtable';
-export async function get() {
+export async function GET() {
   const content = await getContent(50);
   const body = xml(content)
 
@@ -7,6 +8,11 @@ export async function get() {
     'Cache-Control': 'max-age=0, s-maxage=3600',
     'Content-Type': 'application/xml',
   }
+  throw new Error("@migration task: Migrate this return statement (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292701)");
+  // Suggestion (check for correctness before using):
+  // return json(body, {
+  //   headers: headers
+  // });
   return {
     headers,
     body,
