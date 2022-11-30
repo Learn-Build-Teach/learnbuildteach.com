@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-export async function post(event) {
+export async function POST(event) {
 	let response = {};
 	if (event.httpMethod === 'OPTIONS') {
 		response = {
@@ -11,6 +11,7 @@ export async function post(event) {
 				'Access-Control-Allow-Headers': '*'
 			}
 		};
+		throw new Error("@migration task: Migrate this return statement (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292701)");
 		return response;
 	}
 	const body = event.body;
@@ -65,5 +66,6 @@ export async function post(event) {
 		response.headers['Access-Control-Allow-Headers'] = '*';
 	}
 
+	throw new Error("@migration task: Migrate this return statement (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292701)");
 	return response;
 }

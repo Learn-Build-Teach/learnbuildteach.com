@@ -11,22 +11,26 @@
 <nav>
 	<ul>
 		<li>
-			<a class={path === '/' ? 'page' : 'selected'} sveltekit:prefetch href="/"> Home </a>
+			<a class={path === '/' ? 'page' : 'selected'} data-sveltekit-preload-data href="/"> Home </a>
 		</li>
 		<li>
-			<a class={path === '/content' ? 'page' : 'selected'} sveltekit:prefetch href="/content">
+			<a
+				class={path === '/content' ? 'page' : 'selected'}
+				data-sveltekit-preload-data
+				href="/content"
+			>
 				Content
 			</a>
 		</li>
 		<!-- <li>
-			<a class={path === '/talks' ? 'page' : 'selected'} sveltekit:prefetch href="/talks">
+			<a class={path === '/talks' ? 'page' : 'selected'} data-sveltekit-preload-data href="/talks">
 				Talks
 			</a>
 		</li> -->
 		<li>
 			<a
 				class={path === '/code-of-conduct' ? 'page' : 'selected'}
-				sveltekit:prefetch
+				data-sveltekit-preload-data
 				href="/code-of-conduct"
 			>
 				Code of Conduct
@@ -36,7 +40,7 @@
 			<a href={loginUrl}> Login </a>
 		</li>
 		<!-- <li>
-			<a class={$page.path === '/streams' ? 'page' : 'selected'} sveltekit:prefetch href="/streams">
+			<a class={$page.path === '/streams' ? 'page' : 'selected'} data-sveltekit-preload-data href="/streams">
 				Streams
 			</a>
 		</li> -->
