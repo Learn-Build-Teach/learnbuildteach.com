@@ -9,7 +9,7 @@ let adminSharesLoaded: boolean = false;
 export const loadShares = async () => {
 	const { data, error } = await supabase
 		.from('Share')
-		.select('title, description, link, createdAt, imageUrl')
+		.select('title, description, link, createdAt, imageUrl, DiscordUser (username)')
 		.order('createdAt', { ascending: false });
 	if (error) {
 		throw new Error('failed to load shares');
@@ -26,8 +26,8 @@ export const loadAdminShares = async () => {
 	const { data, error } = await supabase
 		.from('Share')
 		.select(
-			`id, title, description, link, 
-    tweeted, emailed, tweetable, emailable, userId, createdAt, imageUrl, 
+			`id, title, description, link,
+    tweeted, emailed, tweetable, emailable, userId, createdAt, imageUrl,
     DiscordUser (username)`
 		)
 		.order('createdAt', { ascending: false });
