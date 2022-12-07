@@ -1,5 +1,5 @@
 <script>
-	import Head from '$components/layout/head.svelte'
+	import Head from '$components/layout/head.svelte';
 	import Header from '$components/layout/header.svelte';
 	import Footer from '$components/layout/footer.svelte';
 	import '$styles/reset.css';
@@ -38,7 +38,7 @@
 		width: 100%;
 		max-width: var(--max-width);
 		margin-inline: auto;
-        padding: var(--gap-4);
+		padding: var(--gap-4);
 	}
 
 	@media (min-width: 1024px) {

@@ -1,21 +1,23 @@
 <script>
-	import { content } from '$lib/stores/contentStore';
+	import ShareCard from '$components/shares/shareCard.svelte';
+	import { shares } from '$stores/sharesStore';
 </script>
 
 <article>
 	<h1>Recent Content from the LBT Community!</h1>
-	<ul>
-		{#each $content as item}
-			<li>
-				<a target="_blank" rel="noreferrer" href={item.link}>
-					{item.title} by {item.user.username}
-				</a>
-			</li>
+	<ul class="card-list">
+		{#each $shares as share}
+			<ShareCard {share} />
 		{/each}
 	</ul>
 </article>
 
 <style>
+	.card-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap-6);
+	}
 	ul {
 		padding-left: 0px;
 	}

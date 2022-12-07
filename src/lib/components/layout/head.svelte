@@ -4,8 +4,7 @@
 		(lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
 			match.toUpperCase()
 		);
-	const img =
-		'https://media.codingcat.dev/image/upload/v1650488862/main-codingcatdev-photo/Learn-build-teach.jpg';
+	const img = '/images/banner.jpeg';
 	const desc =
 		'The goal of this community is to provide a safe place for developers to learn, build, and teach!';
 

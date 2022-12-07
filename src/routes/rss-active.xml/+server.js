@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { loadContentFromLBT } from '$lib/stores/contentStore';
+import { loadContentFromLBT } from '$stores/sharesStore';
 
 export async function GET() {
 	const content = await loadContentFromLBT();
