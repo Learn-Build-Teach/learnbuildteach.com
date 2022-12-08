@@ -5,7 +5,7 @@
 
 <div class="alert-container">
 	{#if $alertMessage}
-		<div class="alert" transition:fly={{x: -16, duration: 150}}>
+		<div class="alert" in:fly={{x: -16, duration: 150}}>
 			<p>{$alertMessage}</p>
 		</div>
 	{/if}
