@@ -3,6 +3,7 @@
 	import { PUBLIC_APP_DOMAIN } from '$env/static/public';
 	import { updateAlert } from '$stores/alertStore';
 	import Alert from '$components/alert.svelte';
+  import Auth from '$components/layout/auth.svelte';
 
 	let email = '';
 	let password = '';
@@ -27,13 +28,27 @@
 	};
 </script>
 
-<Alert />
-<form on:submit|preventDefault={signIn}>
-	<label for="email">Email</label>
-	<input type="email" name="email" id="email" bind:value={email} />
-	<label for="password">Password</label>
-	<input type="password" name="password" id="password" bind:value={password} />
-	<label for="verify">Verify Password</label>
-	<input type="password" name="verify" id="verify" bind:value={verifyPassword} />
+<Auth on:submit={signIn}>
+  <h1>Sign up</h1>
+
+	<div>
+		<label for="email">Email</label>
+		<input type="email" name="email" id="email" bind:value={email} />
+	</div>
+
+	<div>
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password" bind:value={password} />
+	</div>
+
+	<div>
+		<label for="verify">Verify Password</label>
+		<input type="password" name="verify" id="verify" bind:value={verifyPassword} />
+	</div>
+
+	<div />
+
 	<button>Sign Up</button>
-</form>
+
+  <Alert />
+</Auth>
