@@ -5,7 +5,7 @@
 <style>
 	form {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
 		display: flex;
 		flex-direction: column;
 		gap: var(--gap-6);
