@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { alertMessage } from '$stores/alertStore';
-	import { fade } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 </script>
 
 <div class="alert-container">
 	{#if $alertMessage}
-		<div class="alert" transition:fade>
+		<div class="alert" transition:fly={{x: -16, duration: 150}}>
 			<p>{$alertMessage}</p>
 		</div>
 	{/if}
