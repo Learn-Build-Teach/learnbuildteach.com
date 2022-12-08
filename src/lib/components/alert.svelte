@@ -13,7 +13,7 @@
 
 <style>
 	.alert {
-		background: var(--primary-light);
+		background: var(--secondary);
 		color: var(--text);
 		font-size: clamp(var(--text-base), 1rem + 1vw, var(--text-text-lg));
 		border-radius: 4px;
