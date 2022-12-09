@@ -3,12 +3,20 @@
 	import Alert from '$components/alert.svelte';
 	import { supabase } from '$lib/helpers/supabase';
 	import { alertMessage, updateAlert } from '$stores/alertStore';
-  import Auth from '$components/layout/auth.svelte';
+	import Form from '$components/layout/form.svelte';
+	import { onDestroy } from 'svelte';
 
 	let email = '';
 	let password = '';
-	const signIn = async () => {
-		console.log(email);
+
+	onDestroy(() => {
+		updateAlert('');
+	});
+
+	const handleLogIn = async () => {
+		if (!email || !password) {
+			return updateAlert('Email and password are required.');
+		}
 		const { error } = await supabase.auth.signInWithPassword({
 			email,
 			password
@@ -17,28 +25,25 @@
 			console.error(error);
 			updateAlert('Failed to login');
 		} else {
-			alertMessage.set('');
 			goto('/admin');
 		}
 	};
 </script>
 
-<Auth on:submit={signIn}>
-  <h1>Sign in</h1>
+<h1>Log in</h1>
+<Form on:submit={handleLogIn}>
+	<div>
+		<label for="email">Email</label>
+		<input type="email" name="email" id="email" bind:value={email} />
+	</div>
 
 	<div>
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" bind:value={email} />
-  </div>
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password" bind:value={password} />
+	</div>
 
-	<div>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" bind:value={password} />
-  </div>
+	<button>Log in</button>
+	<small>Don't have an account yet? <a href="/signup">Sign up</a></small>
 
-  <div />
-
-	<button>Sign In</button>
-
-  <Alert />
-</Auth>
+	<Alert />
+</Form>
