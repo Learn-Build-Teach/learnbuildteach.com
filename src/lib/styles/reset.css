@@ -79,23 +79,23 @@ button,
 textarea,
 select {
 	font: inherit;
-    width: 100%;
-    margin-bottom: 10px;
-    border-radius: var(--gap-1);
-    font-size: var(--text-xl);
-    padding: var(--gap-2);
-    border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: var(--gap-1);
+  font-size: var(--text-xl);
+  padding: var(--gap-2);
+  border: none;
 }
 
 button {
-    background-color: var(--white);
-    border: none;
-    padding: var(--gap-2) var(--gap-4);
-    border-radius: var(--gap-1);
-    color: var(--primary);
-    font-weight: bold;
-    position: relative;
-    cursor: pointer;
+  background: none;
+  border: none;
+  padding: var(--gap-2) var(--gap-4);
+  border-radius: var(--gap-1);
+  color: var(--primary);
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {

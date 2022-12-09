@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { alertMessage } from '$stores/alertStore';
-	import { fade } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 </script>
 
 <div class="alert-container">
 	{#if $alertMessage}
-		<div class="alert" transition:fade>
+		<div class="alert" in:fly={{x: -16, duration: 150}}>
 			<p>{$alertMessage}</p>
 		</div>
 	{/if}
@@ -13,7 +13,7 @@
 
 <style>
 	.alert {
-		background: var(--primary-light);
+		background: var(--secondary);
 		color: var(--text);
 		font-size: clamp(var(--text-base), 1rem + 1vw, var(--text-text-lg));
 		border-radius: 4px;

@@ -3,6 +3,7 @@
 	import Alert from '$components/alert.svelte';
 	import { supabase } from '$lib/helpers/supabase';
 	import { alertMessage, updateAlert } from '$stores/alertStore';
+  import Auth from '$components/layout/auth.svelte';
 
 	let email = '';
 	let password = '';
@@ -22,11 +23,22 @@
 	};
 </script>
 
-<Alert />
-<form on:submit|preventDefault={signIn}>
-	<label for="email">Email</label>
-	<input type="email" name="email" id="email" bind:value={email} />
-	<label for="password">Password</label>
-	<input type="password" name="password" id="password" bind:value={password} />
+<Auth on:submit={signIn}>
+  <h1>Sign in</h1>
+
+	<div>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" bind:value={email} />
+  </div>
+
+	<div>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" bind:value={password} />
+  </div>
+
+  <div />
+
 	<button>Sign In</button>
-</form>
+
+  <Alert />
+</Auth>
