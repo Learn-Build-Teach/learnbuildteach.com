@@ -1,17 +1,26 @@
 <script lang="ts">
 	import { supabase } from '$lib/helpers/supabase';
 	import { PUBLIC_APP_DOMAIN } from '$env/static/public';
-	import { updateAlert } from '$stores/alertStore';
+	import { alertMessage, updateAlert } from '$stores/alertStore';
 	import Alert from '$components/alert.svelte';
-  import Auth from '$components/layout/auth.svelte';
+	import Form from '$components/layout/form.svelte';
+	import { onDestroy } from 'svelte';
 
 	let email = '';
 	let password = '';
 	let verifyPassword = '';
-	const signIn = async () => {
+
+	onDestroy(() => {
+		updateAlert('');
+	});
+
+	const handleSignUp = async () => {
+		if (!email || !password || !verifyPassword) {
+			return updateAlert('Email and passwords are required.');
+		}
+
 		if (password !== verifyPassword) {
-			updateAlert('Passwords must match');
-			return;
+			return updateAlert('Passwords must match');
 		}
 		const { error } = await supabase.auth.signUp({
 			email,
@@ -28,9 +37,8 @@
 	};
 </script>
 
-<Auth on:submit={signIn}>
-  <h1>Sign up</h1>
-
+<h1>Sign up</h1>
+<Form on:submit={handleSignUp}>
 	<div>
 		<label for="email">Email</label>
 		<input type="email" name="email" id="email" bind:value={email} />
@@ -46,9 +54,8 @@
 		<input type="password" name="verify" id="verify" bind:value={verifyPassword} />
 	</div>
 
-	<div />
+	<button>Sign up</button>
+	<small>Already have an account? <a href="/login">Log in</a></small>
 
-	<button>Sign Up</button>
-
-  <Alert />
-</Auth>
+	<Alert />
+</Form>
