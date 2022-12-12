@@ -17,7 +17,7 @@ export const loadShares = async () => {
         user:discordUserId(username)`
 		)
 		.order('createdAt', { ascending: false })
-		.limit(50);
+		.limit(20);
 	if (error) {
 		return console.error('failed to load shares');
 	}
@@ -35,7 +35,7 @@ export const loadAdminShares = async () => {
         user:discordUserId(username)`
 		)
 		.order('createdAt', { ascending: false })
-		.limit(50);
+		.limit(20);
 
 	if (error) {
 		return console.error('failed to load shares');
