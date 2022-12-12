@@ -3,6 +3,7 @@ import { get, writable } from 'svelte/store';
 
 export const shares = writable<any[]>([]);
 
+console.log('Doing share store thing');
 export const adminShares = writable<any[]>([]);
 let adminSharesLoaded: boolean = false;
 
