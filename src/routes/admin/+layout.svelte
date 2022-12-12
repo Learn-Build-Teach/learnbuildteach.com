@@ -5,10 +5,10 @@
 	import { onMount } from 'svelte';
 	onMount(async () => {
 		if (!$loggedIn) {
-			goto('/');
+			return goto('/');
 		}
+		loadAdminShares();
 	});
-	loadAdminShares();
 </script>
 
 <slot />

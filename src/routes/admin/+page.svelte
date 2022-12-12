@@ -5,9 +5,11 @@
 </script>
 
 <article>
-  <h1>Recent Shares</h1>
+	<h1>Recent Shares</h1>
 
-  <CardList cards={$adminShares} let:card>
-    <AdminShareCard share={card} />
-  </CardList>
+	{#if $adminShares?.length > 0}
+		<CardList cards={$adminShares} let:card>
+			<AdminShareCard share={card} />
+		</CardList>
+	{/if}
 </article>

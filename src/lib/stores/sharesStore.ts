@@ -1,13 +1,15 @@
 import { supabase } from '$lib/helpers/supabase';
 import { get, writable } from 'svelte/store';
 
-export const shares = writable<any[]>([]);
+export const shares = writable<any[]>();
+let sharesLoaded = false;
 
-console.log('Doing share store thing');
-export const adminShares = writable<any[]>([]);
-let adminSharesLoaded: boolean = false;
+export const adminShares = writable<any[]>();
+let adminSharesLoaded = false;
 
 export const loadShares = async () => {
+	if (sharesLoaded) return;
+
 	const { data, error } = await supabase
 		.from('Share')
 		.select(
@@ -20,13 +22,12 @@ export const loadShares = async () => {
 		return console.error('failed to load shares');
 	}
 	shares.set(data);
-	return data;
+	sharesLoaded = true;
 };
 
 export const loadAdminShares = async () => {
-	if (adminSharesLoaded) {
-		return get(adminShares);
-	}
+	if (adminSharesLoaded) return;
+
 	const { data, error } = await supabase
 		.from('Share')
 		.select(
@@ -41,7 +42,6 @@ export const loadAdminShares = async () => {
 	}
 	adminShares.set(data);
 	adminSharesLoaded = true;
-	return data;
 };
 
 export const updateShare = async (id: string, updates: any) => {
@@ -59,5 +59,3 @@ export const updateShare = async (id: string, updates: any) => {
 		return newContent;
 	});
 };
-
-loadShares();
