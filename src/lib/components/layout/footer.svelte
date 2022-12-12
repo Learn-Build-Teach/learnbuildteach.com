@@ -1,22 +1,23 @@
 <footer>
-    <p>@Learn Build Teach, LLC</p>
-    <p>
-		Visit the Learn Build Teach
-		<a href="https://github.com/Learn-Build-Teach/learnbuildteach.com"> repository </a>
+	<p>
+		Visit the
+		<a href="https://github.com/Learn-Build-Teach/learnbuildteach.com"
+			>Learn Build Teach repository</a
+		>
 		to help contribute!
 	</p>
+	<p>&copy; 2022 Learn Build Teach LLC</p>
 </footer>
 
 <style>
 	footer {
-		padding: var(--gap-2);
+		padding: var(--gap-6) var(--gap-2);
 		width: 100%;
-		max-width: var(--max-width);
-		margin-inline: auto;
-        display: flex;
-        flex-direction: column;
-        gap: var(--gap-2);
-        align-items: center;
-        border-top: 1px solid white;
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap-4);
+		align-items: center;
+		background-color: var(--primary-dark);
+		font-size: var(--text-sm);
 	}
 </style>

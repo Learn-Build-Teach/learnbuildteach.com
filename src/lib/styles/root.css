@@ -1,6 +1,9 @@
+
+
 :root {
 	/* COLORS */
 	--primary: #1d3556;
+    --primary-dark: #0f1b2b;
 	--primary-light: #457b9d;
 	--secondary: #ff5a5f;
 	--accent: #a8dadc;
@@ -40,10 +43,64 @@
 	--font-body: 'Inter', system-ui, sans-serif;
 
 	/* TRANSITIONS */
-	--cb: (0.4, 0, 0.2, 1);
+	--cb: cubic-bezier(0.4, 0, 0.2, 1);
 	--transition-all: all 150ms var(--cb);
 	--transition-colors: background-color, border-color, color, fill, stroke 150ms var(--cb);
 	--transition-opacity: opacity 150ms var(--cb);
 	--transition-shadow: box-shadow 150ms var(--cb);
 	--transition-transform: transform 150ms var(--cb);
 }
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  color: var(--black);
+  outline: none;
+  transition: border-color, outline 150ms var(--cb);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: var(--secondary);
+  outline: 2px solid var(--secondary);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary);
+  z-index: -1;
+  border-radius: var(--gap-1);
+  transition: var(--transition-transform);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  z-index: -1;
+  border-radius: var(--gap-1);
+  transition: var(--transition-transform);
+}
+
+button:hover::before,
+button:active::before,
+button:focus-visible::before {
+  transform: translate3d(4px, 4px, 0);
+}
+
+button:active::after {
+  transform: translate3d(2px, 2px, 0);
+}
+

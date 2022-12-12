@@ -1,5 +1,5 @@
 <article>
-	<h1>Welcome to the Learn Build Teach Community!</h1>
+	<h1 class="text-2xl text-center mb-6">Welcome to the Learn Build Teach Community!</h1>
 	<p>
 		Learn Build Teach is a welcoming and open community of web developers. Whether you are a
 		seasoned expert or just getting started in the field of development, you can be certain our

@@ -1,11 +1,15 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	$: path = $page.url.pathname;
-	let loginUrl = `https://discord.com/api/oauth2/authorize?client_id=${
-		import.meta.env.VITE_DISCORD_CLIENT_ID
-	}&redirect_uri=${$page.url.origin}%2Foauth&response_type=code&scope=identify%20email`;
+	import { supabase } from '$src/lib/helpers/supabase';
+	import { loggedIn } from '$stores/authStore';
 
-	let showLogin = import.meta.env.VITE_FEATURE_SHOW_LOGIN === 'TRUE';
+	$: path = $page.url.pathname;
+
+	const logout = async () => {
+		await supabase.auth.signOut();
+		goto('/');
+	};
 </script>
 
 <nav>
@@ -36,14 +40,20 @@
 				Code of Conduct
 			</a>
 		</li>
-		<li class={!showLogin && 'invisible'}>
-			<a href={loginUrl}> Login </a>
-		</li>
-		<!-- <li>
-			<a class={$page.path === '/streams' ? 'page' : 'selected'} data-sveltekit-preload-data href="/streams">
-				Streams
-			</a>
-		</li> -->
+		{#if $loggedIn}
+			<li>
+				<a
+					class={path === '/admin' ? 'page' : 'selected'}
+					data-sveltekit-preload-data
+					href="/admin"
+				>
+					Admin
+				</a>
+			</li>
+			<li>
+				<button on:click={logout}> Logout </button>
+			</li>
+		{/if}
 	</ul>
 </nav>
 
