@@ -9,10 +9,14 @@ let adminSharesLoaded: boolean = false;
 export const loadShares = async () => {
 	const { data, error } = await supabase
 		.from('Share')
-		.select('title, description, link, createdAt, imageUrl, DiscordUser (username)')
-		.order('createdAt', { ascending: false });
+		.select(
+			`id, createdAt, link, title, description, imageUrl, tweetable, discordUserId,
+        user:discordUserId(username)`
+		)
+		.order('createdAt', { ascending: false })
+		.limit(50);
 	if (error) {
-		throw new Error('failed to load shares');
+		return console.error('failed to load shares');
 	}
 	shares.set(data);
 	return data;
@@ -22,21 +26,20 @@ export const loadAdminShares = async () => {
 	if (adminSharesLoaded) {
 		return get(adminShares);
 	}
-	console.log('Loading admin shares');
 	const { data, error } = await supabase
 		.from('Share')
 		.select(
-			`id, title, description, link,
-    tweeted, emailed, tweetable, emailable, userId, createdAt, imageUrl,
-    DiscordUser (username)`
+			`id, createdAt, link, title, tweetable, emailable, tweeted, emailed, description, imageUrl, tweetable, discordUserId,
+        user:discordUserId(username)`
 		)
-		.order('createdAt', { ascending: false });
+		.order('createdAt', { ascending: false })
+		.limit(50);
+
 	if (error) {
-		throw new Error('Failed to load admin shares');
+		return console.error('failed to load shares');
 	}
 	adminShares.set(data);
 	adminSharesLoaded = true;
-	console.log(data);
 	return data;
 };
 
@@ -52,7 +55,6 @@ export const updateShare = async (id: string, updates: any) => {
 			}
 			return content;
 		});
-		console.log(newContent);
 		return newContent;
 	});
 };

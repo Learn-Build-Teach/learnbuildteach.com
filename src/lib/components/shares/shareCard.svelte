@@ -19,7 +19,7 @@
 				{share.title}
 			</h2>
 		</a>
-		<p>by {share?.DiscordUser?.username}</p>
+		<p>by {share?.user?.username}</p>
 		<slot />
 	</div>
 </div>

@@ -1,10 +1,9 @@
+import { loadShares } from '$stores/sharesStore';
 import { json } from '@sveltejs/kit';
-import { loadContentFromLBT } from '$stores/sharesStore';
 
 export async function GET() {
-	const content = await loadContentFromLBT();
+	const content = await loadShares();
 	const body = xml(content);
-	console.log(body);
 	const headers = {
 		'Cache-Control': 'max-age=0, s-maxage=3600',
 		'Content-Type': 'application/xml'
