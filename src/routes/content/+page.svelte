@@ -7,7 +7,9 @@
 <article>
 	<h1>Recent Content from the LBT Community!</h1>
 
-  <CardList cards={$shares} let:card>
-    <ShareCard share={card} />
-  </CardList>
+	{#if $shares && $shares.length > 0}
+		<CardList cards={$shares} let:card>
+			<ShareCard share={card} />
+		</CardList>
+	{/if}
 </article>
