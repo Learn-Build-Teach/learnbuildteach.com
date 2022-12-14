@@ -25,6 +25,22 @@ export const loadShares = async () => {
 	sharesLoaded = true;
 };
 
+export const deleteShare = async (id: string) => {
+	const { error } = await supabase.from('Share').delete().eq('id', id);
+
+	if (error) {
+		throw error;
+	}
+
+	adminShares.update((prevAdminShares) => {
+		return prevAdminShares.filter((share) => share.id !== id);
+	});
+
+	shares.update((prevShares) => {
+		return prevShares.filter((share) => share.id !== id);
+	});
+};
+
 export const loadAdminShares = async () => {
 	if (adminSharesLoaded) return;
 
