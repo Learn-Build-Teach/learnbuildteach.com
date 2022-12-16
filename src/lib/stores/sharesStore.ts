@@ -7,13 +7,15 @@ let sharesLoaded = false;
 export const adminShares = writable<any[]>();
 let adminSharesLoaded = false;
 
+export const SHARE_STORAGE_NAME = 'lbt-shares';
+
 export const loadShares = async () => {
 	if (sharesLoaded) return;
 
 	const { data, error } = await supabase
 		.from('Share')
 		.select(
-			`id, createdAt, link, title, description, imageUrl, tweetable, discordUserId,
+			`id, createdAt, link, title, description, imageUrl, tweetable, discordUserId, storageBucketPath,
         user:discordUserId(username)`
 		)
 		.order('createdAt', { ascending: false })
@@ -47,7 +49,8 @@ export const loadAdminShares = async () => {
 	const { data, error } = await supabase
 		.from('Share')
 		.select(
-			`id, createdAt, link, title, tweetable, emailable, tweeted, emailed, description, imageUrl, tweetable, discordUserId,
+			`id, createdAt, link, title, tweetable, emailable, tweeted, emailed, 
+            description, imageUrl, tweetable, discordUserId, storageBucketPath,
         user:discordUserId(username)`
 		)
 		.order('createdAt', { ascending: false })
@@ -74,4 +77,10 @@ export const updateShare = async (id: string, updates: any) => {
 		});
 		return newContent;
 	});
+};
+
+//TODO: to update with transformation parameters when available
+export const getCoverPublicURL = (storageBucketPath: string) => {
+	const { data } = supabase.storage.from(SHARE_STORAGE_NAME).getPublicUrl(storageBucketPath);
+	return data.publicUrl;
 };
