@@ -1,10 +1,10 @@
 <script lang="ts">
 	import ShareCard from '$components/shares/shareCard.svelte';
 	import Checkbox from '$components/checkbox.svelte';
-	import { deleteShare, updateShare } from '$stores/sharesStore';
+	import { deleteShare, getCoverPublicURL, updateShare } from '$stores/sharesStore';
+	import type { Share } from '$src/types/supabase';
 
-	export let share: any;
-
+	export let share: Share;
 	const handleCheckbox = async (updates: any) => {
 		try {
 			await updateShare(share.id, updates);
