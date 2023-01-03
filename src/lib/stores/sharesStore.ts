@@ -19,6 +19,7 @@ export const loadShares = async () => {
         user:discordUserId(username)`
 		)
 		.order('createdAt', { ascending: false })
+		.eq('emailable', true)
 		.limit(20);
 	if (error) {
 		return console.error('failed to load shares');
@@ -81,6 +82,10 @@ export const updateShare = async (id: string, updates: any) => {
 
 //TODO: to update with transformation parameters when available
 export const getCoverPublicURL = (storageBucketPath: string) => {
-	const { data } = supabase.storage.from(SHARE_STORAGE_NAME).getPublicUrl(storageBucketPath);
+	const { data } = supabase.storage.from(SHARE_STORAGE_NAME).getPublicUrl(storageBucketPath, {
+		transform: {
+			width: 400
+		}
+	});
 	return data.publicUrl;
 };
