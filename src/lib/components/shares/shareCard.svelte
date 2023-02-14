@@ -5,7 +5,6 @@
 	const backupImageUrl = getCoverPublicURL('lbt-banner.jpeg');
 
 	const imageURLFromStorage = share.storageBucketPath && getCoverPublicURL(share.storageBucketPath);
-	console.log(imageURLFromStorage);
 </script>
 
 <div class="share-card">

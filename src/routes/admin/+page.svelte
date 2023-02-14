@@ -1,7 +1,14 @@
 <script lang="ts">
-	import { adminShares } from '$stores/sharesStore';
+	import { adminShares, loadAdminShares } from '$stores/sharesStore';
 	import AdminShareCard from '$components/admin/AdminShareCard.svelte';
 	import CardList from '$components/CardList.svelte';
+
+	let page = 0;
+
+	const handleLoadMore = () => {
+		page++;
+		loadAdminShares(page);
+	};
 </script>
 
 <article>
@@ -12,4 +19,5 @@
 			<AdminShareCard share={card} />
 		</CardList>
 	{/if}
+	<button on:click={handleLoadMore}>Load More</button>
 </article>

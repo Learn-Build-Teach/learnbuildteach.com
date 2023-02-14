@@ -28,6 +28,20 @@
 			goto('/admin');
 		}
 	};
+
+	const handleSendMagicLink = async () => {
+		if (!email) {
+			return updateAlert('Email is required for magic links');
+		}
+
+		const { error } = await supabase.auth.signInWithOtp({ email });
+		if (error) {
+			console.error(error);
+			updateAlert('Failed to send magic link');
+		} else {
+			updateAlert('Please check your email');
+		}
+	};
 </script>
 
 <h1>Log in</h1>
@@ -43,6 +57,7 @@
 	</div>
 
 	<button>Log in</button>
+	<button type="button" on:click={handleSendMagicLink}><small>Send magic link</small></button>
 	<small>Don't have an account yet? <a href="/signup">Sign up</a></small>
 
 	<Alert />

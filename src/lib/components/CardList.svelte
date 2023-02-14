@@ -1,11 +1,11 @@
 <script lang="ts">
-  export let cards: any[];
+	export let cards: any[];
 </script>
 
 <ul>
-  {#each cards as card}
-    <slot {card} />
-  {/each}
+	{#each cards as card}
+		<slot {card} />
+	{/each}
 </ul>
 
 <style>

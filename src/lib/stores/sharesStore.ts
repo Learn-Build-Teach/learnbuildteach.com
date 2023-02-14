@@ -5,6 +5,7 @@ export const shares = writable<any[]>();
 let sharesLoaded = false;
 
 export const adminShares = writable<any[]>();
+adminShares.set([]);
 let adminSharesLoaded = false;
 
 export const SHARE_STORAGE_NAME = 'lbt-shares';
@@ -44,8 +45,11 @@ export const deleteShare = async (id: string) => {
 	});
 };
 
-export const loadAdminShares = async () => {
-	if (adminSharesLoaded) return;
+export const loadAdminShares = async (page: number = 0) => {
+	if (adminSharesLoaded && page === 0) return;
+
+	const start = page * 20;
+	const end = (page + 1) * 20;
 
 	const { data, error } = await supabase
 		.from('Share')
@@ -55,12 +59,16 @@ export const loadAdminShares = async () => {
         user:discordUserId(username)`
 		)
 		.order('createdAt', { ascending: false })
+		.range(start, end)
+
 		.limit(20);
 
 	if (error) {
 		return console.error('failed to load shares');
 	}
-	adminShares.set(data);
+	adminShares.update((existingShares) => {
+		return [...existingShares, ...data];
+	});
 	adminSharesLoaded = true;
 };
 
@@ -80,11 +88,11 @@ export const updateShare = async (id: string, updates: any) => {
 	});
 };
 
-//TODO: to update with transformation parameters when available
 export const getCoverPublicURL = (storageBucketPath: string) => {
 	const { data } = supabase.storage.from(SHARE_STORAGE_NAME).getPublicUrl(storageBucketPath, {
 		transform: {
-			width: 400
+			width: 350,
+			resize: 'contain'
 		}
 	});
 	return data.publicUrl;
