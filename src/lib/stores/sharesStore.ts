@@ -1,17 +1,16 @@
 import { supabase } from '$lib/helpers/supabase';
 import { get, writable } from 'svelte/store';
 
-export const shares = writable<any[]>();
+export const shares = writable<any[]>([]);
 let sharesLoaded = false;
 
-export const adminShares = writable<any[]>();
-adminShares.set([]);
+export const adminShares = writable<any[]>([]);
 let adminSharesLoaded = false;
 
 export const SHARE_STORAGE_NAME = 'lbt-shares';
 
-export const loadShares = async () => {
-	if (sharesLoaded) return;
+export const loadShares = async (page: number = 0) => {
+	if (sharesLoaded && page === 0) return;
 
 	const { data, error } = await supabase
 		.from('Share')
@@ -25,7 +24,10 @@ export const loadShares = async () => {
 	if (error) {
 		return console.error('failed to load shares');
 	}
-	shares.set(data);
+
+	shares.update((existingShares) => {
+		return [...existingShares, ...data];
+	});
 	sharesLoaded = true;
 };
 

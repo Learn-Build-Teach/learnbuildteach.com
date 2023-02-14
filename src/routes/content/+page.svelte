@@ -7,6 +7,13 @@
 	onMount(async () => {
 		loadShares();
 	});
+
+	let page = 0;
+
+	const handleLoadMore = () => {
+		page++;
+		loadShares(page);
+	};
 </script>
 
 <article>
@@ -17,4 +24,5 @@
 			<ShareCard share={card} />
 		</CardList>
 	{/if}
+	<button on:click={handleLoadMore}>Load More</button>
 </article>
