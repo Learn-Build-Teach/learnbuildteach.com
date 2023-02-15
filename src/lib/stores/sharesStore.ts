@@ -12,6 +12,9 @@ export const SHARE_STORAGE_NAME = 'lbt-shares';
 export const loadShares = async (page: number = 0) => {
 	if (sharesLoaded && page === 0) return;
 
+	const start = page * 20;
+	const end = (page + 1) * 20;
+
 	const { data, error } = await supabase
 		.from('Share')
 		.select(
@@ -20,6 +23,7 @@ export const loadShares = async (page: number = 0) => {
 		)
 		.order('createdAt', { ascending: false })
 		.eq('emailable', true)
+		.range(start, end)
 		.limit(20);
 	if (error) {
 		return console.error('failed to load shares');
@@ -62,7 +66,6 @@ export const loadAdminShares = async (page: number = 0) => {
 		)
 		.order('createdAt', { ascending: false })
 		.range(start, end)
-
 		.limit(20);
 
 	if (error) {
