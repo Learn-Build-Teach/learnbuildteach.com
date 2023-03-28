@@ -1,12 +1,15 @@
 <script lang="ts">
+	import { PUBLIC_API_URL } from '$env/static/public';
+
 	const loadInsights = async () => {
 		try {
-			const res = await fetch(
-				'https://learn-build-teach-discord-bot.herokuapp.com/api/server-insights'
-			);
+			const res = await fetch(`${PUBLIC_API_URL}/api/server-insights`);
 			const {
 				data: { totalMembers }
 			} = await res.json();
+			if (res.status === 500) {
+				throw new Error('API request failed');
+			}
 			return { totalMembers };
 		} catch (error) {
 			console.error(error);
@@ -23,7 +26,7 @@
 	{#await insightsPromise}
 		<p>...waiting</p>
 	{:then insights}
-		<p>Total memmbers {insights?.totalMembers}</p>
+		<p>Total members {insights?.totalMembers}</p>
 	{:catch error}
 		<p style="color: red">{error.message}</p>
 	{/await}
