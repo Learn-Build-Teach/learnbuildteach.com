@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { PUBLIC_API_URL } from '$env/static/public';
+
 	const loadInsights = async () => {
 		try {
-			const res = await fetch('http://localhost:3000/api/server-insights');
+			const res = await fetch(`${PUBLIC_API_URL}/api/server-insights`);
 			const {
 				data: { totalMembers }
 			} = await res.json();
