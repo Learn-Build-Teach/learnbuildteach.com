@@ -4,7 +4,7 @@ import { PUBLIC_HIGHLIGHT_PROJECT_ID, PUBLIC_APP_DOMAIN } from '$env/static/publ
 H.init(PUBLIC_HIGHLIGHT_PROJECT_ID, {
 	environment: 'production',
 	version: 'commit:abcdefg12345',
-	tracingOrigins: [PUBLIC_APP_DOMAIN],
+	tracingOrigins: true,
 	networkRecording: {
 		enabled: true,
 		recordHeadersAndBody: true,
