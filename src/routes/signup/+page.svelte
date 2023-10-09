@@ -26,7 +26,7 @@
 			email,
 			password,
 			options: {
-				emailRedirectTo: `${PUBLIC_APP_DOMAIN}/admin`
+				emailRedirectTo: `/admin`
 			}
 		});
 		if (error) {
