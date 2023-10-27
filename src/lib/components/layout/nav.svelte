@@ -13,7 +13,7 @@
 </script>
 
 <nav>
-	<ul>
+	<ul class="flex gap-6 my-8">
 		<li>
 			<a class={path === '/' ? 'page' : 'selected'} data-sveltekit-preload-data href="/"> Home </a>
 		</li>

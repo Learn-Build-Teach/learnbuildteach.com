@@ -5,6 +5,7 @@
 	import '$styles/reset.css';
 	import '$styles/root.css';
 	import '$styles/typography.css';
+    import '../app.css'
 </script>
 
 <Head />
