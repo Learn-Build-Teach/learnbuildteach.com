@@ -21,6 +21,5 @@
 <style lang="postcss">
 	:global(body) {
 		@apply bg-primary text-white;
-		font-size: clamp(var(--text-base), 1rem + 1vw, var(--text-text-lg));
 	}
 </style>
