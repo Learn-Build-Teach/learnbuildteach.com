@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { supabase } from '$src/lib/helpers/supabase';
@@ -10,21 +10,22 @@
 		await supabase.auth.signOut();
 		goto('/');
 	};
+
+	type Route = '/' | '/content' | '/code-of-conduct' | '/admin';
+
+	function anchorClass(route: Route) {
+		const baseClass = 'block relative border-none hover:text-secondary hover:border-none';
+		return baseClass + ' ' + (path === route ? 'page' : 'selected');
+	}
 </script>
 
 <nav>
-	<ul class="flex gap-6 my-8">
+	<ul class="flex gap-8 my-8 text-white font-heading text-2xl leading-10">
 		<li>
-			<a class={path === '/' ? 'page' : 'selected'} data-sveltekit-preload-data href="/"> Home </a>
+			<a class={anchorClass('/')} data-sveltekit-preload-data href="/">Home</a>
 		</li>
 		<li>
-			<a
-				class={path === '/content' ? 'page' : 'selected'}
-				data-sveltekit-preload-data
-				href="/content"
-			>
-				Content
-			</a>
+			<a class={anchorClass('/content')} data-sveltekit-preload-data href="/content">Content</a>
 		</li>
 		<!-- <li>
 			<a class={path === '/talks' ? 'page' : 'selected'} data-sveltekit-preload-data href="/talks">
@@ -33,7 +34,7 @@
 		</li> -->
 		<li>
 			<a
-				class={path === '/code-of-conduct' ? 'page' : 'selected'}
+				class={anchorClass('/code-of-conduct')}
 				data-sveltekit-preload-data
 				href="/code-of-conduct"
 			>
@@ -42,13 +43,7 @@
 		</li>
 		{#if $loggedIn}
 			<li>
-				<a
-					class={path === '/admin' ? 'page' : 'selected'}
-					data-sveltekit-preload-data
-					href="/admin"
-				>
-					Admin
-				</a>
+				<a class={anchorClass('/admin')} data-sveltekit-preload-data href="/admin">Admin</a>
 			</li>
 			<li>
 				<button on:click={logout}> Logout </button>
@@ -58,29 +53,6 @@
 </nav>
 
 <style>
-	.invisible {
-		opacity: 0;
-	}
-	ul {
-		padding: 0;
-		display: grid;
-		gap: var(--gap-2);
-		color: var(--white);
-		font-family: var(--font-heading);
-		font-size: var(--text-xxl);
-		list-style: none;
-	}
-
-	a {
-		color: var(--white);
-		text-decoration: none;
-		display: block;
-		position: relative;
-		border: none;
-	}
-	.page {
-		color: var(--secondary);
-	}
 	a:hover {
 		color: var(--secondary);
 		border: none;
@@ -98,11 +70,6 @@
 	}
 
 	@media (min-width: 1024px) {
-		ul {
-			display: flex;
-			align-items: center;
-			gap: var(--gap-5);
-		}
 		a::before {
 			content: '';
 			position: absolute;
@@ -114,9 +81,6 @@
 			height: 4px;
 			background: var(--white);
 			transform: scaleX(0);
-		}
-		.page {
-			color: var(--white);
 		}
 	}
 </style>
