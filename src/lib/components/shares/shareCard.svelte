@@ -7,13 +7,13 @@
 	const imageURLFromStorage = share.storageBucketPath && getCoverPublicURL(share.storageBucketPath);
 </script>
 
-<div class="share-card">
+<div class="bg-primary-dark rounded-lg overflow-hidden w-[300px]">
 	<img
-		class="card-image"
+		class="h-[200px] w-full object-cover"
 		src={imageURLFromStorage || share.imageUrl || backupImageUrl}
 		alt={share.description}
 	/>
-	<div class="card-body">
+	<div class="p-8">
 		<p>
 			{new Date(share.createdAt).toLocaleDateString('en-us', {
 				weekday: 'long',
@@ -23,7 +23,7 @@
 			})}
 		</p>
 		<a target="_blank" rel="noreferrer" href={share.link}>
-			<h2>
+			<h2 class="text-2xl leading-7 mt-4 mb-2">
 				{share.title}
 			</h2>
 		</a>
@@ -31,20 +31,3 @@
 		<slot />
 	</div>
 </div>
-
-<style>
-	.share-card {
-		background: var(--primary-dark);
-		border-radius: var(--gap-2);
-		overflow: hidden;
-		width: 300px;
-	}
-	.card-image {
-		height: 200px;
-		width: 100%;
-		object-fit: cover;
-	}
-	.card-body {
-		padding: var(--gap-6);
-	}
-</style>

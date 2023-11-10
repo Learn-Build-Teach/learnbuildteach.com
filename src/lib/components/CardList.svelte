@@ -2,17 +2,8 @@
 	export let cards: any[];
 </script>
 
-<ul>
+<ul class="flex flex-wrap gap-8 my-6">
 	{#each cards as card}
 		<slot {card} />
 	{/each}
 </ul>
-
-<style>
-	ul {
-		padding-left: 0px;
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--gap-6);
-	}
-</style>
