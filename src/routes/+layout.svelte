@@ -2,9 +2,7 @@
 	import Head from '$components/layout/head.svelte';
 	import Header from '$components/layout/header.svelte';
 	import Footer from '$components/layout/footer.svelte';
-	import '$styles/reset.css';
 	import '$styles/root.css';
-	import '$styles/typography.css';
 	import '../app.css';
 </script>
 

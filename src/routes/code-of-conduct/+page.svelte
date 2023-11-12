@@ -1,5 +1,5 @@
 <article>
-	<h1 class="text-4xl font-black mb-4">Code of Conduct</h1>
+	<h1 class="text-4xl font-black mb-4 text-center font-heading">Code of Conduct</h1>
 	<p class="mb-4">
 		Welcome! The goal of this Learn Build Teach server is to provide a safe place for developers to
 		well... learn, build, and teach! Feel free to share projects that you're working on, questions
@@ -7,7 +7,7 @@
 		each other, and that's what we would like to build a community around.
 	</p>
 
-	<h2 class="text-2xl mb-2">Admins</h2>
+	<h2 class="text-2xl mb-2 font-heading">Admins</h2>
 
 	<p class="mb-4">
 		We want this to be a fun, pleasant, and harassment-free experience for everyone, regardless of
@@ -25,7 +25,7 @@
 		<li>Amy Dutton</li>
 	</ul>
 
-	<h2 class="text-2xl mb-2">Harassment</h2>
+	<h2 class="text-2xl mb-2 font-heading">Harassment</h2>
 	<p class="mb-4">Harassment includes:</p>
 
 	<ul class="list-disc pl-10 my-6 space-y-2">
@@ -58,7 +58,7 @@
 		<li>Publication of non-harassing private communication</li>
 	</ul>
 
-	<h2 class="text-2xl mb-2">Following Tutorials and Building Projects</h2>
+	<h2 class="text-2xl mb-2 font-heading">Following Tutorials and Building Projects</h2>
 
 	<p class="mb-4">
 		Following tutorials and other learning materials is core to building your skills as a developer.
@@ -79,7 +79,7 @@
 		portfolio.
 	</p>
 
-	<h2 class="text-2xl mb-2">Reporting</h2>
+	<h2 class="text-2xl mb-2 font-heading">Reporting</h2>
 
 	<p class="mb-4">
 		If you are being harassed, notice that someone else is being harassed, or have any other
@@ -93,7 +93,7 @@
 		affirmative consent.
 	</p>
 
-	<h3 class="text-xl">Consequences</h3>
+	<h3 class="text-xl font-heading">Consequences</h3>
 	<p class="mb-4">Participants asked to stop any harassing behavior are expected to comply immediately.</p>
 
 	<p class="mb-4">
@@ -102,7 +102,7 @@
 		publicly as someone about whom we've received complaints.
 	</p>
 
-	<h2 class="text-2xl mb-2">Credits and License</h2>
+	<h2 class="text-2xl mb-2 font-heading">Credits and License</h2>
 	<p class="mb-4">
 		[This work is available to you to use, publish, and modify under the terms of the Creative
 		Commons Attribution License. Please keep the paragraph below attached to your final version.]
