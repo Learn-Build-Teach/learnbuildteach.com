@@ -23,7 +23,7 @@
 			})}
 		</p>
 		<a target="_blank" rel="noreferrer" href={share.link}>
-			<h2 class="text-2xl leading-7 mt-4 mb-2">
+			<h2 class="text-2xl leading-7 mt-4 mb-2 font-heading">
 				{share.title}
 			</h2>
 		</a>

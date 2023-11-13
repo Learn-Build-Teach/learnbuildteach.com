@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { supabase } from '$src/lib/helpers/supabase';
 	import { loggedIn } from '$stores/authStore';
@@ -17,15 +17,24 @@
 		const baseClass = 'block relative border-none hover:text-secondary hover:border-none';
 		return baseClass + ' ' + (path === route ? 'page' : 'selected');
 	}
+
+	let homeClass: string, contentClass: string, codeOfConductClass: string, adminClass: string;
+
+	afterNavigate(() => {
+		homeClass = anchorClass('/');
+		contentClass = anchorClass('/content');
+		codeOfConductClass = anchorClass('/code-of-conduct');
+		adminClass = anchorClass('/admin');
+	});
 </script>
 
 <nav>
 	<ul class="flex gap-8 my-8 text-white font-heading text-2xl leading-10">
 		<li>
-			<a class={anchorClass('/')} data-sveltekit-preload-data href="/">Home</a>
+			<a class={homeClass} data-sveltekit-preload-data href="/">Home</a>
 		</li>
 		<li>
-			<a class={anchorClass('/content')} data-sveltekit-preload-data href="/content">Content</a>
+			<a class={contentClass} data-sveltekit-preload-data href="/content">Content</a>
 		</li>
 		<!-- <li>
 			<a class={path === '/talks' ? 'page' : 'selected'} data-sveltekit-preload-data href="/talks">
@@ -33,17 +42,13 @@
 			</a>
 		</li> -->
 		<li>
-			<a
-				class={anchorClass('/code-of-conduct')}
-				data-sveltekit-preload-data
-				href="/code-of-conduct"
-			>
+			<a class={codeOfConductClass} data-sveltekit-preload-data href="/code-of-conduct">
 				Code of Conduct
 			</a>
 		</li>
 		{#if $loggedIn}
 			<li>
-				<a class={anchorClass('/admin')} data-sveltekit-preload-data href="/admin">Admin</a>
+				<a class={adminClass} data-sveltekit-preload-data href="/admin">Admin</a>
 			</li>
 			<li>
 				<button on:click={logout}> Logout </button>
