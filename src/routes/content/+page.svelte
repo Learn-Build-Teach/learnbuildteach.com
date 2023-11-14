@@ -16,7 +16,7 @@
 	};
 </script>
 
-<article>
+<article class="mb-5">
 	<h1 class="text-4xl mb-4 text-center font-heading">Recent Content from the LBT Community!</h1>
 
 	{#if $shares && $shares.length > 0}
