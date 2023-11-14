@@ -14,7 +14,7 @@
 	type Route = '/' | '/content' | '/code-of-conduct' | '/admin';
 
 	function anchorClass(route: Route) {
-		const baseClass = 'block relative border-none hover:text-secondary hover:border-none';
+		const baseClass = 'block relative border-none';
 		return baseClass + ' ' + (path === route ? 'page' : 'selected');
 	}
 
@@ -57,21 +57,18 @@
 	</ul>
 </nav>
 
-<style>
-	a:hover {
-		color: var(--secondary);
-		border: none;
-	}
+<style lang="postcss">
+    a {
+        @apply hover:text-secondary hover:border-none;
+    }
 
-	.selected:hover {
-		color: var(--secondary);
-	}
 	a:hover::before,
 	.page::before {
 		transform: scaleX(1);
 	}
+
 	.page::before {
-		background: var(--secondary);
+		@apply bg-secondary;
 	}
 
 	@media (min-width: 1024px) {
@@ -84,7 +81,7 @@
 			/* top: 80%; */
 			width: 75%;
 			height: 4px;
-			background: var(--white);
+			background: white;
 			transform: scaleX(0);
 		}
 	}
