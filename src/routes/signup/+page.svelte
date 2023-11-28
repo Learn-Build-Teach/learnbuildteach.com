@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { supabase } from '$lib/helpers/supabase';
-	import { PUBLIC_APP_DOMAIN } from '$env/static/public';
+	// import { PUBLIC_APP_DOMAIN } from '$env/static/public';
 	import { alertMessage, updateAlert } from '$stores/alertStore';
 	import Alert from '$components/alert.svelte';
 	import Form from '$components/layout/form.svelte';
@@ -37,25 +37,46 @@
 	};
 </script>
 
-<h1>Sign up</h1>
+<h1 class="text-4xl font-black mb-4 text-center font-heading">Sign up</h1>
 <Form on:submit={handleSignUp}>
-	<div>
+	<div class="flex flex-col">
 		<label for="email">Email</label>
-		<input type="email" name="email" id="email" bind:value={email} />
+		<input
+			type="email"
+			name="email"
+			id="email"
+			bind:value={email}
+			class="bg-white border-2 border-gray-200 text-black outline-none p-2 rounded focus:border-secondary"
+		/>
 	</div>
 
-	<div>
+	<div class="flex flex-col">
 		<label for="password">Password</label>
-		<input type="password" name="password" id="password" bind:value={password} />
+		<input
+			type="password"
+			name="password"
+			id="password"
+			bind:value={password}
+			class="bg-white border-2 border-gray-200 text-black outline-none p-2 rounded focus:border-secondary"
+		/>
 	</div>
 
-	<div>
+	<div class="flex flex-col">
 		<label for="verify">Verify Password</label>
-		<input type="password" name="verify" id="verify" bind:value={verifyPassword} />
+		<input
+			type="password"
+			name="verify"
+			id="verify"
+			bind:value={verifyPassword}
+			class="bg-white border-2 border-gray-200 text-black outline-none p-2 rounded focus:border-secondary"
+		/>
 	</div>
 
-	<button>Sign up</button>
-	<small>Already have an account? <a href="/login">Log in</a></small>
+	<button class="bg-white rounded text-primary py-2 px-4 font-bold">Sign up</button>
+	<small>
+		Already have an account?
+		<a class="border-b border-secondary font-bold" href="/login">Log in</a>
+	</small>
 
 	<Alert />
 </Form>

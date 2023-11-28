@@ -10,7 +10,7 @@
 
 <div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
 	<Header />
-	<main class="max-w-5xl mx-auto p-4">
+	<main class="w-full max-w-5xl mx-auto p-4">
 		<slot />
 	</main>
 	<Footer />
