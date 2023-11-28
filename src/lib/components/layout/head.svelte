@@ -38,6 +38,13 @@
 	<meta property="twitter:image" content={img} />
 	<meta name="twitter:image:alt" content="Learn Build Teach" />
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
+	<!-- Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&family=Raleway:wght@900&display=swap"
+		rel="stylesheet"
+	/>
 
 	<title>{title}</title>
 </svelte:head>

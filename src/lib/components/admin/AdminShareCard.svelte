@@ -18,7 +18,7 @@
 </script>
 
 <ShareCard {share}>
-	<div class="card-controls">
+	<div class="my-8 grid grid-cols-2 gap-2">
 		<Checkbox
 			on:change={(event) => handleCheckbox({ emailable: event.target?.checked })}
 			checked={share.emailable}
@@ -44,20 +44,5 @@
 			Emailed
 		</Checkbox>
 	</div>
-	<button class="delete" on:click={() => handleDelete(share.id)}>Delete</button>
+	<button class="bg-secondary text-white w-full rounded text-lg p-2" on:click={() => handleDelete(share.id)}>Delete</button>
 </ShareCard>
-
-<style>
-	.card-controls {
-		margin-top: var(--gap-6);
-		margin-bottom: var(--gap-6);
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: var(--gap-2);
-	}
-
-	.delete {
-		background-color: var(--secondary);
-		color: var(--white);
-	}
-</style>

@@ -1,14 +1,3 @@
-<form on:submit|preventDefault>
+<form on:submit|preventDefault class="w-full max-w-sm flex flex-col gap-8 mx-auto">
 	<slot />
 </form>
-
-<style>
-	form {
-		width: 100%;
-		max-width: 400px;
-		display: flex;
-		flex-direction: column;
-		gap: var(--gap-6);
-		justify-self: center;
-	}
-</style>

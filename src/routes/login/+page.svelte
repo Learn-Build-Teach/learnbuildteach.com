@@ -44,21 +44,40 @@
 	};
 </script>
 
-<h1>Log in</h1>
+<h1 class="text-4xl font-black mb-4 text-center font-heading">Log in</h1>
 <Form on:submit={handleLogIn}>
-	<div>
+	<div class="flex flex-col">
 		<label for="email">Email</label>
-		<input type="email" name="email" id="email" bind:value={email} />
+		<input
+			type="email"
+			name="email"
+			id="email"
+			bind:value={email}
+			class="bg-white border border-gray-200 text-black outline-none p-2 rounded"
+		/>
 	</div>
 
-	<div>
+	<div class="flex flex-col">
 		<label for="password">Password</label>
-		<input type="password" name="password" id="password" bind:value={password} />
+		<input
+			type="password"
+			name="password"
+			id="password"
+			bind:value={password}
+			class="bg-white border border-gray-200 text-black outline-none p-2 rounded"
+		/>
 	</div>
 
-	<button>Log in</button>
-	<button type="button" on:click={handleSendMagicLink}><small>Send magic link</small></button>
-	<small>Don't have an account yet? <a href="/signup">Sign up</a></small>
+	<button class="bg-white rounded text-primary py-2 px-4 font-bold">Log in</button>
+	<button
+		class="bg-white rounded text-primary py-2 px-4 font-bold"
+		type="button"
+		on:click={handleSendMagicLink}><small>Send magic link</small></button
+	>
+	<small>
+		Don't have an account yet?
+		<a href="/signup" class="border-b border-secondary font-bold">Sign up</a>
+	</small>
 
 	<Alert />
 </Form>

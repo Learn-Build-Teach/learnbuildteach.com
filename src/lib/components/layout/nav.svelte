@@ -1,5 +1,5 @@
-<script>
-	import { goto } from '$app/navigation';
+<script lang="ts">
+	import { afterNavigate, goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { supabase } from '$src/lib/helpers/supabase';
 	import { loggedIn } from '$stores/authStore';
@@ -10,21 +10,31 @@
 		await supabase.auth.signOut();
 		goto('/');
 	};
+
+	type Route = '/' | '/content' | '/code-of-conduct' | '/admin';
+
+	function anchorClass(route: Route) {
+		const baseClass = 'block relative border-none';
+		return baseClass + ' ' + (path === route ? 'page' : 'selected');
+	}
+
+	let homeClass: string, contentClass: string, codeOfConductClass: string, adminClass: string;
+
+	afterNavigate(() => {
+		homeClass = anchorClass('/');
+		contentClass = anchorClass('/content');
+		codeOfConductClass = anchorClass('/code-of-conduct');
+		adminClass = anchorClass('/admin');
+	});
 </script>
 
 <nav>
-	<ul>
+	<ul class="flex gap-8 my-8 text-white font-heading text-2xl leading-10">
 		<li>
-			<a class={path === '/' ? 'page' : 'selected'} data-sveltekit-preload-data href="/"> Home </a>
+			<a class={homeClass} data-sveltekit-preload-data href="/">Home</a>
 		</li>
 		<li>
-			<a
-				class={path === '/content' ? 'page' : 'selected'}
-				data-sveltekit-preload-data
-				href="/content"
-			>
-				Content
-			</a>
+			<a class={contentClass} data-sveltekit-preload-data href="/content">Content</a>
 		</li>
 		<!-- <li>
 			<a class={path === '/talks' ? 'page' : 'selected'} data-sveltekit-preload-data href="/talks">
@@ -32,23 +42,13 @@
 			</a>
 		</li> -->
 		<li>
-			<a
-				class={path === '/code-of-conduct' ? 'page' : 'selected'}
-				data-sveltekit-preload-data
-				href="/code-of-conduct"
-			>
+			<a class={codeOfConductClass} data-sveltekit-preload-data href="/code-of-conduct">
 				Code of Conduct
 			</a>
 		</li>
 		{#if $loggedIn}
 			<li>
-				<a
-					class={path === '/admin' ? 'page' : 'selected'}
-					data-sveltekit-preload-data
-					href="/admin"
-				>
-					Admin
-				</a>
+				<a class={adminClass} data-sveltekit-preload-data href="/admin">Admin</a>
 			</li>
 			<li>
 				<button on:click={logout}> Logout </button>
@@ -57,52 +57,21 @@
 	</ul>
 </nav>
 
-<style>
-	.invisible {
-		opacity: 0;
-	}
-	ul {
-		padding: 0;
-		display: grid;
-		gap: var(--gap-2);
-		color: var(--white);
-		font-family: var(--font-heading);
-		font-size: var(--text-xxl);
-		list-style: none;
-	}
+<style lang="postcss">
+    a {
+        @apply hover:text-secondary hover:border-none;
+    }
 
-	a {
-		color: var(--white);
-		text-decoration: none;
-		display: block;
-		position: relative;
-		border: none;
-	}
-	.page {
-		color: var(--secondary);
-	}
-	a:hover {
-		color: var(--secondary);
-		border: none;
-	}
-
-	.selected:hover {
-		color: var(--secondary);
-	}
 	a:hover::before,
 	.page::before {
 		transform: scaleX(1);
 	}
+
 	.page::before {
-		background: var(--secondary);
+		@apply bg-secondary;
 	}
 
 	@media (min-width: 1024px) {
-		ul {
-			display: flex;
-			align-items: center;
-			gap: var(--gap-5);
-		}
 		a::before {
 			content: '';
 			position: absolute;
@@ -112,11 +81,8 @@
 			/* top: 80%; */
 			width: 75%;
 			height: 4px;
-			background: var(--white);
+			background: white;
 			transform: scaleX(0);
-		}
-		.page {
-			color: var(--white);
 		}
 	}
 </style>

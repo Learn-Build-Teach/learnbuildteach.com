@@ -16,13 +16,16 @@
 	};
 </script>
 
-<article>
-	<h1>Recent Content from the LBT Community!</h1>
+<article class="mb-5">
+	<h1 class="text-4xl mb-4 text-center font-heading">Recent Content from the LBT Community!</h1>
 
 	{#if $shares && $shares.length > 0}
 		<CardList cards={$shares} let:card>
 			<ShareCard share={card} />
 		</CardList>
 	{/if}
-	<button on:click={handleLoadMore}>Load More</button>
+	<button
+		class="bg-white text-primary rounded py-2 px-4 text-lg font-bold w-full"
+		on:click={handleLoadMore}>Load More</button
+	>
 </article>
