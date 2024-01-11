@@ -1,16 +1,14 @@
 <script lang="ts">
-	import { getCoverPublicURL } from '$stores/sharesStore';
-
 	export let share: any;
-	const backupImageUrl = getCoverPublicURL('lbt-banner.jpeg');
-
-	const imageURLFromStorage = share.storageBucketPath && getCoverPublicURL(share.storageBucketPath);
+	const backupImageUrl = '/images/logo-square-512x512.png';
 </script>
 
-<div class="bg-primary-dark rounded-lg overflow-hidden w-[300px]">
+<div
+	class="bg-primary-dark shadow-xl border-2 border-white/80 rounded-lg overflow-hidden w-[300px]"
+>
 	<img
-		class="h-[200px] w-full object-cover"
-		src={imageURLFromStorage || share.imageUrl || backupImageUrl}
+		class="h-[200px] w-full object-cover border-red"
+		src={share.imageUrl || backupImageUrl}
 		alt={share.description}
 	/>
 	<div class="p-8">

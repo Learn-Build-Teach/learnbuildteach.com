@@ -4,52 +4,64 @@
 	import { supabase } from '$src/lib/helpers/supabase';
 	import { loggedIn } from '$stores/authStore';
 
-	$: path = $page.url.pathname;
-
 	const logout = async () => {
 		await supabase.auth.signOut();
 		goto('/');
 	};
 
-	type Route = '/' | '/content' | '/code-of-conduct' | '/admin';
+	const publicRoutes = [
+		{
+			path: '/',
+			name: 'Home'
+		},
+		{
+			path: '/content',
+			name: 'Content'
+		},
+		{
+			path: '/code-of-conduct',
+			name: 'Code of Conduct'
+		}
+	];
 
-	function anchorClass(route: Route) {
-		const baseClass = 'block relative border-none';
-		return baseClass + ' ' + (path === route ? 'page' : 'selected');
-	}
-
-	let homeClass: string, contentClass: string, codeOfConductClass: string, adminClass: string;
-
-	afterNavigate(() => {
-		homeClass = anchorClass('/');
-		contentClass = anchorClass('/content');
-		codeOfConductClass = anchorClass('/code-of-conduct');
-		adminClass = anchorClass('/admin');
-	});
+	const adminRoutes = [
+		{
+			path: '/admin',
+			name: 'Admin'
+		}
+	];
 </script>
 
 <nav>
 	<ul class="flex gap-8 my-8 text-white font-heading text-2xl leading-10">
-		<li>
-			<a class={homeClass} data-sveltekit-preload-data href="/">Home</a>
-		</li>
-		<li>
-			<a class={contentClass} data-sveltekit-preload-data href="/content">Content</a>
-		</li>
-		<!-- <li>
-			<a class={path === '/talks' ? 'page' : 'selected'} data-sveltekit-preload-data href="/talks">
-				Talks
-			</a>
-		</li> -->
-		<li>
-			<a class={codeOfConductClass} data-sveltekit-preload-data href="/code-of-conduct">
-				Code of Conduct
-			</a>
-		</li>
-		{#if $loggedIn}
-			<li>
-				<a class={adminClass} data-sveltekit-preload-data href="/admin">Admin</a>
+		{#each publicRoutes as route}
+			<li class="relative group">
+				<a class={`block relative border-none `} data-sveltekit-preload-data href={route.path}
+					>{route.name}</a
+				>{#if $page.url.pathname === route.path}
+					<span class="absolute left-1 right-1 h-1 rounded-sm bg-secondary block scale-x-100" />
+				{:else}
+					<span
+						class="absolute left-1 right-1 h-1 rounded-sm bg-white block transition-transform scale-x-0 group-hover:scale-x-100"
+					/>
+				{/if}
 			</li>
+		{/each}
+
+		{#if $loggedIn}
+			{#each adminRoutes as route}
+				<li class="relative group">
+					<a class={`block relative border-none `} data-sveltekit-preload-data href={route.path}
+						>{route.name}</a
+					>{#if $page.url.pathname === route.path}
+						<span class="absolute left-1 right-1 h-1 rounded-sm bg-secondary block scale-x-100" />
+					{:else}
+						<span
+							class="absolute left-1 right-1 h-1 rounded-sm bg-white block transition-transform scale-x-0 group-hover:scale-x-100"
+						/>
+					{/if}
+				</li>
+			{/each}
 			<li>
 				<button on:click={logout}> Logout </button>
 			</li>
@@ -58,19 +70,6 @@
 </nav>
 
 <style lang="postcss">
-    a {
-        @apply hover:text-secondary hover:border-none;
-    }
-
-	a:hover::before,
-	.page::before {
-		transform: scaleX(1);
-	}
-
-	.page::before {
-		@apply bg-secondary;
-	}
-
 	@media (min-width: 1024px) {
 		a::before {
 			content: '';
