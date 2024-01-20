@@ -5,10 +5,8 @@
 	export let blok: SbBlokData;
 </script>
 
-{#key blok}
-	<div use:storyblokEditable={blok} class="px-6">
-		{#each blok.body as blok}
-			<StoryblokComponent {blok} />
-		{/each}
-	</div>
-{/key}
+<div use:storyblokEditable={blok}>
+	{#each blok.body as blok}
+		<StoryblokComponent {blok} />
+	{/each}
+</div>
