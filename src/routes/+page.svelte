@@ -1,4 +1,4 @@
-<article class="flex flex-col gap-6">
+<!-- <article class="flex flex-col gap-6">
 	<h1 class="font-heading font-black text-4xl text-center">
 		Welcome to the Learn Build Teach Community!
 	</h1>
@@ -17,4 +17,4 @@
 			Join the Discord
 		</a>
 	</div>
-</article>
+</article> -->
