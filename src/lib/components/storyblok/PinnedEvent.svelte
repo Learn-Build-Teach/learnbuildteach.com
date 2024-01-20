@@ -3,7 +3,6 @@
 	import type { SbBlokData } from '@storyblok/svelte';
 	import type { PinnedEvent } from '$types/storyblok';
 	import { storyblokEditable } from '@storyblok/svelte';
-
 	export let blok: SbBlokData & PinnedEvent;
 	const { event } = blok;
 </script>
@@ -24,13 +23,22 @@
 		>
 		<h1 class="font-heading font-black text-4xl my-2 text-white">{event.content.name}</h1>
 		<p class="mb-8 text-gray-300">{event.content.description}</p>
-		<a
-			href={blok.cta_url.url}
-			target="_blank"
-			rel="noreferrer noopener"
-			class="bg-white border-none block max-w-max py-2 px-4 mb-4 rounded-lg text-primary hover:bg-accent transition-500"
-		>
-			{blok.cta_title}
-		</a>
+		<div class="flex gap-4">
+			<a
+				href={blok.cta_url.url}
+				target="_blank"
+				rel="noreferrer noopener"
+				class="bg-white border-none block max-w-max py-2 px-4 mb-4 rounded-lg text-primary hover:bg-accent transition-500"
+			>
+				{blok.cta_title}
+			</a>
+
+			<a
+				href="/events/{event.slug}"
+				class="bg-primary/70 text-white border-none block max-w-max py-2 px-4 mb-4 rounded-lg hover:bg-primary/90 transition-500 backdrop-filter backdrop-blur-lg"
+			>
+				Read more
+			</a>
+		</div>
 	</div>
 </section>

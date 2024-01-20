@@ -1,3 +1,11 @@
+export interface Social {
+    name: string;
+    id: number;
+    content: {
+        url: BlokUrl;
+        icon: SBImage;
+    };
+}
 export interface SBImage {
     id: string;
     filename: string;
@@ -26,6 +34,7 @@ export interface EventContent {
     location: string;
     component: 'event';
     cover: SBImage;
+    socials: Social[];
 }
 
 export interface Event {
@@ -36,4 +45,6 @@ export interface Event {
     created_at: string;
     id: number;
     content: EventContent;
+    url: BlokUrl;
+    quick_note: string;
 }

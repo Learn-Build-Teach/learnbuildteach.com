@@ -7,7 +7,8 @@ export async function load({ params, parent }) {
     const url = `cdn/stories/events/${params.slug}`;
 
     const dataStory = await storyblokApi.get(url, {
-        version: 'draft'
+        version: 'draft',
+        resolve_relations: 'event.socials'
     });
 
     if (!dataStory.data) {
