@@ -84,7 +84,7 @@
 			? 'absolute'
 			: 'hidden'} flex flex-col top-5 left-1/2 transform -translate-x-1/2 w-[85%] h-[335px] bg-primary rounded-[17px] shadow"
 	>
-		<div class="flex p-4 justify-between items-center">
+		<div class="flex p-3 justify-between items-center">
 			<img
 				class="w-[52px] h-[52px] shadow-lg rounded-full"
 				src="/images/logo-dark-pencil.png"
@@ -97,23 +97,27 @@
 		<div class="flex flex-col p-4 gap-6">
 			<ul class="p-0 m-0 list-none">
 				<li class="mb-6">
-					<a href="/content" class="text-slate-400 text-lg font-normal hover:text-white">Content</a>
+					<a href="/content" class="text-slate-400 text-lg font-normal font-body hover:text-white"
+						>Content</a
+					>
 				</li>
 				<li class="mb-6">
-					<a href="/code-of-conduct" class="text-slate-400 text-lg font-normal hover:text-white"
-						>Code of Conduct</a
+					<a
+						href="/code-of-conduct"
+						class="text-slate-400 text-lg font-normal font-body hover:text-white">Code of Conduct</a
 					>
 				</li>
 				<li class="mb-6">
 					<a
 						href="https://github.com/Learn-Build-Teach"
-						class="text-slate-400 text-lg font-normal hover:text-white">Github Repo</a
+						class="text-slate-400 text-lg font-normal font-body hover:text-white">Github Repo</a
 					>
 				</li>
 				<li class="mb-6">
 					<a
 						href="https://discord.gg/vM2bagU"
-						class="text-slate-400 text-lg font-normal hover:text-white underline">Join on Discord</a
+						class="text-slate-400 text-lg font-normal font-body hover:text-white underline"
+						>Join on Discord</a
 					>
 				</li>
 			</ul>
