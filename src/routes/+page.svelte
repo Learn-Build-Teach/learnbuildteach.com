@@ -19,8 +19,6 @@
 	</div>
 </article> -->
 
-<!-- Commented-out section removed -->
-
 <div class="flex flex-col items-left blur-effect relative">
 	<div class="w-[330px] p-3 font-heading text-left">
 		<span class="text-[42px] font-bold font-body text-white">LEARN.</span>
@@ -44,6 +42,20 @@
 		/>
 		<div class="text-primary text-[14.96px] font-normal font-body">Join on Discord</div>
 	</a>
+	<div class="flex justify-left items-center px-4 py-2 gap-4">
+		<div
+			class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1"
+		>
+			<img src="/images/online-icon.svg" alt="green dot" />
+			<span>551 Online</span>
+		</div>
+		<div
+			class="flex justify-center items-center text-[0.60106rem] text-gray font-normal leading-normal tracking-tighter gap-1"
+		>
+			<img src="/images/total-users.svg" alt="gray dot" />
+			<span>5,426 Members</span>
+		</div>
+	</div>
 </div>
 
 <style>

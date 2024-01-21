@@ -13,7 +13,7 @@ module.exports = {
 				accent: '#a8dadc',
 				white: '#f1faee',
 				black: '#232323',
-				gray: '#5c616e',
+				gray: '#B5BAC1',
 				'dark-gray': '#474747',
 				success: '#62cc3f',
 				error: '#e63946'
