@@ -9,7 +9,7 @@
 
 <div class="min-h-screen bg-primary-dark text-white">
 	<Header />
-	<main class="w-full max-w-5xl mx-auto p-4">
+	<main class="w-full max-w-5xl p-4">
 		<slot />
 	</main>
 	<Footer />

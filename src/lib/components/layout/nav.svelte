@@ -71,17 +71,15 @@
 			</li>
 		{/if}
 	</ul>
-	<div class="md:hidden">
+	<div class="md:hidden px-2">
 		<button on:click={handleIsOpen}>
-			<a href="/">
-				<img src="/images/burger-icon.svg" alt="burger menu" />
-			</a>
+			<img src="/images/burger-icon.svg" alt="burger menu" />
 		</button>
 	</div>
 
 	<div
 		class="{isOpen
-			? 'absolute'
+			? 'absolute z-10'
 			: 'hidden'} flex flex-col top-5 left-1/2 transform -translate-x-1/2 w-[85%] h-[335px] bg-primary rounded-[17px] shadow"
 	>
 		<div class="flex p-4 justify-between items-center">
