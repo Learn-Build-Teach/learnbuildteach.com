@@ -1,26 +1,13 @@
 <script>
-	import EventCard from '$components/storyblok/EventCard.svelte';
-	import { onMount } from 'svelte';
-	import { useStoryblokBridge, StoryblokComponent } from '@storyblok/svelte';
-
+	import EventCard from '$components/EventCard.svelte';
+	/** @type {import('./$types').PageData} */
 	export let data;
-	onMount(() => {
-		useStoryblokBridge(data.story.id, (newStory) => (data.story = newStory));
-	});
+	const { data: eventData } = data;
 </script>
 
-<div>
-	{#if data.story}
-		<StoryblokComponent blok={data.story.content} />
-	{/if}
-	<div class="py-12">
-		<h2 class="text-2xl leading-7 mt-4 mb-4  font-heading">Upcoming Events</h2>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-12 gap-4">
-			{#if data.stories}
-				{#each data.stories as story}
-					<EventCard event={story} />
-				{/each}
-			{/if}
-		</div>
-	</div>
+<h2 class="mb-6 inline-block font-heading font-black text-3xl ">Upcoming Events</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8  mb-12">
+	{#each eventData.data.events.slice(1) as evt}
+		<EventCard event={evt} />
+	{/each}
 </div>
