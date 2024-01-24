@@ -28,6 +28,7 @@
 	import { faqContent } from '$src/FaqContent';
 </script>
 
+<!-- --------------HERO SECTION-------------------- -->
 <article class="flex flex-col px-6 items-left blur-effect">
 	<div class="w-[330px] font-heading text-left">
 		<span class="text-[42px] font-bold font-body text-white">LEARN.</span>
@@ -56,9 +57,9 @@
 		</div>
 	</div>
 </article>
-
 <!-- --------------END OF HERO SECTION--------------- -->
 
+<!-- ------------- HOME PAGE CARDS SECTION ---------- -->
 <div class="flex flex-col justify-center items-center px-8 gap-8 mt-32">
 	<!-- Renders every generic card  -->
 	{#each cardContent as content}
@@ -100,8 +101,9 @@
 	</div>
 	<hr class="w-[282px] h-[0px] opacity-50 border-white mt-12" />
 </div>
-<!-- ----------------------END OF HOME PAGE CARD SECTION--------------------------- -->
+<!-- ------------- END OF HOME PAGE CARDS SECTION ---------- -->
 
+<!-- ------------- POST SECTION ------------- -->
 <div class="flex flex-col p-6 mt-20">
 	<h2 class="font-bold text-white text-3xl">Recent posts from the community</h2>
 	{#each postCardContent as postContent}
@@ -114,16 +116,34 @@
 		View all
 	</a>
 </div>
+<!-- ------------- END OF POST SECTION ----------- -->
 
-<!-- --------------------END OF POST SECTION----------------------------- -->
-
+<!-- --------------- FAQ SECTION ------------- -->
 <div class="flex flex-col p-6 justify-start mt-10 bg-slate-800 shadow">
 	<h2 class="font-bold text-[28px] text-white">FAQs</h2>
 	{#each faqContent as faq}
 		<Accordion {faq} />
 	{/each}
 </div>
+<!-- --------------- END OF FAQ SECTION ------------- -->
 
+<!-- ------------------- SECOND CTA SECTION --------------- -->
+<div class="flex flex-col justify-center items-center bg-primary-dark p-6">
+	<img
+		class="w-24 h-24 rounded-full mt-24"
+		src="/images/discovery-banner.png"
+		alt="discovery icon"
+	/>
+	<h2 class="text-white text-[28px] font-bold mt-6">Ready to dive in?</h2>
+	<p class="text-center text-neutral-300 text-base font-normal mt-4">
+		Join our Discord server today and become part of a vibrant community dedicated to web
+		development excellence
+	</p>
+	<JoinDiscordBtn />
+	<hr class="w-[282px] h-[0px] opacity-50 border-white mt-20" />
+</div>
+
+<!-- ------------------- END OF SECOND CTA SECTION --------------- -->
 <style>
 	.blur-effect {
 		background: radial-gradient(50% 50% at 50% 50%, #1d3557 0%, #0f1b2b 100%);

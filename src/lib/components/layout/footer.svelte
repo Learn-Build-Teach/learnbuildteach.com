@@ -10,3 +10,20 @@
 	</p>
 	<p>&copy; 2022 Learn Build Teach LLC</p>
 </footer> -->
+
+<footer class="flex flex-col p-6 items-center mt-10 bg-primary-dark shadow">
+	<div class="flex gap-6">
+		<a href="https://github.com/Learn-Build-Teach">
+			<img src="/images/github-icon-white.svg" alt="github logo" />
+		</a>
+		<a href="https://twitter.com/jamesqquick">
+			<img src="/images/x-icon-white.svg" alt="x logo" />
+		</a>
+		<a href="https://discord.gg/vM2bagU">
+			<img src="/images/discord-icon-white.svg" alt="discord icon" />
+		</a>
+	</div>
+	<div class="text-center text-neutral-300 text-opacity-60 text-sm font-light mt-10">
+		Copyright &copy; 2023, Learn Build Teach LLC
+	</div>
+</footer>

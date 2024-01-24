@@ -71,6 +71,8 @@
 			</li>
 		{/if}
 	</ul>
+
+	<!-- ------------------ MOBILE NAV -------------------- -->
 	<div class="md:hidden px-2">
 		<button on:click={handleIsOpen}>
 			<img src="/images/burger-icon.svg" alt="burger menu" />
@@ -80,14 +82,10 @@
 	<div
 		class="{isOpen
 			? 'absolute z-10'
-			: 'hidden'} flex flex-col top-5 left-1/2 transform -translate-x-1/2 w-[85%] h-[335px] bg-primary rounded-[17px] shadow"
+			: 'hidden'} flex flex-col top-5 left-1/2 transform -translate-x-1/2 w-[95%] h-[335px] bg-primary rounded-[17px] shadow"
 	>
 		<div class="flex p-4 justify-between items-center">
-			<img
-				class="w-[52px] h-[52px] shadow-lg rounded-full"
-				src="/images/logo-dark-pencil.png"
-				alt="logo"
-			/>
+			<img class="w-12 h-12 shadow-lg rounded-full" src="/images/logo-dark-pencil.png" alt="logo" />
 			<button on:click={handleIsOpen}>
 				<img class="w-6 h-6 relative" src="/images/x-close.svg" alt="close button" />
 			</button>
