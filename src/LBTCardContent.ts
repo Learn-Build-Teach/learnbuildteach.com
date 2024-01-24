@@ -1,4 +1,6 @@
-export const cardContent = [
+import type { ICardContent } from "./types/ICardContent";
+
+export const cardContent: ICardContent[] = [
     {
         preHeader:"Embark on a Journey of Learning",
         header:"We learn because we have to",

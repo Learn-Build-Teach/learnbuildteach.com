@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { CardContent } from '$src/types/LBTCardContent';
+	import type { ICardContent } from '$src/types/ICardContent';
 
-	export let content: CardContent;
+	export let content: ICardContent;
 </script>
 
 <div

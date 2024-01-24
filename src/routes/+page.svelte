@@ -20,11 +20,14 @@
 </article> -->
 <script lang="ts">
 	import HomeCard from '$components/HomeCard.svelte';
+	import JoinDiscordBtn from '$components/JoinDiscordBtn.svelte';
+	import PostCard from '$components/PostCard.svelte';
 	import { cardContent } from '$src/LBTCardContent';
+	import { postCardContent } from '$src/PostCardContent';
 </script>
 
-<article class="flex flex-col items-left blur-effect">
-	<div class="w-[330px] p-3 font-heading text-left">
+<article class="flex flex-col px-6 items-left blur-effect">
+	<div class="w-[330px] font-heading text-left">
 		<span class="text-[42px] font-bold font-body text-white">LEARN.</span>
 		<span class="text-[42px] font-bold font-body text-secondary">BUILD</span>
 		<span class="text-[42px] font-bold font-body text-white">. TEACH</span>
@@ -35,13 +38,7 @@
 			discussions. Catered to seasoned experts or beginners
 		</p>
 	</div>
-	<a
-		href="https://discord.gg/vM2bagU"
-		class="w-[190.80px] h-[43.89px] px-4 py-3 ml-3 mt-10 bg-[#fff] rounded-lg flex items-center gap-4"
-	>
-		<img src="/images/discord-logo.svg" alt="discord-logo" class="w-[29.71px] h-[22.52px]" />
-		<div class="text-primary text-[14.96px] font-normal font-body">Join on Discord</div>
-	</a>
+	<JoinDiscordBtn />
 	<div class="flex justify-left items-center px-4 py-2 gap-4">
 		<div
 			class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1"
@@ -61,9 +58,11 @@
 <!-- --------------END OF HERO SECTION--------------- -->
 
 <div class="flex flex-col justify-center items-center px-8 gap-8 mt-32">
+	<!-- Renders every generic card  -->
 	{#each cardContent as content}
 		<HomeCard {content} />
 	{/each}
+	<!-- Renders the last and different one with profile pictures -->
 	<div
 		class="flex flex-col items-start py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
@@ -82,7 +81,13 @@
 					alt="brittney icon"
 				/>
 			</div>
-			<img class="w-4 h-4 flex-shrink-0 ml-auto" src="/images/arrow-right.svg" alt="arrow right" />
+			<a href="/">
+				<img
+					class="w-4 h-4 flex-shrink-0 ml-auto"
+					src="/images/arrow-right.svg"
+					alt="arrow right"
+				/>
+			</a>
 		</div>
 
 		<h2 class="text-white text-lg font-bold mt-4">Ready to dive in?</h2>
@@ -91,6 +96,31 @@
 			development excellence
 		</p>
 	</div>
+	<!-- Divider -->
+	<div class="w-[90%] h-0 mt-12 opacity-50 border border-white" />
+</div>
+<!-- ----------------------END OF HOME PAGE CARD SECTION--------------------------- -->
+
+<div class="flex flex-col p-6 mt-20">
+	<h2 class="font-bold text-white text-[26px]">Recent posts from the community</h2>
+	{#each postCardContent as postContent}
+		<PostCard {postContent} />
+	{/each}
+	<a
+		href="/"
+		class="w-full flex justify-center items-end mt-14 text-white text-base font-normal underline"
+	>
+		View all
+	</a>
+</div>
+
+<!-- --------------------END OF POST SECTION----------------------------- -->
+
+<div class="flex flex-col p-6 justify-start mt-10 bg-slate-800 shadow">
+	<h2 class="font-bold text-[28px] text-white">FAQS</h2>
+	<h3 class="text-neutral-300 text-[20px] mt-5 font-bold">
+		How do I join the Learn Build Teach Discord server
+	</h3>
 </div>
 
 <style>
