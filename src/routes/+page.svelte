@@ -19,11 +19,13 @@
 	</div>
 </article> -->
 <script lang="ts">
+	import Accordion from '$components/Accordion.svelte';
 	import HomeCard from '$components/HomeCard.svelte';
 	import JoinDiscordBtn from '$components/JoinDiscordBtn.svelte';
 	import PostCard from '$components/PostCard.svelte';
 	import { cardContent } from '$src/LBTCardContent';
 	import { postCardContent } from '$src/PostCardContent';
+	import { faqContent } from '$src/FaqContent';
 </script>
 
 <article class="flex flex-col px-6 items-left blur-effect">
@@ -32,14 +34,14 @@
 		<span class="text-[42px] font-bold font-body text-secondary">BUILD</span>
 		<span class="text-[42px] font-bold font-body text-white">. TEACH</span>
 	</div>
-	<div class="w-[332px] p-3 text-slate-300 text-sm font-normal font-body text-left">
+	<div class="w-[332px] py-3 text-slate-300 text-sm font-normal font-body text-left">
 		<p>
 			Our Discord server is a friendly place to ask web development questions and engage in
 			discussions. Catered to seasoned experts or beginners
 		</p>
 	</div>
 	<JoinDiscordBtn />
-	<div class="flex justify-left items-center px-4 py-2 gap-4">
+	<div class="flex justify-left items-center px-2 py-2 gap-4">
 		<div
 			class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1"
 		>
@@ -96,13 +98,12 @@
 			development excellence
 		</p>
 	</div>
-	<!-- Divider -->
-	<div class="w-[90%] h-0 mt-12 opacity-50 border border-white" />
+	<hr class="w-[282px] h-[0px] opacity-50 border-white mt-12" />
 </div>
 <!-- ----------------------END OF HOME PAGE CARD SECTION--------------------------- -->
 
 <div class="flex flex-col p-6 mt-20">
-	<h2 class="font-bold text-white text-[26px]">Recent posts from the community</h2>
+	<h2 class="font-bold text-white text-3xl">Recent posts from the community</h2>
 	{#each postCardContent as postContent}
 		<PostCard {postContent} />
 	{/each}
@@ -117,10 +118,10 @@
 <!-- --------------------END OF POST SECTION----------------------------- -->
 
 <div class="flex flex-col p-6 justify-start mt-10 bg-slate-800 shadow">
-	<h2 class="font-bold text-[28px] text-white">FAQS</h2>
-	<h3 class="text-neutral-300 text-[20px] mt-5 font-bold">
-		How do I join the Learn Build Teach Discord server
-	</h3>
+	<h2 class="font-bold text-[28px] text-white">FAQs</h2>
+	{#each faqContent as faq}
+		<Accordion {faq} />
+	{/each}
 </div>
 
 <style>
