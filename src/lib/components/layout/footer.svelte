@@ -12,7 +12,7 @@
 </footer> -->
 
 <footer class="flex flex-col p-6 items-center mt-10 bg-primary-dark shadow">
-	<div class="flex gap-6">
+	<div class="flex gap-6 justify-center items-center">
 		<a href="https://github.com/Learn-Build-Teach">
 			<img src="/images/github-icon-white.svg" alt="github logo" />
 		</a>
