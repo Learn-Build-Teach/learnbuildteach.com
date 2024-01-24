@@ -27,7 +27,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@storyblok/svelte": "^4.0.4",
 		"@supabase/supabase-js": "^2.1.2",
 		"@vitejs/plugin-basic-ssl": "^1.1.0",
 		"dotenv": "^10.0.0",

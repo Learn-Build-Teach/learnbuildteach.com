@@ -7,7 +7,7 @@
 
 <div class={`w-full rounded-lg overflow-hidden gap-4 `}>
 	<img
-		src={fallbackUrl}
+		src={event.coverImageURL || fallbackUrl}
 		alt={event.name}
 		class="aspect-video object-cover border rounded-lg border-primary-dark/30"
 	/>
