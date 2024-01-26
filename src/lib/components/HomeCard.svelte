@@ -12,5 +12,5 @@
 		>{content.preHeader}</span
 	>
 	<h2 class="text-white text-lg font-bold">{content.header}</h2>
-	<p class="w-[294px] mt-2 text-neutral-300 text-sm font-normal">{content.body}</p>
+	<p class="mt-2 text-neutral-300 text-sm font-normal">{content.body}</p>
 </div>

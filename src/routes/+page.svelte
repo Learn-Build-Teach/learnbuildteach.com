@@ -30,7 +30,7 @@
 
 <!-- --------------HERO SECTION-------------------- -->
 <article class="flex flex-col px-6 blur-effect md:justify-center md:w-full">
-	<div class="md:text-center  sm:w-[230px] w-[330px] font-heading text-left">
+	<div class="md:text-center font-heading text-left">
 		<span class="text-[42px] font-bold font-body text-white">LEARN.</span>
 		<span class="text-[42px] font-bold font-body text-secondary">BUILD</span>
 		<span class="text-[42px] font-bold font-body text-white">. TEACH</span>
@@ -94,7 +94,7 @@
 		</div>
 
 		<h2 class="text-white text-lg font-bold mt-4">Ready to dive in?</h2>
-		<p class="w-[294px] mt-2 text-neutral-300 text-sm font-normal">
+		<p class="mt-2 text-neutral-300 text-sm font-normal">
 			Join our Discord server today and become part of a vibrant community dedicated to web
 			development excellence
 		</p>
