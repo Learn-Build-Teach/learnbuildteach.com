@@ -29,13 +29,13 @@
 </script>
 
 <!-- --------------HERO SECTION-------------------- -->
-<article class="flex flex-col px-6 items-left blur-effect">
-	<div class="w-[330px] font-heading text-left">
+<article class="flex flex-col px-6 blur-effect md:justify-center md:w-full">
+	<div class="md:text-center  sm:w-[230px] w-[330px] font-heading text-left">
 		<span class="text-[42px] font-bold font-body text-white">LEARN.</span>
 		<span class="text-[42px] font-bold font-body text-secondary">BUILD</span>
 		<span class="text-[42px] font-bold font-body text-white">. TEACH</span>
 	</div>
-	<div class="w-[332px] py-3 text-slate-300 text-sm font-normal font-body text-left">
+	<div class="py-3 text-slate-300 text-sm font-normal font-body text-left">
 		<p>
 			Our Discord server is a friendly place to ask web development questions and engage in
 			discussions. Catered to seasoned experts or beginners
@@ -77,9 +77,9 @@
 			/>
 			<div class="flex items-center flex-grow flex-shrink-0 ml-4">
 				<img class="w-5 h-5 rounded-full" src="/images/james-icon.png" alt="james icon" />
-				<img class="w-5 h-5 rounded-full -ml-2" src="/images/amy-icon.png" alt="amy icon" />
+				<img class="w-5 h-5 rounded-full -ml-1" src="/images/amy-icon.png" alt="amy icon" />
 				<img
-					class="w-5 h-5 rounded-full -ml-2"
+					class="w-5 h-5 rounded-full -ml-1"
 					src="/images/brittney-icon.png"
 					alt="brittney icon"
 				/>

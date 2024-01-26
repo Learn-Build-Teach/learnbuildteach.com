@@ -3,13 +3,14 @@
 	import Header from '$components/layout/header.svelte';
 	import Footer from '$components/layout/footer.svelte';
 	import '../app.css';
+	import { isOpen } from '$stores/mobileMenuStore';
 </script>
 
 <Head />
 
 <div class="min-h-screen bg-primary-dark text-white">
 	<Header />
-	<main class="w-full max-w-5xl">
+	<main on:click={() => isOpen.set(false)} on:keydown={() => null}>
 		<slot />
 	</main>
 	<Footer />

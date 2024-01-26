@@ -3,10 +3,10 @@
 	import { page } from '$app/stores';
 	import { supabase } from '$src/lib/helpers/supabase';
 	import { loggedIn } from '$stores/authStore';
+	import { isOpen } from '$stores/mobileMenuStore';
+	// let isOpen = false;
 
-	let isOpen = false;
-
-	const handleIsOpen = () => (isOpen = !isOpen);
+	const handleIsOpen = () => isOpen.set(!$isOpen);
 
 	const logout = async () => {
 		await supabase.auth.signOut();
@@ -15,16 +15,17 @@
 
 	const publicRoutes = [
 		{
-			path: '/',
-			name: 'Home'
-		},
-		{
 			path: '/content',
 			name: 'Content'
 		},
 		{
 			path: '/code-of-conduct',
 			name: 'Code of Conduct'
+		},
+		{
+			path: 'https://github.com/Learn-Build-Teach',
+			name: 'Join on Discord',
+			underlined: true
 		}
 	];
 
@@ -37,18 +38,14 @@
 </script>
 
 <nav>
-	<ul class="md:flex relative gap-8 my-8 text-white font-heading text-2xl leading-10 hidden">
+	<ul class="md:flex relative gap-8 my-8 text-slate-400 font-normal text-lg leading-10 hidden">
 		{#each publicRoutes as route}
 			<li class="relative group">
-				<a class={`block relative border-none `} data-sveltekit-preload-data href={route.path}
-					>{route.name}</a
-				>{#if $page.url.pathname === route.path}
-					<span class="absolute left-1 right-1 h-1 rounded-sm bg-secondary block scale-x-100" />
-				{:else}
-					<span
-						class="absolute left-1 right-1 h-1 rounded-sm bg-white block transition-transform scale-x-0 group-hover:scale-x-100"
-					/>
-				{/if}
+				<a
+					class={`block relative border-none hover:text-white ${route.underlined && 'underline'}`}
+					data-sveltekit-preload-data
+					href={route.path}>{route.name}</a
+				>
 			</li>
 		{/each}
 
@@ -80,7 +77,7 @@
 	</div>
 
 	<div
-		class="{isOpen
+		class="{$isOpen
 			? 'absolute z-10'
 			: 'hidden'} flex flex-col top-5 left-1/2 transform -translate-x-1/2 w-[95%] h-[335px] bg-primary rounded-[17px] shadow"
 	>
@@ -93,26 +90,30 @@
 		<div class="flex flex-col p-4 gap-6">
 			<ul class="p-0 m-0 list-none">
 				<li class="mb-6">
-					<a href="/content" class="text-slate-400 text-lg font-normal font-body hover:text-white"
+					<a
+						href="/content"
+						class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
 						>Content</a
 					>
 				</li>
 				<li class="mb-6">
 					<a
 						href="/code-of-conduct"
-						class="text-slate-400 text-lg font-normal font-body hover:text-white">Code of Conduct</a
+						class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
+						>Code of Conduct</a
 					>
 				</li>
 				<li class="mb-6">
 					<a
 						href="https://github.com/Learn-Build-Teach"
-						class="text-slate-400 text-lg font-normal font-body hover:text-white">Github Repo</a
+						class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
+						>Github Repo</a
 					>
 				</li>
 				<li class="mb-6">
 					<a
 						href="https://discord.gg/vM2bagU"
-						class="text-slate-400 text-lg font-normal font-body hover:text-white underline"
+						class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
 						>Join on Discord</a
 					>
 				</li>
