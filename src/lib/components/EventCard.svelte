@@ -1,40 +1,31 @@
 <script lang="ts">
 	import type { Event } from '$types/events';
 	import { formatDate, formatTime } from '$lib/helpers/format-date';
-	export let event: Event;
 	const fallbackUrl = '/images/lbt_cover.png';
+	export let event: Event;
 </script>
 
-<div class={`w-full rounded-lg overflow-hidden gap-4 `}>
+<div class="w-full rounded-lg flex flex-col justify-between">
 	<img
 		src={event.coverImageURL || fallbackUrl}
 		alt={event.name}
-		class="aspect-video object-cover border rounded-lg border-primary-dark/30"
+		class="aspect-square object-cover border rounded-lg border-primary-dark/30"
 	/>
-	<div class="flex flex-col gap-2 mt-4">
-		<h2 class="text-2xl leading-relaxed font-heading">
+	<a href={event.url} rel="noreferrer" target="_blank" class="my-4 block">
+		<h2 class="text-2xl font-heading ">
 			{event.name}
 		</h2>
+	</a>
 
-		<div class="text-secondary text-sm max-w-max flex items-center   rounded-md  ">
-			<span class="font-semibold">
-				{formatTime(event.scheduledStartTimestamp)}
-				{#if event.scheduledEndTimestamp}
-					- {formatTime(event.scheduledEndTimestamp)}
-				{/if}
-			</span>
-			<span class="font-semibold ml-2">
-				@ {formatDate(event.scheduledStartTimestamp)}
-			</span>
-		</div>
-		<p class="text-gray-400 line-clamp-3">{event.description}</p>
-		<a
-			href={event.url}
-			target="_blank"
-			rel="noreferrer noopener"
-			class=" bg-white max-w-max border-none py-2 px-4 rounded-lg text-primary hover:bg-accent transition-500 mt-4"
-		>
-			Join in Discord
-		</a>
+	<div>
+		<span>
+			{formatTime(event.scheduledStartTimestamp)}
+			{#if event.scheduledEndTimestamp}
+				- {formatTime(event.scheduledEndTimestamp)}
+			{/if}
+		</span>
+		<span>
+			@ {formatDate(event.scheduledStartTimestamp)}
+		</span>
 	</div>
 </div>
