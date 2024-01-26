@@ -11,21 +11,24 @@
 		alt={event.name}
 		class="aspect-square object-cover border rounded-lg border-primary-dark/30"
 	/>
-	<a href={event.url} rel="noreferrer" target="_blank" class="my-4 block">
-		<h2 class="text-2xl font-heading ">
-			{event.name}
-		</h2>
-	</a>
 
-	<div>
-		<span>
-			{formatTime(event.scheduledStartTimestamp)}
-			{#if event.scheduledEndTimestamp}
-				- {formatTime(event.scheduledEndTimestamp)}
-			{/if}
-		</span>
-		<span>
-			@ {formatDate(event.scheduledStartTimestamp)}
-		</span>
+	<div class="mt-auto">
+		<a href={event.url} rel="noreferrer" target="_blank" class="my-4 block">
+			<h2 class="text-2xl font-heading ">
+				{event.name}
+			</h2>
+		</a>
+
+		<div>
+			<span>
+				{formatTime(event.scheduledStartTimestamp)}
+				{#if event.scheduledEndTimestamp}
+					- {formatTime(event.scheduledEndTimestamp)}
+				{/if}
+			</span>
+			<span>
+				@ {formatDate(event.scheduledStartTimestamp)}
+			</span>
+		</div>
 	</div>
 </div>
