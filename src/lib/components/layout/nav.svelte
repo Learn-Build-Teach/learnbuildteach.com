@@ -38,11 +38,13 @@
 </script>
 
 <nav>
-	<ul class="md:flex relative gap-8 my-8 text-slate-400 font-normal text-lg leading-10 hidden">
+	<ul
+		class="md:flex md:text-[18px] relative gap-8 my-8 text-slate-400 font-normal text-lg leading-10 hidden"
+	>
 		{#each publicRoutes as route}
 			<li class="relative group">
 				<a
-					class={`block relative border-none hover:text-white ${route.underlined && 'underline'}`}
+					class={`block relative border-none hover:text-white hover:underline`}
 					data-sveltekit-preload-data
 					href={route.path}>{route.name}</a
 				>
@@ -82,7 +84,13 @@
 			: 'hidden'} flex flex-col top-5 left-1/2 transform -translate-x-1/2 w-[95%] h-[335px] bg-primary rounded-[17px] shadow"
 	>
 		<div class="flex p-4 justify-between items-center">
-			<img class="w-12 h-12 shadow-lg rounded-full" src="/images/logo-dark-pencil.png" alt="logo" />
+			<a href="/">
+				<img
+					class="w-12 h-12 shadow-lg rounded-full"
+					src="/images/logo-dark-pencil.png"
+					alt="logo"
+				/>
+			</a>
 			<button on:click={handleIsOpen}>
 				<img class="w-6 h-6 relative" src="/images/x-close.svg" alt="close button" />
 			</button>

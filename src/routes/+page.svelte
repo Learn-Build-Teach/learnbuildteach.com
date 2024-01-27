@@ -26,33 +26,86 @@
 	import { cardContent } from '$src/LBTCardContent';
 	import { postCardContent } from '$src/PostCardContent';
 	import { faqContent } from '$src/FaqContent';
+	import Skeleton from '$components/Skeleton.svelte';
 </script>
 
 <!-- --------------HERO SECTION-------------------- -->
-<article class="flex flex-col px-6 blur-effect md:justify-center md:w-full">
-	<div class="md:text-center font-heading text-left">
-		<span class="text-[42px] font-bold font-body text-white">LEARN.</span>
-		<span class="text-[42px] font-bold font-body text-secondary">BUILD</span>
-		<span class="text-[42px] font-bold font-body text-white">. TEACH</span>
+<article
+	class="flex flex-col px-6 blur-effect md:justify-center md:items-center md:text-center md:mt-20 md:max-w-7xl md:mx-auto relative"
+>
+	<div class="font-heading text-left">
+		<span class="text-[42px] md:text-[64px] font-bold font-body text-white">LEARN.</span>
+		<span class="text-[42px] md:text-[64px] font-bold font-body text-secondary">BUILD</span>
+		<span class="text-[42px] md:text-[64px] font-bold font-body text-white">.</span>
+		<span class="text-[42px] md:text-[64px] font-bold font-body text-white">TEACH</span>
 	</div>
-	<div class="py-3 text-slate-300 text-sm font-normal font-body text-left">
+	<div
+		class="py-3 text-slate-300 text-sm font-normal font-body md:text-center md:text-[26px] md:w-[930px]"
+	>
 		<p>
 			Our Discord server is a friendly place to ask web development questions and engage in
 			discussions. Catered to seasoned experts or beginners
 		</p>
 	</div>
 	<JoinDiscordBtn />
+	<!-- ----------- Skeletons only for lg screen size ------------------- -->
+	<div
+		class="px-4 py-2 lg:w-[182px] lg:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21]  absolute left-[-140px] top-[120px]"
+	>
+		<p class="text-[#A8ABAD] text-[7px] font-bold absolute top-[-10px]">#wins</p>
+		<div class="flex justify-between">
+			<span class="text-[7px] font-bold text-white">James Q. Quick</span>
+			<span class="text-[7px] font-[300] text-white">12:27pm</span>
+		</div>
+		<div class="flex flex-col gap-1">
+			<div class="w-[95%] h-[6px] bg-[#D9D9D921] rounded-xl" />
+			<div class="w-[85%] h-[6px] bg-[#D9D9D921] rounded-xl" />
+		</div>
+	</div>
+	<img
+		class="w-10 h-10 rounded-full absolute left-[-185px] top-[160px]"
+		src="/images/james-icon.png"
+		alt="face icon"
+	/>
+
+	<div
+		class="px-4 py-2 lg:w-[182px] lg:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21]  absolute right-[-10px] top-[320px]"
+	>
+		<p class="text-[#A8ABAD] text-[7px] font-bold absolute top-[-10px]">#job-opportunities</p>
+		<div class="flex justify-between">
+			<span class="text-[7px] font-bold text-white">Amy Dutton</span>
+			<span class="text-[7px] font-[300] text-white">3:27pm</span>
+		</div>
+		<div class="flex flex-col gap-1">
+			<div class="w-[95%] h-[6px] bg-[#D9D9D921] rounded-xl" />
+			<div class="w-[85%] h-[6px] bg-[#D9D9D921] rounded-xl" />
+		</div>
+	</div>
+	<img
+		class="w-10 h-10 rounded-full absolute right-[-60px] top-[350px]"
+		src="/images/amy-icon.png"
+		alt="face icon"
+	/>
+	<!-- -------------------------- END OF SKELETONS SECTION ----------------------- -->
 	<div class="flex justify-left items-center px-2 py-2 gap-4">
 		<div
-			class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1"
+			class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1 md:text-[18px]"
 		>
-			<img src="/images/online-icon.svg" alt="green dot" />
+			<img
+				class="md:w-[18px] md:h-[18px] md:flex-shrink-0"
+				src="/images/online-icon.svg"
+				alt="green dot"
+			/>
 			<span>551 Online</span>
 		</div>
 		<div
-			class="flex justify-center items-center text-[0.60106rem] text-gray font-normal leading-normal tracking-tighter gap-1"
+			class="flex justify-center items-center text-[0.60106rem] text-gray font-normal leading-normal tracking-tighter gap-1 md:text-[18px]"
 		>
-			<img src="/images/total-users.svg" alt="gray dot" />
+			<img
+				class="md:w-[18px] md:h-[18px] md:flex-shrink-0"
+				src="/images/total-users.svg"
+				alt="gray dot"
+			/>
 			<span>5,426 Members</span>
 		</div>
 	</div>
