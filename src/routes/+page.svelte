@@ -26,7 +26,6 @@
 	import { cardContent } from '$src/LBTCardContent';
 	import { postCardContent } from '$src/PostCardContent';
 	import { faqContent } from '$src/FaqContent';
-	import Skeleton from '$components/Skeleton.svelte';
 </script>
 
 <!-- --------------HERO SECTION-------------------- -->
@@ -34,10 +33,10 @@
 	class="flex flex-col px-6 blur-effect md:justify-center md:items-center md:text-center md:mt-20 md:max-w-7xl md:mx-auto relative"
 >
 	<div class="font-heading text-left">
-		<span class="text-[42px] md:text-[64px] font-bold font-body text-white">LEARN.</span>
-		<span class="text-[42px] md:text-[64px] font-bold font-body text-secondary">BUILD</span>
-		<span class="text-[42px] md:text-[64px] font-bold font-body text-white">.</span>
-		<span class="text-[42px] md:text-[64px] font-bold font-body text-white">TEACH</span>
+		<span class="text-[41px] md:text-[64px] font-bold font-body text-white">LEARN.</span>
+		<span class="text-[41px] md:text-[64px] font-bold font-body text-secondary">BUILD</span>
+		<span class="text-[41px] md:text-[64px] font-bold font-body text-white">.</span>
+		<span class="text-[41px] md:text-[64px] font-bold font-body text-white">TEACH</span>
 	</div>
 	<div
 		class="py-3 text-slate-300 text-sm font-normal font-body md:text-center md:text-[26px] md:w-[930px]"
@@ -50,39 +49,39 @@
 	<JoinDiscordBtn />
 	<!-- ----------- Skeletons only for lg screen size ------------------- -->
 	<div
-		class="px-4 py-2 lg:w-[182px] lg:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21]  absolute left-[-140px] top-[120px]"
+		class="px-4 py-2 lg:block lg:w-[182px] lg:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21]  absolute left-[-140px] top-[120px] hidden"
 	>
 		<p class="text-[#A8ABAD] text-[7px] font-bold absolute top-[-10px]">#wins</p>
 		<div class="flex justify-between">
 			<span class="text-[7px] font-bold text-white">James Q. Quick</span>
 			<span class="text-[7px] font-[300] text-white">12:27pm</span>
 		</div>
-		<div class="flex flex-col gap-1">
+		<div class="flex flex-col gap-1 mt-2">
 			<div class="w-[95%] h-[6px] bg-[#D9D9D921] rounded-xl" />
 			<div class="w-[85%] h-[6px] bg-[#D9D9D921] rounded-xl" />
 		</div>
 	</div>
 	<img
-		class="w-10 h-10 rounded-full absolute left-[-185px] top-[160px]"
+		class="w-10 h-10 lg:block rounded-full absolute left-[-185px] top-[160px] hidden"
 		src="/images/james-icon.png"
 		alt="face icon"
 	/>
 
 	<div
-		class="px-4 py-2 lg:w-[182px] lg:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21]  absolute right-[-10px] top-[320px]"
+		class="px-4 py-2 lg:block lg:w-[182px] lg:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21] absolute right-[-10px] top-[320px] hidden"
 	>
 		<p class="text-[#A8ABAD] text-[7px] font-bold absolute top-[-10px]">#job-opportunities</p>
 		<div class="flex justify-between">
 			<span class="text-[7px] font-bold text-white">Amy Dutton</span>
 			<span class="text-[7px] font-[300] text-white">3:27pm</span>
 		</div>
-		<div class="flex flex-col gap-1">
+		<div class="flex flex-col gap-1 mt-2">
 			<div class="w-[95%] h-[6px] bg-[#D9D9D921] rounded-xl" />
 			<div class="w-[85%] h-[6px] bg-[#D9D9D921] rounded-xl" />
 		</div>
 	</div>
 	<img
-		class="w-10 h-10 rounded-full absolute right-[-60px] top-[350px]"
+		class="w-10 h-10 lg:block rounded-full absolute right-[-60px] top-[350px] hidden"
 		src="/images/amy-icon.png"
 		alt="face icon"
 	/>
@@ -113,14 +112,52 @@
 <!-- --------------END OF HERO SECTION--------------- -->
 
 <!-- ------------- HOME PAGE CARDS SECTION ---------- -->
-<div class="flex flex-col justify-center items-center px-8 gap-8 mt-32">
+<div
+	class="md:max-w-7xl md:mx-auto md:grid md:grid-cols-3 md:grid-rows-6 flex flex-col justify-center items-center px-8 gap-8 mt-32"
+>
 	<!-- Renders every generic card  -->
-	{#each cardContent as content}
-		<HomeCard {content} />
-	{/each}
+	<div
+		class="md:col-span-2 md:justify-center md:h-full md:border-none md:order-1 flex flex-col py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+	>
+		<img class="w-5 h-5" src="/images/book-icon.svg" alt="book icon" />
+		<span class="text-slate-300 text-opacity-70 text-[10px] font-normal mt-4"
+			>Embark on a Journey of Learning</span
+		>
+		<h2 class="text-white text-lg font-bold">We learn because we have to</h2>
+		<p class="mt-2 text-neutral-300 text-sm font-normal">
+			Our Discord channels are filled with resources, tutorials, and fellow developers that are more
+			than willing to assist you along your learning journey!
+		</p>
+	</div>
+	<div
+		class="md:col-span-1 md:justify-center md:h-full md:border-none md:order-2 flex flex-col items-start py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+	>
+		<img class="w-5 h-5" src="/images/console-icon.svg" alt="console icon" />
+		<span class="text-slate-300 text-opacity-70 text-[10px] font-normal mt-4"
+			>Bring Your Ideas to Life</span
+		>
+		<h2 class="text-white text-lg font-bold">We build because we can</h2>
+		<p class="mt-2 text-neutral-300 text-sm font-normal">
+			From coding challenges to group projects, unleash your creativity and amplify your impact
+			within our vibrant community
+		</p>
+	</div>
+	<div
+		class="md:col-span-2 md:justify-center md:h-full md:border-none md:order-4 flex flex-col items-start py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+	>
+		<img class="w-5 h-5" src="/images/chat-bubble-icon.svg" alt="chat-bubble icon" />
+		<span class="text-slate-300 text-opacity-70 text-[10px] font-normal mt-4"
+			>Empower Others Through Teaching</span
+		>
+		<h2 class="text-white text-lg font-bold">We teach because we care</h2>
+		<p class="mt-2 text-neutral-300 text-sm font-normal">
+			Contribute to our knowledge base, lead workshops, and empower the community by becoming a
+			guiding force in the world of web development
+		</p>
+	</div>
 	<!-- Renders the last and different one with profile pictures -->
 	<div
-		class="flex flex-col items-start py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="md:col-span-1 md:justify-center md:h-full md:border-none md:order-3 flex flex-col items-start py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
 		<div class="flex justify-center items-center w-full">
 			<img
@@ -152,8 +189,8 @@
 			development excellence
 		</p>
 	</div>
-	<hr class="w-[282px] h-[0px] opacity-50 border-white mt-12" />
 </div>
+<hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12" />
 <!-- ------------- END OF HOME PAGE CARDS SECTION ---------- -->
 
 <!-- ------------- POST SECTION ------------- -->
