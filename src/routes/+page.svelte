@@ -113,59 +113,63 @@
 
 <!-- ------------- HOME PAGE CARDS SECTION ---------- -->
 <div
-	class="md:max-w-7xl md:mx-auto md:grid md:grid-cols-3 md:grid-rows-6 flex flex-col justify-center items-center px-8 gap-8 mt-32"
+	class="container md:mx-auto md:grid md:grid-cols-3 flex flex-col justify-center items-center px-8 gap-8 mt-32"
 >
 	<!-- Renders every generic card  -->
 	<div
-		class="md:col-span-2 md:justify-center md:h-full md:border-none md:order-1 flex flex-col py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="md:opacity-50 hover:opacity-100 md:col-span-2 md:p-10 md:h-full md:border-none md:order-1 flex flex-col p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
-		<img class="w-5 h-5" src="/images/book-icon.svg" alt="book icon" />
-		<span class="text-slate-300 text-opacity-70 text-[10px] font-normal mt-4"
+		<img class="md:w-10 md:h-10 w-5 h-5" src="/images/book-icon.svg" alt="book icon" />
+		<span class="text-slate-400 text-opacity-70 text-[10px] font-normal mt-4 md:text-xl md:mt-20"
 			>Embark on a Journey of Learning</span
 		>
-		<h2 class="text-white text-lg font-bold">We learn because we have to</h2>
-		<p class="mt-2 text-neutral-300 text-sm font-normal">
+		<h2 class="text-white text-lg font-bold md:text-3xl md:w-[90%]">We learn because we have to</h2>
+		<p class="mt-2 text-slate-400 text-sm font-normal md:mt-4 md:text-[22px] md:w-[692px]">
 			Our Discord channels are filled with resources, tutorials, and fellow developers that are more
 			than willing to assist you along your learning journey!
 		</p>
 	</div>
 	<div
-		class="md:col-span-1 md:justify-center md:h-full md:border-none md:order-2 flex flex-col items-start py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="md:opacity-50 hover:opacity-100 md:col-span-1 md:justify-center md:p-8 md:h-full md:border-none md:order-2 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
-		<img class="w-5 h-5" src="/images/console-icon.svg" alt="console icon" />
-		<span class="text-slate-300 text-opacity-70 text-[10px] font-normal mt-4"
+		<img class="md:w-10 md:h-10 w-5 h-5" src="/images/console-icon.svg" alt="console icon" />
+		<span class="text-slate-400 text-opacity-70 text-[10px] font-normal mt-4 md:text-xl md:mt-20"
 			>Bring Your Ideas to Life</span
 		>
-		<h2 class="text-white text-lg font-bold">We build because we can</h2>
-		<p class="mt-2 text-neutral-300 text-sm font-normal">
+		<h2 class="text-white text-lg font-bold md:text-3xl">We build because we can</h2>
+		<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px]">
 			From coding challenges to group projects, unleash your creativity and amplify your impact
 			within our vibrant community
 		</p>
 	</div>
 	<div
-		class="md:col-span-2 md:justify-center md:h-full md:border-none md:order-4 flex flex-col items-start py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="md:opacity-50 hover:opacity-100 md:col-span-2 md:h-full md:p-8 md:border-none md:order-4 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
-		<img class="w-5 h-5" src="/images/chat-bubble-icon.svg" alt="chat-bubble icon" />
-		<span class="text-slate-300 text-opacity-70 text-[10px] font-normal mt-4"
+		<img
+			class="md:w-10 md:h-10 w-5 h-5"
+			src="/images/chat-bubble-icon.svg"
+			alt="chat-bubble icon"
+		/>
+		<span class="text-slate-400 text-opacity-70 text-[10px] font-normal mt-4 md:text-xl md:mt-20"
 			>Empower Others Through Teaching</span
 		>
-		<h2 class="text-white text-lg font-bold">We teach because we care</h2>
-		<p class="mt-2 text-neutral-300 text-sm font-normal">
+		<h2 class="text-white text-lg font-bold md:text-3xl">We teach because we care</h2>
+		<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px]">
 			Contribute to our knowledge base, lead workshops, and empower the community by becoming a
 			guiding force in the world of web development
 		</p>
 	</div>
 	<!-- Renders the last and different one with profile pictures -->
 	<div
-		class="md:col-span-1 md:justify-center md:h-full md:border-none md:order-3 flex flex-col items-start py-4 px-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="md:opacity-50 hover:opacity-100 md:col-span-1 md:justify-center md:items-center md:p-8 md:h-full md:border-none md:order-3 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500 relative"
 	>
-		<div class="flex justify-center items-center w-full">
+		<div class="md:flex md:flex-col md:mt-12 flex justify-center items-center w-full ">
 			<img
 				class="w-12 h-12 rounded-full flex-shrink-0"
 				src="/images/discovery-icon.png"
 				alt="discovery icon"
 			/>
-			<div class="flex items-center flex-grow flex-shrink-0 ml-4">
+			<div class="md:hidden flex items-center flex-grow flex-shrink-0 ml-4">
 				<img class="w-5 h-5 rounded-full" src="/images/james-icon.png" alt="james icon" />
 				<img class="w-5 h-5 rounded-full -ml-1" src="/images/amy-icon.png" alt="amy icon" />
 				<img
@@ -176,18 +180,36 @@
 			</div>
 			<a href="/">
 				<img
-					class="w-4 h-4 flex-shrink-0 ml-auto"
+					class="w-4 h-4 flex-shrink-0 ml-auto md:absolute right-6 top-6"
 					src="/images/arrow-right.svg"
 					alt="arrow right"
 				/>
 			</a>
 		</div>
 
-		<h2 class="text-white text-lg font-bold mt-4">Ready to dive in?</h2>
-		<p class="mt-2 text-neutral-300 text-sm font-normal">
+		<h2 class="text-white text-lg font-bold mt-4 md:text-3xl">Ready to dive in?</h2>
+		<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px] md:text-center">
 			Join our Discord server today and become part of a vibrant community dedicated to web
 			development excellence
 		</p>
+
+		<div class="md:flex md:items-center md:flex-grow md:mt-4 flex-shrink-0 ml-4">
+			<img
+				class="md:w-8 md:h-8 w-5 h-5 rounded-full"
+				src="/images/james-icon.png"
+				alt="james icon"
+			/>
+			<img
+				class="md:w-8 md:h-8 w-5 h-5 rounded-full -ml-1"
+				src="/images/amy-icon.png"
+				alt="amy icon"
+			/>
+			<img
+				class="md:w-8 md:h-8 w-5 h-5 rounded-full -ml-1"
+				src="/images/brittney-icon.png"
+				alt="brittney icon"
+			/>
+		</div>
 	</div>
 </div>
 <hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12" />
