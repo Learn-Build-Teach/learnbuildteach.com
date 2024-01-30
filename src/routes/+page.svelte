@@ -30,7 +30,7 @@
 
 <!-- --------------HERO SECTION-------------------- -->
 <article
-	class="flex flex-col px-6 blur-effect md:justify-center md:items-center md:text-center md:mt-20 md:max-w-7xl md:mx-auto relative"
+	class="flex flex-col px-6 blur-effect md:justify-center md:items-center md:text-center md:mt-28 md:max-w-7xl md:mx-auto relative"
 >
 	<div class="font-heading text-left">
 		<span class="text-[41px] md:text-[64px] font-bold font-body text-white">LEARN.</span>
@@ -86,38 +86,16 @@
 		alt="face icon"
 	/>
 	<!-- -------------------------- END OF SKELETONS SECTION ----------------------- -->
-	<div class="flex justify-left items-center px-2 py-2 gap-4">
-		<div
-			class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1 md:text-[18px]"
-		>
-			<img
-				class="md:w-[18px] md:h-[18px] md:flex-shrink-0"
-				src="/images/online-icon.svg"
-				alt="green dot"
-			/>
-			<span>551 Online</span>
-		</div>
-		<div
-			class="flex justify-center items-center text-[0.60106rem] text-gray font-normal leading-normal tracking-tighter gap-1 md:text-[18px]"
-		>
-			<img
-				class="md:w-[18px] md:h-[18px] md:flex-shrink-0"
-				src="/images/total-users.svg"
-				alt="gray dot"
-			/>
-			<span>5,426 Members</span>
-		</div>
-	</div>
 </article>
 <!-- --------------END OF HERO SECTION--------------- -->
 
 <!-- ------------- HOME PAGE CARDS SECTION ---------- -->
 <div
-	class="container md:mx-auto md:grid md:grid-cols-3 flex flex-col justify-center items-center px-8 gap-8 mt-32"
+	class="container md:mx-auto md:grid md:grid-cols-3 md:mt-60 flex flex-col justify-center items-center px-8 gap-8 mt-20"
 >
 	<!-- Renders every generic card  -->
 	<div
-		class="md:opacity-50 hover:opacity-100 md:col-span-2 md:p-10 md:h-full md:border-none md:order-1 flex flex-col p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="md:opacity-50 hover:opacity-100 md:col-span-2 md:p-8 md:h-full md:border-none md:order-1 flex flex-col p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
 		<img class="md:w-10 md:h-10 w-5 h-5" src="/images/book-icon.svg" alt="book icon" />
 		<span class="text-slate-400 text-opacity-70 text-[10px] font-normal mt-4 md:text-xl md:mt-20"
@@ -186,14 +164,14 @@
 				/>
 			</a>
 		</div>
-
+		<!-- ------------------ Renders the same profile pictures component but with different layout in md screens ---------------- -->
 		<h2 class="text-white text-lg font-bold mt-4 md:text-3xl">Ready to dive in?</h2>
 		<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px] md:text-center">
 			Join our Discord server today and become part of a vibrant community dedicated to web
 			development excellence
 		</p>
 
-		<div class="md:flex md:items-center md:flex-grow md:mt-4 flex-shrink-0 ml-4">
+		<div class="md:flex md:items-center md:flex-grow md:mt-4 flex-shrink-0 ml-4 hidden">
 			<img
 				class="md:w-8 md:h-8 w-5 h-5 rounded-full"
 				src="/images/james-icon.png"
@@ -212,21 +190,31 @@
 		</div>
 	</div>
 </div>
-<hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12" />
+<hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12 md:w-[65%] md:mt-44" />
 <!-- ------------- END OF HOME PAGE CARDS SECTION ---------- -->
 
 <!-- ------------- POST SECTION ------------- -->
-<div class="flex flex-col p-6 mt-20">
-	<h2 class="font-bold text-white text-3xl">Recent posts from the community</h2>
-	{#each postCardContent as postContent}
-		<PostCard {postContent} />
-	{/each}
-	<a
-		href="/"
-		class="w-full flex justify-center items-end mt-14 text-white text-base font-normal underline"
-	>
-		View all
-	</a>
+<div class="md:container md:mx-auto md:mt-48">
+	<div class="flex justify-between items-center">
+		<h2 class="font-bold text-white text-3xl md:text-[42px]">Recent posts from the community</h2>
+		<a
+			href="/"
+			class="md:inline md:w-20 w-full flex justify-center items-end text-white text-base font-normal underline"
+		>
+			View all
+		</a>
+	</div>
+	<div class="md:flex-row md:justify-between md:m-auto md:items-center flex flex-col p-6 mt-20">
+		{#each postCardContent as postContent}
+			<PostCard {postContent} />
+		{/each}
+		<a
+			href="/"
+			class="md:hidden md:w-20 w-full flex justify-center items-end mt-14 text-white text-base font-normal underline"
+		>
+			View all
+		</a>
+	</div>
 </div>
 <!-- ------------- END OF POST SECTION ----------- -->
 

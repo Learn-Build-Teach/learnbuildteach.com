@@ -11,3 +11,25 @@
 		Join on Discord
 	</div>
 </a>
+<div class="flex justify-left items-center px-2 py-2 gap-4">
+	<div
+		class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1 md:text-[18px]"
+	>
+		<img
+			class="md:w-[18px] md:h-[18px] md:flex-shrink-0"
+			src="/images/online-icon.svg"
+			alt="green dot"
+		/>
+		<span>551 Online</span>
+	</div>
+	<div
+		class="flex justify-center items-center text-[0.60106rem] text-gray font-normal leading-normal tracking-tighter gap-1 md:text-[18px]"
+	>
+		<img
+			class="md:w-[18px] md:h-[18px] md:flex-shrink-0"
+			src="/images/total-users.svg"
+			alt="gray dot"
+		/>
+		<span>5,426 Members</span>
+	</div>
+</div>
