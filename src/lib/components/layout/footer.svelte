@@ -11,19 +11,19 @@
 	<p>&copy; 2022 Learn Build Teach LLC</p>
 </footer> -->
 
-<footer class="flex flex-col p-4 items-center bg-primary-dark shadow">
+<footer class="md:mt-12 flex flex-col p-4 items-center bg-primary-dark shadow">
 	<div class="flex gap-6 justify-center items-center">
 		<a href="https://github.com/Learn-Build-Teach">
-			<img src="/images/github-icon-white.svg" alt="github logo" />
+			<img class="md:w-11 md:h-11" src="/images/github-icon-white.svg" alt="github logo" />
 		</a>
 		<a href="https://twitter.com/jamesqquick">
-			<img src="/images/x-icon-white.svg" alt="x logo" />
+			<img class="md:w-11 md:h-11" src="/images/x-icon-white.svg" alt="x logo" />
 		</a>
 		<a href="https://discord.gg/vM2bagU">
-			<img src="/images/discord-icon-white.svg" alt="discord icon" />
+			<img class="md:w-11 md:h-11" src="/images/discord-icon-white.svg" alt="discord icon" />
 		</a>
 	</div>
-	<div class="text-center text-neutral-300 text-opacity-60 text-sm font-light mt-10">
+	<div class="text-center text-neutral-300 text-opacity-60 md:text-[22px] text-sm font-light mt-10">
 		Copyright &copy; 2023, Learn Build Teach LLC
 	</div>
 </footer>

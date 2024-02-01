@@ -39,7 +39,7 @@
 
 <nav>
 	<ul
-		class="md:flex md:text-[18px] relative gap-8 my-8 text-slate-400 font-normal text-lg leading-10 hidden"
+		class="lg:flex lg:text-[18px] relative gap-8 my-8 text-slate-400 font-normal text-lg leading-10 hidden"
 	>
 		{#each publicRoutes as route}
 			<li class="relative group">
@@ -72,9 +72,9 @@
 	</ul>
 
 	<!-- ------------------ MOBILE NAV -------------------- -->
-	<div class="md:hidden px-2">
+	<div class="lg:hidden px-2">
 		<button on:click={handleIsOpen}>
-			<img src="/images/burger-icon.svg" alt="burger menu" />
+			<img class="md:w-10 md:h-10" src="/images/burger-icon.svg" alt="burger menu" />
 		</button>
 	</div>
 

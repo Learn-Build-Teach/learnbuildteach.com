@@ -20,5 +20,5 @@ export const postCardContent: Post[] = [
 		title: 'Collaboration on GitHub: a Practical Intro',
 		pubDate: 'August 28, 2023',
 		link: '/'
-	},
+	}
 ];
