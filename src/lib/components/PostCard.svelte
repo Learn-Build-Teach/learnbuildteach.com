@@ -6,12 +6,12 @@
 <div class="flex flex-col justify-start mt-12 opacity-90 hover:opacity-100">
 	<a href={postContent.link}>
 		<img
-			class="w-[375px] h-[211px] rounded-2xl"
+			class="w-[375px] h-[211px] rounded-2xl object-cover"
 			src={postContent.imageUrl || backupImageUrl}
 			alt={postContent.description}
 		/>
 		<h2
-			class="text-slate-200 md:text-[22px] max-w-[300px] text-lg font-semibold leading-[23px] mt-4"
+			class="text-slate-200 md:text-[22px] max-w-[370px] text-lg font-semibold leading-[23px] mt-4"
 		>
 			{postContent.title}
 		</h2>
