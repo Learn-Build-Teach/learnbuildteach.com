@@ -4,10 +4,10 @@
 	export let postContent: Post;
 </script>
 
-<div class="flex flex-col justify-start mt-12">
+<div class="flex flex-col justify-start mt-12 opacity-100 hover:opacity-90">
 	<a href={postContent.link}>
 		<img
-			class="w-[330px] h-[211px] rounded-2xl"
+			class=" w-[330px] h-[211px] rounded-2xl"
 			src={postContent.imageUrl}
 			alt="postContent thumbnail"
 		/>

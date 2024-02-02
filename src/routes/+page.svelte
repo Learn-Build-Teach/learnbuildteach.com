@@ -55,7 +55,7 @@
 	<JoinDiscordBtn />
 	<!-- ----------- Skeletons only for lg screen size ------------------- -->
 	<div
-		class="px-4 py-2 xl:block xl:w-[182px] xl:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21]  absolute left-[-140px] top-[120px] hidden"
+		class="px-4 py-2 2xl:block 2xl:w-[182px] 2xl:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21]  absolute left-[-140px] top-[120px] hidden"
 	>
 		<p class="text-[#A8ABAD] text-[7px] font-bold absolute top-[-10px]">#wins</p>
 		<div class="flex justify-between">
@@ -68,13 +68,13 @@
 		</div>
 	</div>
 	<img
-		class="w-10 h-10 xl:block rounded-full absolute left-[-185px] top-[160px] hidden"
+		class="w-10 h-10 2xl:block rounded-full absolute left-[-185px] top-[160px] hidden"
 		src="/images/james-icon.png"
 		alt="face icon"
 	/>
 
 	<div
-		class="px-4 py-2 xl:block xl:w-[182px] xl:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21] absolute right-[-10px] top-[320px] hidden"
+		class="px-4 py-2 2xl:block 2xl:w-[182px] 2xl:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21] absolute right-[-10px] top-[320px] hidden"
 	>
 		<p class="text-[#A8ABAD] text-[7px] font-bold absolute top-[-10px]">#job-opportunities</p>
 		<div class="flex justify-between">
@@ -87,7 +87,7 @@
 		</div>
 	</div>
 	<img
-		class="w-10 h-10 xl:block rounded-full absolute right-[-60px] top-[350px] hidden"
+		class="w-10 h-10 2xl:block rounded-full absolute right-[-60px] top-[350px] hidden"
 		src="/images/amy-icon.png"
 		alt="face icon"
 	/>
@@ -101,33 +101,37 @@
 >
 	<!-- Renders every generic card  -->
 	<div
-		class="lg:opacity-50 hover:opacity-100 lg:col-span-2 md:p-8 lg:h-full md:border-none lg:order-1 flex flex-col p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="lg:opacity-90 hover:opacity-100 lg:col-span-2 md:p-8 lg:h-full md:border-none lg:order-1 flex flex-col p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
 		<img class="md:w-10 md:h-10 w-5 h-5" src="/images/book-icon.svg" alt="book icon" />
 		<span class="text-slate-400 text-opacity-70 text-[10px] font-normal mt-4 md:text-xl lg:mt-20"
 			>Embark on a Journey of Learning</span
 		>
-		<h2 class="text-white text-lg font-bold md:text-3xl lg:w-[90%]">We learn because we have to</h2>
+		<h2 class="text-white text-lg font-bold md:text-3xl lg:w-[90%]">
+			We <span class="text-secondary">learn</span> because we have to
+		</h2>
 		<p class="mt-2 text-slate-400 text-sm font-normal lg:mt-4 md:text-[22px]">
 			Our Discord channels are filled with resources, tutorials, and fellow developers that are more
 			than willing to assist you along your learning journey!
 		</p>
 	</div>
 	<div
-		class="lg:opacity-50 hover:opacity-100 lg:col-span-1 lg:justify-center md:p-8 lg:h-full md:border-none lg:order-2 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="lg:opacity-90 hover:opacity-100 lg:col-span-1 lg:justify-center md:p-8 lg:h-full md:border-none lg:order-2 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
 		<img class="md:w-10 md:h-10 w-5 h-5" src="/images/console-icon.svg" alt="console icon" />
 		<span class="text-slate-400 text-opacity-70 text-[10px] font-normal mt-4 md:text-xl lg:mt-20"
 			>Bring Your Ideas to Life</span
 		>
-		<h2 class="text-white text-lg font-bold md:text-3xl">We build because we can</h2>
+		<h2 class="text-white text-lg font-bold md:text-3xl">
+			We <span class="text-secondary">build</span> because we can
+		</h2>
 		<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px]">
 			From coding challenges to group projects, unleash your creativity and amplify your impact
 			within our vibrant community
 		</p>
 	</div>
 	<div
-		class="lg:opacity-50 hover:opacity-100 lg:col-span-2 lg:h-full md:p-8 md:border-none lg:order-4 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="lg:opacity-90 hover:opacity-100 lg:col-span-2 lg:h-full md:p-8 md:border-none lg:order-4 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
 		<img
 			class="md:w-10 md:h-10 w-5 h-5"
@@ -137,98 +141,100 @@
 		<span class="text-slate-400 text-opacity-70 text-[10px] font-normal mt-4 md:text-xl lg:mt-20"
 			>Empower Others Through Teaching</span
 		>
-		<h2 class="text-white text-lg font-bold md:text-3xl">We teach because we care</h2>
+		<h2 class="text-white text-lg font-bold md:text-3xl">
+			We <span class="text-secondary">teach</span> because we care
+		</h2>
 		<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px]">
 			Contribute to our knowledge base, lead workshops, and empower the community by becoming a
 			guiding force in the world of web development
 		</p>
 	</div>
 	<!-- Renders the last and different one with profile pictures -->
-	<div
-		class="lg:opacity-50 hover:opacity-100 lg:col-span-1 lg:justify-center lg:items-center md:p-8 lg:h-full md:border-none lg:order-3 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500 relative"
-	>
-		<div class="lg:flex lg:flex-col lg:mt-12 flex justify-center items-center w-full">
-			<img
-				class="lg:w-20 lg:h-20 md:w-16 md:h-16 w-12 h-12 rounded-full flex-shrink-0"
-				src="/images/discovery-icon.png"
-				alt="discovery icon"
-			/>
-			<div class="lg:hidden flex items-center flex-grow flex-shrink-0 ml-4">
+	<a class="lg:order-3" href="https://discord.gg/vM2bagU">
+		<div
+			class="lg:opacity-90 hover:opacity-100 lg:col-span-1 lg:justify-center lg:items-center md:p-8 lg:h-full md:border-none flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500 relative"
+		>
+			<div class="lg:flex lg:flex-col lg:mt-12 flex justify-center items-center w-full">
 				<img
-					class="md:w-8 md:h-8 w-5 h-5 rounded-full"
-					src="/images/james-icon.png"
-					alt="james icon"
+					class="lg:w-20 lg:h-20 md:w-16 md:h-16 w-12 h-12 rounded-full flex-shrink-0"
+					src="/images/discovery-banner.png"
+					alt="discovery icon"
 				/>
-				<img
-					class="md:w-8 md:h-8 w-5 h-5 rounded-full -ml-1"
-					src="/images/amy-icon.png"
-					alt="amy icon"
-				/>
-				<img
-					class="md:w-8 md:h-8 w-5 h-5 rounded-full -ml-1"
-					src="/images/brittney-icon.png"
-					alt="brittney icon"
-				/>
-			</div>
-			<a href="/">
+				<div class="lg:hidden flex items-center flex-grow flex-shrink-0 ml-4">
+					<img
+						class="md:w-8 md:h-8 w-5 h-5 rounded-full"
+						src="/images/james-icon.png"
+						alt="james icon"
+					/>
+					<img
+						class="md:w-8 md:h-8 w-5 h-5 rounded-full -ml-1"
+						src="/images/amy-icon.png"
+						alt="amy icon"
+					/>
+					<img
+						class="md:w-8 md:h-8 w-5 h-5 rounded-full -ml-1"
+						src="/images/brittney-icon.png"
+						alt="brittney icon"
+					/>
+				</div>
 				<img
 					class="lg:w-6 lg:h-6 md:w-5 md:h-5 w-4 h-4 flex-shrink-0 ml-auto lg:absolute right-6 top-6"
 					src="/images/arrow-right.svg"
 					alt="arrow right"
 				/>
-			</a>
-		</div>
-		<!-- ------------------ Renders the same profile pictures component but with different layout in lg screens ---------------- -->
-		<h2 class="text-white text-lg font-bold mt-4 md:text-3xl">Ready to dive in?</h2>
-		<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px] lg:text-center">
-			Join our Discord server today and become part of a vibrant community dedicated to web
-			development excellence
-		</p>
+			</div>
+			<!-- ------------------ Renders the same profile pictures component but with different layout in lg screens ---------------- -->
+			<h2 class="text-white text-lg font-bold mt-4 md:text-3xl">Ready to dive in?</h2>
+			<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px] lg:text-center">
+				Join our Discord server today and become part of a vibrant community dedicated to web
+				development excellence
+			</p>
 
-		<div class="lg:flex lg:items-center lg:flex-grow lg:mt-4 flex-shrink-0 ml-4 hidden">
-			<img
-				class="lg:w-8 lg:h-8 md:w-6 md:h-6 w-5 h-5 rounded-full"
-				src="/images/james-icon.png"
-				alt="james icon"
-			/>
-			<img
-				class="lg:w-8 lg:h-8 md:w-6 md:h-6 w-5 h-5 rounded-full -ml-1"
-				src="/images/amy-icon.png"
-				alt="amy icon"
-			/>
-			<img
-				class="lg:w-8 lg:h-8 md:w-6 md:h-6 w-5 h-5 rounded-full -ml-1"
-				src="/images/brittney-icon.png"
-				alt="brittney icon"
-			/>
+			<div class="lg:flex lg:items-center lg:flex-grow lg:mt-4 flex-shrink-0 ml-4 hidden">
+				<img
+					class="lg:w-8 lg:h-8 md:w-6 md:h-6 w-5 h-5 rounded-full"
+					src="/images/james-icon.png"
+					alt="james icon"
+				/>
+				<img
+					class="lg:w-8 lg:h-8 md:w-6 md:h-6 w-5 h-5 rounded-full -ml-1"
+					src="/images/amy-icon.png"
+					alt="amy icon"
+				/>
+				<img
+					class="lg:w-8 lg:h-8 md:w-6 md:h-6 w-5 h-5 rounded-full -ml-1"
+					src="/images/brittney-icon.png"
+					alt="brittney icon"
+				/>
+			</div>
 		</div>
-	</div>
+	</a>
 </div>
 <hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12 lg:w-[65%] lg:mt-44" />
 <!-- ------------- END OF HOME PAGE CARDS SECTION ---------- -->
 
 <!-- ------------- POST SECTION ------------- -->
-<div class="container mx-auto lg:mt-48 mt-12">
+<div class="container mx-auto lg:mt-48 mt-16">
 	<div class="flex justify-between items-center px-6">
 		<h2 class="font-bold text-white text-3xl md:text-[42px] md:text-center">
 			Recent posts from the community
 		</h2>
 		<a
-			href="/"
-			class="lg:inline lg:w-20 md:text-xl w-full justify-center items-end text-white text-base font-normal underline hidden"
+			href="/content"
+			class="lg:inline lg:w-20 md:text-xl w-full justify-center items-end text-white text-base font-normal underline hidden opacity-90 hover:opacity-100"
 		>
 			View all
 		</a>
 	</div>
 	<div
-		class="lg:flex-row lg:justify-between lg:items-baseline md:items-center flex flex-col p-6 mt-6"
+		class="lg:flex-row lg:justify-between lg:items-baseline md:justify-between md:items-center flex flex-col p-6 mt-6 gap-6"
 	>
 		{#each postCardContent as postContent}
 			<PostCard {postContent} />
 		{/each}
 		<a
-			href="/"
-			class="lg:hidden lg:w-20 md:text-xl w-full flex justify-center items-end mt-14 text-white text-base font-normal underline"
+			href="/content"
+			class="lg:hidden lg:w-20 md:text-xl w-full flex justify-center items-end mt-14 text-white text-base font-normal underline opacity-90 hover:opacity-100"
 		>
 			View all
 		</a>

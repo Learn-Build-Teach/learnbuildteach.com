@@ -16,9 +16,6 @@
 		<a href="https://github.com/Learn-Build-Teach">
 			<img class="md:w-11 md:h-11" src="/images/github-icon-white.svg" alt="github logo" />
 		</a>
-		<a href="https://twitter.com/jamesqquick">
-			<img class="md:w-11 md:h-11" src="/images/x-icon-white.svg" alt="x logo" />
-		</a>
 		<a href="https://discord.gg/vM2bagU">
 			<img class="md:w-11 md:h-11" src="/images/discord-icon-white.svg" alt="discord icon" />
 		</a>
