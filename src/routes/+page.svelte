@@ -20,30 +20,25 @@
 </article> -->
 <script lang="ts">
 	import Accordion from '$components/Accordion.svelte';
-	import HomeCard from '$components/HomeCard.svelte';
 	import JoinDiscordBtn from '$components/JoinDiscordBtn.svelte';
 	import PostCard from '$components/PostCard.svelte';
-	import { cardContent } from '$src/LBTCardContent';
-	import { postCardContent } from '$src/PostCardContent';
 	import { faqContent } from '$src/FaqContent';
+	import { loadShares, shares } from '$stores/sharesStore';
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		loadShares();
+	});
 </script>
 
 <!-- --------------HERO SECTION-------------------- -->
 <article
 	class="flex flex-col px-6 blur-effect md:justify-center md:items-center md:text-center md:mt-32 mt-12 lg:max-w-7xl lg:mx-auto relative"
 >
-	<div class="font-heading text-left">
-		<span class="text-[41px] lg:text-[64px] md:text-[64px] font-bold font-body text-white"
-			>LEARN.</span
-		>
-		<span class="text-[41px] lg:text-[64px] md:text-[64px] font-bold font-body text-secondary"
-			>BUILD</span
-		>
-		<span class="text-[41px] lg:text-[64px] md:text-[64px] font-bold font-body text-white">.</span>
-		<span class="text-[41px] lg:text-[64px] md:text-[64px] font-bold font-body text-white"
-			>TEACH</span
-		>
-	</div>
+	<h1 class="font-heading text-left text-[41px] lg:text-[64px] md:text-[64px] font-bold text-white">
+		LEARN. <span class="text-secondary">BUILD</span>. TEACH
+	</h1>
+
 	<div
 		class="py-3 text-slate-300 text-sm font-normal font-body lg:text-center lg:text-[26px] md:text-[26px] lg:w-[930px]"
 	>
@@ -227,9 +222,9 @@
 		</a>
 	</div>
 	<div
-		class="lg:flex-row lg:justify-between lg:items-baseline md:justify-between md:items-center flex flex-col p-6 mt-6 gap-6"
+		class="lg:flex-row lg:justify-between lg:items-baseline md:justify-between md:items-center flex flex-col items-center p-6 mt-6 gap-6"
 	>
-		{#each postCardContent as postContent}
+		{#each $shares.slice(0, 3) as postContent (postContent.id)}
 			<PostCard {postContent} />
 		{/each}
 		<a
@@ -260,7 +255,7 @@
 		src="/images/discovery-banner.png"
 		alt="discovery icon"
 	/>
-	<h2 class="text-white md:text-[42px] text-[28px] font-bold mt-6">Ready to dive in?</h2>
+	<h2 class="text-white md:text-[42px] text-[28px] font-bold mt-20">Ready to dive in?</h2>
 	<p class="md:text-2xl text-center text-neutral-300 text-base font-normal mt-4">
 		Join our Discord server today and become part of a vibrant community dedicated to web
 		development excellence
