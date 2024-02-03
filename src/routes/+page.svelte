@@ -239,7 +239,7 @@
 
 <!-- --------------- FAQ SECTION ------------- -->
 <div
-	class="md:w-[85%] md:rounded-3xl md:p-16 md:mt-40 md:mx-auto flex flex-col p-6 justify-start mt-10 bg-slate-800 shadow"
+	class="md:w-[85%] md:rounded-3xl md:py-16 md:px-24 md:mt-40 md:mx-auto flex flex-col py-6 px-16 justify-start mt-10 bg-slate-800 shadow"
 >
 	<h2 class="md:text-[42px] font-bold text-[28px] text-white">FAQs</h2>
 	{#each faqContent as faq}
