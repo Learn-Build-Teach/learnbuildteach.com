@@ -209,7 +209,7 @@
 <!-- ------------- END OF HOME PAGE CARDS SECTION ---------- -->
 
 <!-- ------------- POST SECTION ------------- -->
-<div class="container mx-auto lg:mt-48 mt-16">
+<div class="container mx-auto lg:mt-48 mt-16 relative blur-effect">
 	<div class="flex justify-between items-center px-6">
 		<h2 class="font-bold text-white text-3xl md:text-[42px] md:text-center">
 			Recent posts from the community
