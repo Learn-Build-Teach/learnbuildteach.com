@@ -2,8 +2,9 @@
 	import { onMount } from 'svelte';
 	import { loadDiscordMemberInsights } from '$stores/discordStore';
 	import { totalServerMembers, currentOnlineMembers } from '$stores/discordStore';
+	import { fade } from 'svelte/transition';
 
-	onMount(async () => {
+	onMount(() => {
 		loadDiscordMemberInsights();
 	});
 </script>
@@ -30,7 +31,11 @@
 			src="/images/online-icon.svg"
 			alt="green dot"
 		/>
-		<span>{$currentOnlineMembers} online</span>
+		{#if $currentOnlineMembers}
+			<span transition:fade>{$currentOnlineMembers} online</span>
+		{:else}
+			<span>0 online</span>
+		{/if}
 	</div>
 	<div
 		class="flex justify-center items-center text-[0.60106rem] text-gray font-normal leading-normal tracking-tighter gap-1 lg:text-[18px] md:text-[18px]"
@@ -40,6 +45,10 @@
 			src="/images/total-users.svg"
 			alt="gray dot"
 		/>
-		<span>{$totalServerMembers} members</span>
+		{#if $totalServerMembers}
+			<span transition:fade>{$totalServerMembers} members</span>
+		{:else}
+			<span>0 members</span>
+		{/if}
 	</div>
 </div>

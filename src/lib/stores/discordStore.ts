@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
-export const totalServerMembers = writable(5426);
-export const currentOnlineMembers = writable(551);
+export const totalServerMembers = writable(0);
+export const currentOnlineMembers = writable(0);
 
 export const loadDiscordMemberInsights = async () => {
 	const response = await fetch(
