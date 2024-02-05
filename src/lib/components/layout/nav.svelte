@@ -4,7 +4,7 @@
 	import { supabase } from '$src/lib/helpers/supabase';
 	import { loggedIn } from '$stores/authStore';
 	import { isOpen } from '$stores/mobileMenuStore';
-	// let isOpen = false;
+	import { fly } from 'svelte/transition';
 
 	const handleIsOpen = () => isOpen.set(!$isOpen);
 
@@ -86,7 +86,7 @@
 		<div class="flex p-4 justify-between items-center">
 			<a href="/">
 				<img
-					class="w-12 h-12 shadow-lg rounded-full"
+					class="w-[52px] h-[52px] shadow-lg rounded-full"
 					src="/images/logo-dark-pencil.png"
 					alt="logo"
 				/>
