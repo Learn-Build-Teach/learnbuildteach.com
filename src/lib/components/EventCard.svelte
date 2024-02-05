@@ -19,7 +19,8 @@
 			</h2>
 		</a>
 
-		<div>
+		<p class="line-clamp-2 mb-2">{event.description}</p>
+		<span class="text-sm">
 			<span>
 				{formatTime(event.scheduledStartTimestamp)}
 				{#if event.scheduledEndTimestamp}
@@ -29,6 +30,6 @@
 			<span>
 				@ {formatDate(event.scheduledStartTimestamp)}
 			</span>
-		</div>
+		</span>
 	</div>
 </div>
