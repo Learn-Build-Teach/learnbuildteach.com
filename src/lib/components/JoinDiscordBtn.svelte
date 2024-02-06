@@ -26,29 +26,25 @@
 	<div
 		class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1 lg:text-[18px] md:text-[18px]"
 	>
-		<img
-			class="lg:w-[18px] lg:h-[18px] lg:flex-shrink-0 md:w-[18px] md:h-[18px] md:flex-shrink-0"
-			src="/images/online-icon.svg"
-			alt="green dot"
-		/>
 		{#if $currentOnlineMembers}
+			<img
+				class="lg:w-[18px] lg:h-[18px] lg:flex-shrink-0 md:w-[18px] md:h-[18px] md:flex-shrink-0"
+				src="/images/online-icon.svg"
+				alt="green dot"
+			/>
 			<span transition:fade>{$currentOnlineMembers} online</span>
-		{:else}
-			<span>0 online</span>
 		{/if}
 	</div>
 	<div
 		class="flex justify-center items-center text-[0.60106rem] text-gray font-normal leading-normal tracking-tighter gap-1 lg:text-[18px] md:text-[18px]"
 	>
-		<img
-			class="lg:w-[18px] lg:h-[18px] lg:flex-shrink-0 md:w-[18px] md:h-[18px] md:flex-shrink-0"
-			src="/images/total-users.svg"
-			alt="gray dot"
-		/>
 		{#if $totalServerMembers}
+			<img
+				class="lg:w-[18px] lg:h-[18px] lg:flex-shrink-0 md:w-[18px] md:h-[18px] md:flex-shrink-0"
+				src="/images/total-users.svg"
+				alt="gray dot"
+			/>
 			<span transition:fade>{$totalServerMembers} members</span>
-		{:else}
-			<span>0 members</span>
 		{/if}
 	</div>
 </div>
