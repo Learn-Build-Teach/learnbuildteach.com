@@ -165,3 +165,21 @@ export interface Leader {
 	teachPoints: number;
 	id: string;
 }
+
+
+export interface Project {
+	id: string;
+	username?: string;
+	title: string;
+	description: string;
+	language: string;
+	website: string;
+	repo: string;
+}
+
+
+
+
+
+
+
