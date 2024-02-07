@@ -3,7 +3,7 @@
 	import { loadDiscordMemberInsights } from '$stores/discordStore';
 	import { totalServerMembers, currentOnlineMembers } from '$stores/discordStore';
 	import { fade } from 'svelte/transition';
-
+	export let showDetails = false;
 	onMount(() => {
 		loadDiscordMemberInsights();
 	});
@@ -22,29 +22,31 @@
 		Join on Discord
 	</div>
 </a>
-<div class="flex justify-left items-center px-2 py-2 gap-4 h-16">
-	<div
-		class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1 lg:text-[18px] md:text-[18px]"
-	>
-		{#if $currentOnlineMembers}
-			<img
-				class="lg:w-[18px] lg:h-[18px] lg:flex-shrink-0 md:w-[18px] md:h-[18px] md:flex-shrink-0"
-				src="/images/online-icon.svg"
-				alt="green dot"
-			/>
-			<span transition:fade>{$currentOnlineMembers} online</span>
-		{/if}
+{#if showDetails}
+	<div class="flex justify-left items-center px-2 py-2 gap-4 h-16">
+		<div
+			class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1 lg:text-[18px] md:text-[18px]"
+		>
+			{#if $currentOnlineMembers}
+				<img
+					class="lg:w-[18px] lg:h-[18px] lg:flex-shrink-0 md:w-[18px] md:h-[18px] md:flex-shrink-0"
+					src="/images/online-icon.svg"
+					alt="green dot"
+				/>
+				<span transition:fade>{$currentOnlineMembers} online</span>
+			{/if}
+		</div>
+		<div
+			class="flex justify-center items-center text-[0.60106rem] text-gray font-normal leading-normal tracking-tighter gap-1 lg:text-[18px] md:text-[18px]"
+		>
+			{#if $totalServerMembers}
+				<img
+					class="lg:w-[18px] lg:h-[18px] lg:flex-shrink-0 md:w-[18px] md:h-[18px] md:flex-shrink-0"
+					src="/images/total-users.svg"
+					alt="gray dot"
+				/>
+				<span transition:fade>{$totalServerMembers} members</span>
+			{/if}
+		</div>
 	</div>
-	<div
-		class="flex justify-center items-center text-[0.60106rem] text-gray font-normal leading-normal tracking-tighter gap-1 lg:text-[18px] md:text-[18px]"
-	>
-		{#if $totalServerMembers}
-			<img
-				class="lg:w-[18px] lg:h-[18px] lg:flex-shrink-0 md:w-[18px] md:h-[18px] md:flex-shrink-0"
-				src="/images/total-users.svg"
-				alt="gray dot"
-			/>
-			<span transition:fade>{$totalServerMembers} members</span>
-		{/if}
-	</div>
-</div>
+{/if}

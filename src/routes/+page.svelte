@@ -33,21 +33,21 @@
 
 <!-- --------------HERO SECTION-------------------- -->
 <article
-	class="flex flex-col px-6 blur-effect md:justify-center md:items-center md:text-center md:mt-32 mt-12 lg:max-w-7xl lg:mx-auto relative"
+	class="flex flex-col px-6 blur-effect md:justify-center md:items-center md:text-center md:mt-32 mt-12  lg:mx-auto relative"
 >
 	<h1 class="font-heading text-left text-[41px] lg:text-[64px] md:text-[64px] font-bold text-white">
 		LEARN. <span class="text-secondary">BUILD</span>. TEACH
 	</h1>
 
 	<div
-		class="py-3 text-slate-300 text-sm font-normal font-body lg:text-center lg:text-[26px] md:text-[26px] lg:w-[930px]"
+		class="py-3 text-slate-300 text-sm font-normal font-body lg:text-center lg:text-[26px] md:text-[26px] lg:w-[930px] mb-10"
 	>
 		<p>
 			A community of developers excited to share in your journey to learning, building, and
 			teaching!
 		</p>
 	</div>
-	<JoinDiscordBtn />
+	<JoinDiscordBtn showDetails={true} />
 	<!-- ----------- Skeletons only for lg screen size ------------------- -->
 	<div
 		class="px-4 py-2 2xl:block 2xl:w-[182px] 2xl:h-[51px] flex-shrink-0 rounded-xl bg-[#457B9D21]  absolute left-[-140px] top-[120px] hidden"
@@ -92,7 +92,7 @@
 
 <!-- ------------- HOME PAGE CARDS SECTION ---------- -->
 <div
-	class="container xl:mx-auto xl:grid xl:grid-cols-3 xl:mt-60 md:mx-auto flex flex-col justify-center items-center px-8 gap-8 mt-20"
+	class="container xl:mx-auto xl:grid xl:grid-cols-3 xl:mt-60 md:mx-auto flex flex-col justify-center items-stretch px-8 gap-8 mt-20"
 >
 	<!-- Renders every generic card  -->
 	<div
@@ -238,7 +238,7 @@
 
 <!-- --------------- FAQ SECTION ------------- -->
 <div
-	class="md:w-[85%] md:rounded-3xl md:py-16 md:px-24 md:mt-40 md:mx-auto flex flex-col py-6 px-16 justify-start mt-10 bg-slate-800 shadow"
+	class=" md:rounded-3xl md:py-16 md:px-24 md:mt-40 md:mx-auto flex flex-col py-6 px-16 justify-start mt-10 bg-slate-800 shadow"
 >
 	<h2 class="md:text-[42px] font-bold text-[28px] text-white">FAQs</h2>
 	{#each faqContent as faq}
@@ -255,10 +255,10 @@
 		alt="discovery icon"
 	/>
 	<h2 class="text-white md:text-[42px] text-[28px] font-bold mt-20">Ready to dive in?</h2>
-	<p class="md:text-2xl text-center text-neutral-300 text-base font-normal mt-4">
+	<p class="md:text-2xl text-center text-neutral-300 text-base font-normal mt-4 mb-10">
 		Join our Discord today and become part of our developer community.
 	</p>
-	<JoinDiscordBtn />
+	<JoinDiscordBtn showDetails={true} />
 	<hr class="md:w-[55%] md:mt-32 w-[282px] h-[0px] opacity-50 border-white mt-20" />
 </div>
 

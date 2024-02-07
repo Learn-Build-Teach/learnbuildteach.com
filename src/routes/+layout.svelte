@@ -10,7 +10,7 @@
 
 <div class="min-h-screen bg-primary-dark text-white">
 	<Header />
-	<main on:click={() => isOpen.set(false)} on:keydown={() => null}>
+	<main class="max-w-6xl mx-auto px-8" on:click={() => isOpen.set(false)} on:keydown={() => null}>
 		<slot />
 	</main>
 	<Footer />

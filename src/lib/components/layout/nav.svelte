@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { afterNavigate, goto } from '$app/navigation';
-	import { page } from '$app/stores';
+	import JoinDiscordBtn from '$components/JoinDiscordBtn.svelte';
+	import NavLink from '$components/NavLink.svelte';
 	import { supabase } from '$src/lib/helpers/supabase';
 	import { loggedIn } from '$stores/authStore';
 	import { isOpen } from '$stores/mobileMenuStore';
@@ -21,11 +21,6 @@
 		{
 			path: '/code-of-conduct',
 			name: 'Code of Conduct'
-		},
-		{
-			path: 'https://github.com/Learn-Build-Teach',
-			name: 'Join on Discord',
-			underlined: true
 		}
 	];
 
@@ -39,31 +34,20 @@
 
 <nav>
 	<ul
-		class="lg:flex lg:text-[18px] relative gap-8 my-8 text-slate-400 font-normal text-lg leading-10 hidden"
+		class="lg:flex lg:text-[18px] relative gap-8 my-8 text-slate-300 font-normal text-lg leading-10 hidden items-center"
 	>
 		{#each publicRoutes as route}
-			<li class="relative group">
-				<a
-					class={`block relative border-none hover:text-white hover:underline`}
-					data-sveltekit-preload-data
-					href={route.path}>{route.name}</a
-				>
-			</li>
+			<NavLink path={route.path} name={route.name} />
 		{/each}
+		<img
+			src="/images/discord-logo.svg"
+			alt="discord-logo"
+			class="bg-white p-2 cursor-pointer hover:scale-105 transition-transform rounded-xl w-[29.71px] h-[22.52px] lg:w-[55px] lg:h-[42px] md:w-[55px] md:h-[42px]"
+		/>
 
 		{#if $loggedIn}
 			{#each adminRoutes as route}
-				<li class="relative group">
-					<a class={`block relative border-none `} data-sveltekit-preload-data href={route.path}
-						>{route.name}</a
-					>{#if $page.url.pathname === route.path}
-						<span class="absolute left-1 right-1 h-1 rounded-sm bg-secondary block scale-x-100" />
-					{:else}
-						<span
-							class="absolute left-1 right-1 h-1 rounded-sm bg-white block transition-transform scale-x-0 group-hover:scale-x-100"
-						/>
-					{/if}
-				</li>
+				<NavLink path={route.path} name={route.name} />
 			{/each}
 			<li>
 				<button on:click={logout}> Logout </button>
@@ -96,32 +80,30 @@
 				</button>
 			</div>
 			<div class="flex flex-col p-4 gap-6">
-				<ul class="p-0 m-0 list-none">
+				<ul class="p-0 m-0 list-none text-slate-200">
 					<li class="mb-6">
 						<a
 							href="/content"
-							class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
-							>Content</a
+							class=" text-lg font-normal font-body hover:text-white hover:underline">Content</a
 						>
 					</li>
 					<li class="mb-6">
 						<a
 							href="/code-of-conduct"
-							class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
+							class=" text-lg font-normal font-body hover:text-white hover:underline"
 							>Code of Conduct</a
 						>
 					</li>
 					<li class="mb-6">
 						<a
 							href="https://github.com/Learn-Build-Teach"
-							class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
-							>Github Repo</a
+							class=" text-lg font-normal font-body hover:text-white hover:underline">Github Repo</a
 						>
 					</li>
 					<li class="mb-6">
 						<a
 							href="https://discord.gg/vM2bagU"
-							class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
+							class=" text-lg font-normal font-body hover:text-white hover:underline"
 							>Join on Discord</a
 						>
 					</li>
