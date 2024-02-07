@@ -22,7 +22,7 @@
 		Join on Discord
 	</div>
 </a>
-<div class="flex justify-left items-center px-2 py-2 gap-4">
+<div class="flex justify-left items-center px-2 py-2 gap-4 h-16">
 	<div
 		class="flex justify-center items-center text-[0.60106rem] text-gray leading-normal tracking-tighter gap-1 lg:text-[18px] md:text-[18px]"
 	>
