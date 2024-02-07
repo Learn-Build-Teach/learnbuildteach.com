@@ -1,5 +1,4 @@
 <script lang="ts">
-	import JoinDiscordBtn from '$components/JoinDiscordBtn.svelte';
 	import NavLink from '$components/NavLink.svelte';
 	import { supabase } from '$src/lib/helpers/supabase';
 	import { loggedIn } from '$stores/authStore';
