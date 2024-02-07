@@ -3,6 +3,10 @@
 	import { page } from '$app/stores';
 	import { supabase } from '$src/lib/helpers/supabase';
 	import { loggedIn } from '$stores/authStore';
+	import { isOpen } from '$stores/mobileMenuStore';
+	import { fly } from 'svelte/transition';
+
+	const handleIsOpen = () => isOpen.set(!$isOpen);
 
 	const logout = async () => {
 		await supabase.auth.signOut();
@@ -11,16 +15,17 @@
 
 	const publicRoutes = [
 		{
-			path: '/',
-			name: 'Home'
-		},
-		{
 			path: '/content',
 			name: 'Content'
 		},
 		{
 			path: '/code-of-conduct',
 			name: 'Code of Conduct'
+		},
+		{
+			path: 'https://github.com/Learn-Build-Teach',
+			name: 'Join on Discord',
+			underlined: true
 		}
 	];
 
@@ -33,18 +38,16 @@
 </script>
 
 <nav>
-	<ul class="flex gap-8 my-8 text-white font-heading text-2xl leading-10">
+	<ul
+		class="lg:flex lg:text-[18px] relative gap-8 my-8 text-slate-400 font-normal text-lg leading-10 hidden"
+	>
 		{#each publicRoutes as route}
 			<li class="relative group">
-				<a class={`block relative border-none `} data-sveltekit-preload-data href={route.path}
-					>{route.name}</a
-				>{#if $page.url.pathname === route.path}
-					<span class="absolute left-1 right-1 h-1 rounded-sm bg-secondary block scale-x-100" />
-				{:else}
-					<span
-						class="absolute left-1 right-1 h-1 rounded-sm bg-white block transition-transform scale-x-0 group-hover:scale-x-100"
-					/>
-				{/if}
+				<a
+					class={`block relative border-none hover:text-white hover:underline`}
+					data-sveltekit-preload-data
+					href={route.path}>{route.name}</a
+				>
 			</li>
 		{/each}
 
@@ -67,21 +70,63 @@
 			</li>
 		{/if}
 	</ul>
-</nav>
 
-<style lang="postcss">
-	@media (min-width: 1024px) {
-		a::before {
-			content: '';
-			position: absolute;
-			transition: all 0.3s ease;
-			left: 12%;
-			top: 100%;
-			/* top: 80%; */
-			width: 75%;
-			height: 4px;
-			background: white;
-			transform: scaleX(0);
-		}
-	}
-</style>
+	<!-- ------------------ MOBILE NAV -------------------- -->
+	<div class="lg:hidden px-2">
+		<button on:click={handleIsOpen}>
+			<img class="md:w-10 md:h-10" src="/images/burger-icon.svg" alt="burger menu" />
+		</button>
+	</div>
+
+	{#if $isOpen}
+		<div
+			transition:fly
+			class="absolute z-10 flex flex-col top-5 left-1/2 transform -translate-x-1/2 w-[95%] h-[335px] bg-primary rounded-[17px] shadow"
+		>
+			<div class="flex p-4 justify-between items-center">
+				<a href="/">
+					<img
+						class="w-[52px] h-[52px] shadow-lg rounded-full"
+						src="/images/logo-dark-pencil.png"
+						alt="logo"
+					/>
+				</a>
+				<button on:click={handleIsOpen}>
+					<img class="w-6 h-6 relative" src="/images/x-close.svg" alt="close button" />
+				</button>
+			</div>
+			<div class="flex flex-col p-4 gap-6">
+				<ul class="p-0 m-0 list-none">
+					<li class="mb-6">
+						<a
+							href="/content"
+							class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
+							>Content</a
+						>
+					</li>
+					<li class="mb-6">
+						<a
+							href="/code-of-conduct"
+							class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
+							>Code of Conduct</a
+						>
+					</li>
+					<li class="mb-6">
+						<a
+							href="https://github.com/Learn-Build-Teach"
+							class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
+							>Github Repo</a
+						>
+					</li>
+					<li class="mb-6">
+						<a
+							href="https://discord.gg/vM2bagU"
+							class="text-slate-400 text-lg font-normal font-body hover:text-white hover:underline"
+							>Join on Discord</a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+	{/if}
+</nav>

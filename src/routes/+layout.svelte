@@ -2,22 +2,16 @@
 	import Head from '$components/layout/head.svelte';
 	import Header from '$components/layout/header.svelte';
 	import Footer from '$components/layout/footer.svelte';
-	import '$styles/root.css';
 	import '../app.css';
+	import { isOpen } from '$stores/mobileMenuStore';
 </script>
 
 <Head />
 
-<div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
+<div class="min-h-screen bg-primary-dark text-white">
 	<Header />
-	<main class="w-full max-w-5xl mx-auto p-4">
+	<main on:click={() => isOpen.set(false)} on:keydown={() => null}>
 		<slot />
 	</main>
 	<Footer />
 </div>
-
-<style lang="postcss">
-	:global(body) {
-		@apply bg-primary text-white;
-	}
-</style>
