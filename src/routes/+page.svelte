@@ -43,8 +43,8 @@
 		class="py-3 text-slate-300 text-sm font-normal font-body lg:text-center lg:text-[26px] md:text-[26px] lg:w-[930px]"
 	>
 		<p>
-			Our Discord server is a friendly place to ask web development questions and engage in
-			discussions. Catered to seasoned experts or beginners
+			A community of developers excited to share in your journey to learning, building, and
+			teaching!
 		</p>
 	</div>
 	<JoinDiscordBtn />
@@ -103,11 +103,11 @@
 			>Embark on a Journey of Learning</span
 		>
 		<h2 class="text-white text-xl font-bold md:text-3xl xl:w-[90%]">
-			We <span class="text-secondary">learn</span> because we have to
+			We <span class="text-secondary">learn</span> because we have to.
 		</h2>
 		<p class="mt-2 text-slate-400 text-sm font-normal xl:mt-4 md:text-[22px]">
-			Our Discord channels are filled with resources, tutorials, and fellow developers that are more
-			than willing to assist you along your learning journey!
+			Our Discord channels are filled with resources, tutorials, and fellow developers that are
+			excited to assist you along your learning journey!
 		</p>
 	</div>
 	<div
@@ -118,11 +118,11 @@
 			>Bring Your Ideas to Life</span
 		>
 		<h2 class="text-white text-lg font-bold md:text-3xl">
-			We <span class="text-secondary">build</span> because we can
+			We <span class="text-secondary">build</span> because we can.
 		</h2>
 		<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px]">
 			From coding challenges to group projects, unleash your creativity and amplify your impact
-			within our vibrant community
+			within our vibrant community.
 		</p>
 	</div>
 	<div
@@ -140,8 +140,8 @@
 			We <span class="text-secondary">teach</span> because we care
 		</h2>
 		<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px]">
-			Contribute to our knowledge base, lead workshops, and empower the community by becoming a
-			guiding force in the world of web development
+			The best way to learn is to teach, and our community is the perfect place to share your
+			expertise to help others grow.
 		</p>
 	</div>
 	<!-- Renders the last and different one with profile pictures -->
@@ -181,8 +181,7 @@
 			<!-- ------------------ Renders the same profile pictures component but with different layout in lg screens ---------------- -->
 			<h2 class="text-white text-lg font-bold mt-4 md:text-3xl">Ready to dive in?</h2>
 			<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px] xl:text-center">
-				Join our Discord server today and become part of a vibrant community dedicated to web
-				development excellence
+				Join our Discord today and become part of our developer community.
 			</p>
 
 			<div class="xl:flex xl:items-center xl:flex-grow xl:mt-4 flex-shrink-0 ml-4 hidden">
@@ -257,8 +256,7 @@
 	/>
 	<h2 class="text-white md:text-[42px] text-[28px] font-bold mt-20">Ready to dive in?</h2>
 	<p class="md:text-2xl text-center text-neutral-300 text-base font-normal mt-4">
-		Join our Discord server today and become part of a vibrant community dedicated to web
-		development excellence
+		Join our Discord today and become part of our developer community.
 	</p>
 	<JoinDiscordBtn />
 	<hr class="md:w-[55%] md:mt-32 w-[282px] h-[0px] opacity-50 border-white mt-20" />
