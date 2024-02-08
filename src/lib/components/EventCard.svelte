@@ -1,35 +1,33 @@
 <script lang="ts">
 	import type { Event } from '$types/events';
 	import { formatDate, formatTime } from '$lib/helpers/format-date';
-	const fallbackUrl = '/images/lbt_cover.png';
+	const fallbackUrl = '/images/discord-event-fallback.png';
 	export let event: Event;
 </script>
 
-<div class="w-full rounded-lg flex flex-col justify-between">
-	<img
-		src={event.coverImageURL || fallbackUrl}
-		alt={event.name}
-		class="aspect-square object-cover border rounded-lg border-primary-dark/30"
-	/>
-
-	<div class="mt-auto">
-		<a href={event.url} rel="noreferrer" target="_blank" class="my-4 block">
-			<h2 class="text-2xl font-heading ">
-				{event.name}
-			</h2>
-		</a>
-
-		<p class="line-clamp-2 mb-2">{event.description}</p>
-		<span class="text-sm">
-			<span>
-				{formatTime(event.scheduledStartTimestamp)}
-				{#if event.scheduledEndTimestamp}
-					- {formatTime(event.scheduledEndTimestamp)}
-				{/if}
-			</span>
-			<span>
-				@ {formatDate(event.scheduledStartTimestamp)}
-			</span>
+<div class="flex flex-col justify-start mt-12 opacity-90 hover:opacity-100">
+	<a href={event.url}>
+		<img
+			class="w-[375px] h-[211px] border-primary-dark/50 border rounded-2xl object-cover"
+			src={fallbackUrl}
+			alt={event.description}
+		/>
+		<h2
+			class="text-slate-200 md:text-[22px] max-w-[370px] text-lg font-semibold leading-[23px] mt-4"
+		>
+			{event.name}
+		</h2>
+	</a>
+	<p class="line-clamp-2 my-2">{event.description}</p>
+	<span class="text-sm text-slate-300 md:text-sm text-[11px] font-normal mt-2">
+		<span class="text-secondary">
+			{formatTime(event.scheduledStartTimestamp)}
+			{#if event.scheduledEndTimestamp}
+				- {formatTime(event.scheduledEndTimestamp)}
+			{/if}
 		</span>
-	</div>
+		<span>
+			@ {formatDate(event.scheduledStartTimestamp)}
+		</span>
+	</span>
 </div>
