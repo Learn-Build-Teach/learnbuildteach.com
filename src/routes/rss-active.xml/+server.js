@@ -15,6 +15,7 @@ export async function GET() {
 
 const website = 'https://www.learnbuildteach.com';
 
+//@ts-ignore
 const xml = (posts) =>
 	`<rss xmlns:dc="https://purl.org/dc/elements/1.1/" xmlns:content="https://purl.org/rss/1.0/modules/content/" xmlns:atom="https://www.w3.org/2005/Atom" version="2.0">
   <channel>
@@ -23,6 +24,7 @@ const xml = (posts) =>
     <description>Learn Build Teach</description>
     ${posts
 			.map(
+				//@ts-ignore
 				(post) =>
 					`
         <item>
