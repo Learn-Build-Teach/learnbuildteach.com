@@ -8,7 +8,7 @@
 <div class="flex flex-col justify-start mt-12 opacity-90 hover:opacity-100">
 	<a href={event.url}>
 		<img
-			class="w-[375px] h-[211px] border-primary-dark/50 border rounded-2xl object-cover"
+			class="w-[400px] h-[160px] border-primary-dark/50 border rounded-2xl object-cover"
 			src={event.coverImageURL || fallbackUrl}
 			alt={event.description}
 		/>
@@ -19,7 +19,7 @@
 		</h2>
 	</a>
 	<p class="line-clamp-2 my-2">{event.description}</p>
-	<span class="text-sm text-slate-300 md:text-sm text-[11px] font-normal mt-2">
+	<span class="text-slate-300 md:text-sm text-[11px] font-normal mt-2">
 		<span class="text-secondary">
 			{formatTime(event.scheduledStartTimestamp)}
 			{#if event.scheduledEndTimestamp}
