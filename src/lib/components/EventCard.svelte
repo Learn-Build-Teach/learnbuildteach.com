@@ -9,7 +9,7 @@
 	<a href={event.url}>
 		<img
 			class="w-[375px] h-[211px] border-primary-dark/50 border rounded-2xl object-cover"
-			src={fallbackUrl}
+			src={event.coverImageURL || fallbackUrl}
 			alt={event.description}
 		/>
 		<h2
