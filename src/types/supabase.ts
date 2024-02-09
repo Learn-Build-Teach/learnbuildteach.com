@@ -172,6 +172,7 @@ export interface Project {
 	username?: string;
 	title: string;
 	description: string;
+	cover_image: string;
 	language: string;
 	website: string;
 	repo: string;
