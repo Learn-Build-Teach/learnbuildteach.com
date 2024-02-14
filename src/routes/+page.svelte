@@ -25,9 +25,12 @@
 	import { faqContent } from '$src/FaqContent';
 	import { loadShares, shares } from '$stores/sharesStore';
 	import { onMount } from 'svelte';
+	import { contributors } from '$stores/contributorStore';
+	import { loadContributors } from '$stores/contributorStore';
 
 	onMount(async () => {
 		loadShares();
+		loadContributors();
 	});
 </script>
 
@@ -246,7 +249,37 @@
 		<Accordion {faq} />
 	{/each}
 </div>
+<hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12 xl:w-[65%] xl:mt-44" />
 <!-- --------------- END OF FAQ SECTION ------------- -->
+
+<!--------- CONTRIBUTORS SECTION --------->
+<div class="container mx-auto mt-52">
+	<h2 class="font-bold text-white text-3xl md:text-[42px] text-center md:text-left">
+		Contributors
+	</h2>
+	<p class="md:text-2xl text-left text-neutral-300 text-base font-normal mt-4">
+		Check out our contributing members!
+	</p>
+	<div class="flex mt-20 items-center justify-between">
+		<div class="flex px-2">
+			{#each $contributors as contributor}
+				<img
+					class="w-12 h-12 rounded-full -ml-2"
+					src={contributor.avatar_url}
+					alt="github profile avatar"
+				/>
+			{/each}
+		</div>
+		<a
+			class="underline"
+			href="https://github.com/Learn-Build-Teach/learnbuildteach.com"
+			target="_blank"
+			rel="noreferrer"
+		>
+			Become a contributor
+		</a>
+	</div>
+</div>
 
 <!-- ------------------- SECOND CTA SECTION --------------- -->
 <div class="md:mt-40 flex flex-col justify-center items-center bg-primary-dark p-6">
