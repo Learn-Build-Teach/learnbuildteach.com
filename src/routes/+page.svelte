@@ -249,25 +249,25 @@
 		<Accordion {faq} />
 	{/each}
 </div>
-<hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12 xl:w-[65%] xl:mt-44" />
 <!-- --------------- END OF FAQ SECTION ------------- -->
 
 <!--------- CONTRIBUTORS SECTION --------->
-<div class="container mx-auto mt-52">
-	<h2 class="font-bold text-white text-3xl md:text-[42px] text-center md:text-left">
-		Contributors
-	</h2>
-	<p class="md:text-2xl text-left text-neutral-300 text-base font-normal mt-4">
-		Check out our contributing members!
+<div class="container mx-auto mt-32">
+	<h2 class="text-white md:text-[42px] text-[28px] text-center font-bold mt-20">Contributors</h2>
+	<p class="md:text-2xl text-center text-neutral-300 text-base font-bold mt-16 leading-8">
+		Learn by <span class="text-secondary">BUILDING</span>! <br /> Checkout our members who are contributing
+		to the community!
 	</p>
-	<div class="flex mt-20 items-center justify-between">
+	<div class="flex flex-col mt-20 items-center gap-28">
 		<div class="flex px-2">
 			{#each $contributors as contributor}
-				<img
-					class="w-12 h-12 rounded-full -ml-2"
-					src={contributor.avatar_url}
-					alt="github profile avatar"
-				/>
+				<a class="-ml-2" href={contributor.html_url} title={contributor.login}>
+					<img
+						class="md:w-24 md:h-24 w-12 h-12 rounded-full"
+						src={contributor.avatar_url}
+						alt="github profile avatar"
+					/>
+				</a>
 			{/each}
 		</div>
 		<a
@@ -278,6 +278,7 @@
 		>
 			Become a contributor
 		</a>
+		<hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12 xl:w-[65%] xl:mt-44" />
 	</div>
 </div>
 
