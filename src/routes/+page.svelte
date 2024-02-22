@@ -1,23 +1,3 @@
-<!-- <article class="flex flex-col gap-6">
-	<h1 class="font-heading font-black text-4xl text-left">
-		Welcome to the Learn Build Teach Community!
-	</h1>
-	<p class="text-lg mb-3">
-		Learn Build Teach is a welcoming and open community of web developers. Whether you are a
-		seasoned expert or just getting started in the field of development, you can be certain our
-		Discord server remains a friendly place to ask questions and engage in discussions.
-	</p>
-	<div class="button-wrapper">
-		<a
-			href="https://discord.gg/vM2bagU"
-			target="_blank"
-			rel="noreferrer noopener"
-			class="bg-white border-none py-2 px-4 rounded-lg text-primary hover:bg-accent transition-500"
-		>
-			Join the Discord
-		</a>
-	</div>
-</article> -->
 <script lang="ts">
 	import Accordion from '$components/Accordion.svelte';
 	import JoinDiscordBtn from '$components/JoinDiscordBtn.svelte';
@@ -43,7 +23,7 @@
 	</h1>
 
 	<div
-		class="py-3 text-slate-300 text-sm font-normal font-body lg:text-center lg:text-[26px] md:text-[26px] lg:w-[930px] mb-10"
+		class="py-3 text-slate-300 text-sm font-normal font-body lg:text-center lg:text-[26px] md:text-[26px] lg:w-[800px] mb-10"
 	>
 		<p>
 			A community of developers excited to share in your journey to learning, building, and
@@ -95,17 +75,17 @@
 
 <!-- ------------- HOME PAGE CARDS SECTION ---------- -->
 <div
-	class="container xl:mx-auto xl:grid xl:grid-cols-3 xl:mt-60 md:mx-auto flex flex-col justify-center items-stretch px-8 gap-8 mt-20"
+	class="container xl:mx-auto xl:grid xl:grid-cols-12 xl:mt-60 md:mx-auto flex flex-col justify-center items-stretch gap-8 mt-20"
 >
 	<!-- Renders every generic card  -->
 	<div
-		class="xl:opacity-90 hover:opacity-100 xl:col-span-2 md:p-8 xl:h-full md:border-none xl:order-1 flex flex-col p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="xl:opacity-90 hover:opacity-100 xl:col-span-7 md:p-8 xl:h-full md:border-none xl:order-1 flex flex-col p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
 		<img class="md:w-10 md:h-10 w-5 h-5" src="/images/book-icon.svg" alt="book icon" />
 		<span class="text-slate-400 text-opacity-70 text-[10px] font-normal mt-4 md:text-xl xl:mt-20"
 			>Embark on a Journey of Learning</span
 		>
-		<h2 class="text-white text-xl font-bold md:text-3xl xl:w-[90%]">
+		<h2 class="text-white text-xl font-bold md:text-3xl">
 			We <span class="text-secondary">learn</span> because we have to.
 		</h2>
 		<p class="mt-2 text-slate-400 text-sm font-normal xl:mt-4 md:text-[22px]">
@@ -114,7 +94,7 @@
 		</p>
 	</div>
 	<div
-		class="xl:opacity-90 hover:opacity-100 xl:col-span-1 xl:justify-center md:p-8 xl:h-full md:border-none xl:order-2 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="xl:opacity-90 hover:opacity-100 xl:col-span-5 xl:justify-center md:p-8 xl:h-full md:border-none xl:order-2 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
 		<img class="md:w-10 md:h-10 w-5 h-5" src="/images/console-icon.svg" alt="console icon" />
 		<span class="text-slate-400 text-opacity-70 text-[10px] font-normal mt-4 md:text-xl xl:mt-20"
@@ -129,7 +109,7 @@
 		</p>
 	</div>
 	<div
-		class="xl:opacity-90 hover:opacity-100 xl:col-span-2 xl:h-full md:p-8 md:border-none xl:order-4 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
+		class="xl:opacity-90 hover:opacity-100 xl:col-span-7 xl:h-full md:p-8 md:border-none xl:order-4 flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500"
 	>
 		<img
 			class="md:w-10 md:h-10 w-5 h-5"
@@ -148,9 +128,12 @@
 		</p>
 	</div>
 	<!-- Renders the last and different one with profile pictures -->
-	<a class="xl:order-3" href="https://discord.gg/vM2bagU">
+	<a
+		class="xl:order-3 xl:col-span-5 hover:-translate-y-1 transition-transform"
+		href="https://discord.gg/vM2bagU"
+	>
 		<div
-			class="xl:opacity-90 hover:opacity-100 xl:col-span-1 xl:justify-center xl:items-center md:p-8 xl:h-full md:border-none flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500 relative"
+			class="xl:opacity-90 hover:opacity-100  xl:justify-center xl:items-center md:p-8 xl:h-full md:border-none flex flex-col items-start p-4 bg-slate-800 rounded-[10.27px] shadow border border-slate-500 relative"
 		>
 			<div class="xl:flex xl:flex-col xl:mt-12 flex justify-center items-center w-full">
 				<img
@@ -184,7 +167,7 @@
 			<!-- ------------------ Renders the same profile pictures component but with different layout in lg screens ---------------- -->
 			<h2 class="text-white text-lg font-bold mt-4 md:text-3xl">Ready to dive in?</h2>
 			<p class="mt-2 text-slate-400 text-sm font-normal md:text-[22px] xl:text-center">
-				Join our Discord today and become part of our developer community.
+				Join our Discord today and start learning, building, and teaching with us!
 			</p>
 
 			<div class="xl:flex xl:items-center xl:flex-grow xl:mt-4 flex-shrink-0 ml-4 hidden">
@@ -253,9 +236,8 @@
 <!--------- CONTRIBUTORS SECTION --------->
 <div class="container mx-auto mt-32">
 	<h2 class="text-white md:text-[42px] text-[28px] text-center font-bold mt-20">Contributors</h2>
-	<p class="md:text-2xl text-center text-neutral-300 text-base font-bold mt-4 leading-8">
-		Learn by <span class="text-secondary">BUILDING</span>! Checkout our members who are contributing
-		to the community!
+	<p class="md:text-2xl text-center text-neutral-300 text-base  mt-4 leading-8">
+		Thank you to our discord members who have contributed to our website!
 	</p>
 	<div class="flex flex-col mt-20 items-center gap-28">
 		<div class="flex px-2">
@@ -281,23 +263,22 @@
 		>
 			Become a contributor
 		</a>
-		<hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12 xl:w-[65%] xl:mt-44" />
 	</div>
 </div>
 
 <!-- ------------------- SECOND CTA SECTION --------------- -->
-<div class="md:mt-40 flex flex-col justify-center items-center bg-primary-dark p-6">
+<div class="md:mt-20 flex flex-col justify-center items-center bg-primary-dark p-6">
 	<img
-		class="md:w-[172px] md:h-[170px] w-24 h-24 rounded-full mt-24"
+		class="md:w-[172px] md:h-[170px] w-24 h-24 rounded-full mt-1"
 		src="/images/discovery-banner.png"
 		alt="discovery icon"
 	/>
-	<h2 class="text-white md:text-[42px] text-[28px] font-bold mt-20">Ready to dive in?</h2>
-	<p class="md:text-2xl text-center text-neutral-300 text-base font-normal mt-4 mb-10">
-		Join our Discord today and become part of our developer community.
+	<h2 class="text-white md:text-[42px] text-[28px] font-bold mt-10">Ready to dive in?</h2>
+	<p class="md:text-2xl text-center text-neutral-300 text-base font-normal mt-4 pb-10">
+		Join our Discord today and start learning, building, and teaching with us!
 	</p>
 	<JoinDiscordBtn showDetails={true} />
-	<hr class="md:w-[55%] md:mt-32 w-[282px] h-[0px] opacity-50 border-white mt-20" />
+	<hr class="md:w-[80%] md:mt-2- w-[282px] h-[0px] opacity-50 border-white mt-20" />
 </div>
 
 <!-- ------------------- END OF SECOND CTA SECTION --------------- -->

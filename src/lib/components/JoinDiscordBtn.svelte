@@ -11,7 +11,7 @@
 
 <a
 	href="https://discord.gg/vM2bagU"
-	class="w-[190.80px] h-[43.89px] lg:w-auto lg:h-auto md:w-auto md:h-auto lg:mt-20 px-4 py-3 mt-10  bg-[#fff] rounded-lg flex items-center gap-4"
+	class="w-[190.80px] h-[43.89px] lg:w-auto lg:h-auto md:w-auto md:h-auto lg:mt-20 px-4 py-3 mt-10  bg-[#fff] rounded-lg flex items-center gap-4 hover:-translate-y-1 transition-transform"
 >
 	<img
 		src="/images/discord-logo.svg"

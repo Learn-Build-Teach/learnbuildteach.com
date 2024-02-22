@@ -11,7 +11,7 @@
 	<p>&copy; 2022 Learn Build Teach LLC</p>
 </footer> -->
 
-<footer class="md:mt-12 flex flex-col p-4 items-center bg-primary-dark shadow">
+<footer class="md:mt-12 flex flex-col p-4 items-center bg-primary-dark shadow py-10">
 	<div class="flex gap-6 justify-center items-center">
 		<a href="https://github.com/Learn-Build-Teach">
 			<img
@@ -28,7 +28,7 @@
 			/>
 		</a>
 	</div>
-	<div class="text-center text-neutral-300 text-opacity-60 md:text-[22px] text-sm font-light mt-10">
+	<div class="text-center text-neutral-300 text-opacity-60 md:text-[22px] text-sm font-light mt-4">
 		Copyright &copy; {new Date().getFullYear()}, Learn Build Teach LLC
 	</div>
 </footer>
