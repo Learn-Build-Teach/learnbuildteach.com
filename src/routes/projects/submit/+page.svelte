@@ -2,7 +2,7 @@
 	// Projects submitted here will have a default status of "pending" to be reviewed by admin
 </script>
 
-<main class="flex flex-col align-center justify-center  h-screen">
+<main class="flex flex-col align-center justify-center h-screen">
 	<div class="text-left mb-6 w-[50%] mx-auto">
 		<h1 class="text-4xl font-bold">Submit your project.</h1>
 		<p class="text-slate-300">Note: will be reviewed before being published on the website.</p>
