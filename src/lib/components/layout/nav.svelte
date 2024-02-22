@@ -14,6 +14,10 @@
 
 	const publicRoutes = [
 		{
+			path: '/events',
+			name: 'Events'
+		},
+		{
 			path: '/content',
 			name: 'Content'
 		},
@@ -64,7 +68,7 @@
 	{#if $isOpen}
 		<div
 			transition:fly
-			class="absolute z-10 flex flex-col top-5 left-1/2 transform -translate-x-1/2 w-[95%] h-[335px] bg-primary rounded-[17px] shadow"
+			class="absolute z-10 flex flex-col top-5 left-1/2 transform -translate-x-1/2 w-[95%] h-auto bg-primary rounded-[17px] shadow"
 		>
 			<div class="flex p-4 justify-between items-center">
 				<a href="/">
@@ -80,6 +84,12 @@
 			</div>
 			<div class="flex flex-col p-4 gap-6">
 				<ul class="p-0 m-0 list-none text-slate-200">
+					<li class="mb-6">
+						<a
+							href="/events"
+							class=" text-lg font-normal font-body hover:text-white hover:underline">Events</a
+						>
+					</li>
 					<li class="mb-6">
 						<a
 							href="/content"
@@ -99,7 +109,7 @@
 							class=" text-lg font-normal font-body hover:text-white hover:underline">Github Repo</a
 						>
 					</li>
-					<li class="mb-6">
+					<li class="mb-4">
 						<a
 							href="https://discord.gg/vM2bagU"
 							class=" text-lg font-normal font-body hover:text-white hover:underline"
