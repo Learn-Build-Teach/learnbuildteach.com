@@ -254,8 +254,8 @@
 <!--------- CONTRIBUTORS SECTION --------->
 <div class="container mx-auto mt-32">
 	<h2 class="text-white md:text-[42px] text-[28px] text-center font-bold mt-20">Contributors</h2>
-	<p class="md:text-2xl text-center text-neutral-300 text-base font-bold mt-16 leading-8">
-		Learn by <span class="text-secondary">BUILDING</span>! <br /> Checkout our members who are contributing
+	<p class="md:text-2xl text-center text-neutral-300 text-base font-bold mt-4 leading-8">
+		Learn by <span class="text-secondary">BUILDING</span>! Checkout our members who are contributing
 		to the community!
 	</p>
 	<div class="flex flex-col mt-20 items-center gap-28">
@@ -271,7 +271,7 @@
 			{/each}
 		</div>
 		<a
-			class="underline"
+			class="underline text-2xl"
 			href="https://github.com/Learn-Build-Teach/learnbuildteach.com"
 			target="_blank"
 			rel="noreferrer"
