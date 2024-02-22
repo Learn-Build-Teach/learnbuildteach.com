@@ -25,9 +25,12 @@
 	import { faqContent } from '$src/FaqContent';
 	import { loadShares, shares } from '$stores/sharesStore';
 	import { onMount } from 'svelte';
+	import { contributors } from '$stores/contributorStore';
+	import { loadContributors } from '$stores/contributorStore';
 
 	onMount(async () => {
 		loadShares();
+		loadContributors();
 	});
 </script>
 
@@ -246,6 +249,41 @@
 	{/each}
 </div>
 <!-- --------------- END OF FAQ SECTION ------------- -->
+
+<!--------- CONTRIBUTORS SECTION --------->
+<div class="container mx-auto mt-32">
+	<h2 class="text-white md:text-[42px] text-[28px] text-center font-bold mt-20">Contributors</h2>
+	<p class="md:text-2xl text-center text-neutral-300 text-base font-bold mt-4 leading-8">
+		Learn by <span class="text-secondary">BUILDING</span>! Checkout our members who are contributing
+		to the community!
+	</p>
+	<div class="flex flex-col mt-20 items-center gap-28">
+		<div class="flex px-2">
+			{#each $contributors as contributor}
+				<a
+					class="-ml-2 transition-transform transform hover:-translate-y-2"
+					href={contributor.html_url}
+					title={contributor.login}
+				>
+					<img
+						class="md:w-24 md:h-24 w-12 h-12 rounded-full"
+						src={contributor.avatar_url}
+						alt="github profile avatar"
+					/>
+				</a>
+			{/each}
+		</div>
+		<a
+			class="underline text-2xl"
+			href="https://github.com/Learn-Build-Teach/learnbuildteach.com"
+			target="_blank"
+			rel="noreferrer"
+		>
+			Become a contributor
+		</a>
+		<hr class="mx-auto w-[282px] h-[0px] opacity-50 border-white mt-12 xl:w-[65%] xl:mt-44" />
+	</div>
+</div>
 
 <!-- ------------------- SECOND CTA SECTION --------------- -->
 <div class="md:mt-40 flex flex-col justify-center items-center bg-primary-dark p-6">
