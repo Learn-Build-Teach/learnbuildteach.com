@@ -261,7 +261,11 @@
 	<div class="flex flex-col mt-20 items-center gap-28">
 		<div class="flex px-2">
 			{#each $contributors as contributor}
-				<a class="-ml-2" href={contributor.html_url} title={contributor.login}>
+				<a
+					class="-ml-2 transition-transform transform hover:-translate-y-2"
+					href={contributor.html_url}
+					title={contributor.login}
+				>
 					<img
 						class="md:w-24 md:h-24 w-12 h-12 rounded-full"
 						src={contributor.avatar_url}
