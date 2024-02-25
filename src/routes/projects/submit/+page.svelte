@@ -4,7 +4,7 @@
 
 <main class="flex flex-col align-center justify-center h-screen">
 	<div class="text-left mb-6 w-[50%] mx-auto">
-		<h1 class="text-4xl font-bold">Submit your project.</h1>
+		<h1 class="text-4xl font-bold leading-none mb-2">Submit your project.</h1>
 		<p class="text-slate-300">Note: will be reviewed before being published on the website.</p>
 	</div>
 	<form method="POST" class="w-[50%] mx-auto">
@@ -19,7 +19,7 @@
 		</div>
 		<div class="flex flex-col align-start mb-6 gap-y-1">
 			<label for="cover_image" class="font-bold text-slate-300">Cover Image:</label>
-			<input name="cover_image" type="file" />
+			<input name="cover_image" type="file" class="cursor-pointer" />
 		</div>
 		<div class="flex flex-col align-start mb-6 gap-y-1">
 			<label for="description" class="font-bold text-slate-300">Description:</label>
@@ -36,6 +36,15 @@
 				type="text"
 				class="w-[90%] py-2 px-3 rounded-md opacity-90"
 				placeholder="Discord username"
+			/>
+		</div>
+		<div class="flex flex-col align-start mb-6 gap-y-1">
+			<label for="language" class="font-bold text-slate-300">Programming language used:</label>
+			<input
+				name="language"
+				type="text"
+				class="w-[90%] py-2 px-3 rounded-md opacity-90"
+				placeholder="i.e. JavaScript, Python, etc."
 			/>
 		</div>
 		<div class="flex flex-col align-start mb-6 gap-y-1">
