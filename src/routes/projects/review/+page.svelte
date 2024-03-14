@@ -21,7 +21,12 @@
 		>
 			<h1 class="font-bold text-xl">Easy CSV</h1>
 			<p class="font-light text-slate-300">Christophe Anfry</p>
-			<p>A web application that display your csv data into a table.</p>
+			<p>
+				A web application that display your csv data into a table.A web application that display
+				your csv data into a table.A web application that display your csv data into a table.A web
+				application that display your csv data into a table.A web application that display your csv
+				data into a table.
+			</p>
 			<p class="text-slate-400 italic font-bold">Typescript</p>
 			<div class="flex items-center justify-between w-full">
 				<a
