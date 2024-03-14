@@ -22,7 +22,8 @@
 	<button
 		class="bg-white text-primary rounded py-2 px-4 text-lg font-bold w-full"
 		on:click={handleLoadMore}
-    >
-        Load More
-    </button>
+	>
+		Load More
+	</button>
+	<!-- Need to add here link to go to the review project page /projects/review -->
 </article>

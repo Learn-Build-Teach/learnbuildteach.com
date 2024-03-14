@@ -165,3 +165,25 @@ export interface Leader {
 	teachPoints: number;
 	id: string;
 }
+
+export enum Status {
+	PENDING = "pending",
+	ACCEPTED = "accepted",
+}
+
+export interface Project {
+	id: string;
+	username: string;
+	title: string;
+	description: string;
+	cover_image: string;
+	status: Status.PENDING | Status.ACCEPTED;
+	language: string;
+	website: string;
+	repo: string;
+}
+
+
+
+
+

@@ -24,6 +24,10 @@
 		{
 			path: '/code-of-conduct',
 			name: 'Code of Conduct'
+		},
+		{
+			path: '/projects',
+			name: 'Projects'
 		}
 	];
 
@@ -101,6 +105,12 @@
 							href="/code-of-conduct"
 							class=" text-lg font-normal font-body hover:text-white hover:underline"
 							>Code of Conduct</a
+						>
+					</li>
+					<li class="mb-6">
+						<a
+							href="/projects"
+							class=" text-lg font-normal font-body hover:text-white hover:underline">Projects</a
 						>
 					</li>
 					<li class="mb-6">
